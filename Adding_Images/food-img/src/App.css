@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.Pantry-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: full;
+  border: 3px solid black;
+  text-align: left;
+  list-style-type: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+}
+
+img {
+  border-radius: 30%;
+}

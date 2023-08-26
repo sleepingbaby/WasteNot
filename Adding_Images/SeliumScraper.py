@@ -15,7 +15,10 @@ with open(csv_filename, "r") as csvfile, open(output_file, "w", newline="") as o
     driver = webdriver.Chrome()  # You'll need to download and install the appropriate WebDriver for your browser
 
     for row in reader:
-        url = f"https://spoonacular.com/cdn/ingredients_100x100/{row[0]}.jpg"
+        word = row[0].replace(" ", "-")
+        print(word)
+        url = f"https://spoonacular.com/cdn/ingredients_100x100/{word}.jpg"
+
 
         # Load the webpage
         driver.get(url)
@@ -25,7 +28,7 @@ with open(csv_filename, "r") as csvfile, open(output_file, "w", newline="") as o
 
         if "100" in title:
             print(f"Title containing '100' found in {url}: {title}")
-            row.append(row[0])
+            row.append(word)
             writer.writerow(row)
         else:
             writer.writerow(row)
