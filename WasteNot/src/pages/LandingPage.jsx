@@ -1,10 +1,15 @@
 import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
+import TrashCan from "../components/TrashCan";
 
 const LandingPage = () => {
   return (
-    <Stack alignItems={"center"} justifyContent={"center"} minHeight="100vh">
-      <Stack alignItems={"center"} justifyContent={"center"}>
+    <Stack
+      alignItems={"center"}
+      justifyContent={"space-between"}
+      minHeight="100vh"
+    >
+      <Stack alignItems={"center"} justifyContent={"center"} mt={8}>
         <Typography
           sx={{
             fontSize: { xs: "300%", sm: "650%" },
@@ -29,6 +34,9 @@ const LandingPage = () => {
         >
           Get Started
         </Button>
+      </Stack>
+      <Stack maxWidth="100%">
+        <TrashCan />
       </Stack>
     </Stack>
   );

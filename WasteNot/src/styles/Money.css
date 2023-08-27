@@ -1,0 +1,26 @@
+@keyframes dropAndRotateAnimationMoney {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 100vh) rotate(-360deg);
+    opacity: 1;
+  }
+}
+
+.money-container {
+  width: 128px;
+  height: 128px;
+  position: fixed;
+  z-index: -99999;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: dropAndRotateAnimationMoney 7s ease-in infinite;
+  animation-delay: 2s;
+}
+
+.money-container img {
+  width: 100%;
+}
