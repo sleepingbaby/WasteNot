@@ -1,0 +1,27 @@
+.IngredientsBox {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.IngredientsBox-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: full;
+  border: 3px solid black;
+  text-align: center;
+  list-style-type: none; 
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  width: 120px;
+  padding: 1px;
+  text-align: center;
+}
+
+.item img {
+  border-radius: 30%;
+}
