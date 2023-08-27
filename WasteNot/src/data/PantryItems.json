@@ -53,7 +53,7 @@
         "amaretto": {
             "name": "amaretto",
             "id": "10014534",
-            "image": ""
+            "image": "temporary-orange-liqueur.jpg"
         },
         "ancho chiles": {
             "name": "ancho chiles",
@@ -68,12 +68,12 @@
         "andouille sausage": {
             "name": "andouille sausage",
             "id": "7064",
-            "image": ""
+            "image": "smoked-sausage.jpg"
         },
         "angel food cake mix": {
             "name": "angel food cake mix",
             "id": "18087",
-            "image": ""
+            "image": "angel-food-cake.jpg"
         },
         "angel hair pasta": {
             "name": "angel hair pasta",
@@ -83,7 +83,7 @@
         "angostura bitters": {
             "name": "angostura bitters",
             "id": "93653",
-            "image": ""
+            "image": "dark-sauce.jpg"
         },
         "apple": {
             "name": "apple",
@@ -108,12 +108,12 @@
         "apple pie spice": {
             "name": "apple pie spice",
             "id": "1042035",
-            "image": ""
+            "image": "garam-masala.jpg"
         },
         "apricot preserves": {
             "name": "apricot preserves",
             "id": "19719",
-            "image": ""
+            "image": "apricot-jam.jpg"
         },
         "apricots": {
             "name": "apricots",
@@ -128,12 +128,12 @@
         "arrowroot powder": {
             "name": "arrowroot powder",
             "id": "20003",
-            "image": ""
+            "image": "white-powder.jpg"
         },
         "artichoke heart quarters": {
             "name": "artichoke heart quarters",
             "id": "93828",
-            "image": ""
+            "image": "artichoke-hearts.png"
         },
         "artichokes": {
             "name": "artichokes",
@@ -148,12 +148,7 @@
         "asafoetida": {
             "name": "asafoetida",
             "id": "1032035",
-            "image": ""
-        },
-        "asafoetida powder": {
-            "name": "asafoetida powder",
-            "id": "0",
-            "image": ""
+            "image": "curry-powder.jpg"
         },
         "asiago cheese": {
             "name": "asiago cheese",
@@ -243,7 +238,7 @@
         "balsamic glaze": {
             "name": "balsamic glaze",
             "id": "98998",
-            "image": ""
+            "image": "dark-sauce.jpg"
         },
         "balsamic vinegar": {
             "name": "balsamic vinegar",
@@ -343,12 +338,12 @@
         "bittersweet chocolate": {
             "name": "bittersweet chocolate",
             "id": "19903",
-            "image": ""
+            "image": "dark-chocolate-pieces.jpg"
         },
         "black bean sauce": {
             "name": "black bean sauce",
             "id": "99210",
-            "image": ""
+            "image": "douchi.jpg"
         },
         "black beans": {
             "name": "black beans",
@@ -403,7 +398,7 @@
         "boneless skinless chicken breast": {
             "name": "boneless skinless chicken breast",
             "id": "1055062",
-            "image": ""
+            "image": "chicken-breasts.png"
         },
         "bourbon": {
             "name": "bourbon",
@@ -424,11 +419,6 @@
             "name": "bread flour",
             "id": "10120129",
             "image": "flour.png"
-        },
-        "breakfast links": {
-            "name": "breakfast links",
-            "id": "7919",
-            "image": ""
         },
         "brie": {
             "name": "brie",
@@ -453,17 +443,17 @@
         "brown rice flour": {
             "name": "brown rice flour",
             "id": "20090",
-            "image": ""
+            "image": "brown-flour.jpg"
         },
         "brown sugar": {
             "name": "brown sugar",
             "id": "19334",
-            "image": ""
+            "image": "dark-brown-sugar.png"
         },
         "brownie mix": {
             "name": "brownie mix",
             "id": "18632",
-            "image": ""
+            "image": "brownie-isolated.png"
         },
         "brussel sprouts": {
             "name": "brussel sprouts",
@@ -508,7 +498,7 @@
         "caesar dressing": {
             "name": "caesar dressing",
             "id": "43015",
-            "image": ""
+            "image": "coleslaw-or-caesar-dressing.jpg"
         },
         "cajun seasoning": {
             "name": "cajun seasoning",
@@ -528,12 +518,12 @@
         "candy coating": {
             "name": "candy coating",
             "id": "98857",
-            "image": ""
+            "image": "baking-chocolate.jpg"
         },
         "candy melts": {
             "name": "candy melts",
             "id": "93775",
-            "image": ""
+            "image": "chocolate-candy-melt.png"
         },
         "canned black beans": {
             "name": "canned black beans",
@@ -588,12 +578,12 @@
         "canned white beans": {
             "name": "canned white beans",
             "id": "16051",
-            "image": ""
+            "image": "white-beans.jpg"
         },
         "canned white cannellini beans": {
             "name": "canned white cannellini beans",
             "id": "10016051",
-            "image": ""
+            "image": "cooked-cannellini-beans.png"
         },
         "cannellini beans": {
             "name": "cannellini beans",
@@ -618,12 +608,12 @@
         "caramels": {
             "name": "caramels",
             "id": "19074",
-            "image": ""
+            "image": "soft-caramels.jpg"
         },
         "caraway seed": {
             "name": "caraway seed",
             "id": "2005",
-            "image": ""
+            "image": "caraway-seeds.jpg"
         },
         "cardamom": {
             "name": "cardamom",
@@ -633,7 +623,7 @@
         "cardamom pods": {
             "name": "cardamom pods",
             "id": "1002006",
-            "image": ""
+            "image": "cardamom.jpg"
         },
         "carp": {
             "name": "carp",
@@ -728,7 +718,7 @@
         "cheese soup": {
             "name": "cheese soup",
             "id": "6038",
-            "image": ""
+            "image": "cheddar-cheese-soup.png"
         },
         "cheese tortellini": {
             "name": "cheese tortellini",
@@ -763,7 +753,7 @@
         "chicken base": {
             "name": "chicken base",
             "id": "6080",
-            "image": ""
+            "image": "stock-cube.jpg"
         },
         "chicken bouillon": {
             "name": "chicken bouillon",
@@ -808,7 +798,7 @@
         "chicken stock": {
             "name": "chicken stock",
             "id": "6172",
-            "image": ""
+            "image": "chicken-broth.png"
         },
         "chicken tenders": {
             "name": "chicken tenders",
@@ -833,7 +823,7 @@
         "chile garlic sauce": {
             "name": "chile garlic sauce",
             "id": "93749",
-            "image": ""
+            "image": "chili-garlic-sauce.jpg"
         },
         "chili paste": {
             "name": "chili paste",
@@ -853,27 +843,27 @@
         "chili sauce": {
             "name": "chili sauce",
             "id": "6972",
-            "image": ""
+            "image": "tomato-sauce-or-pasta-sauce.jpg"
         },
         "chipotle chiles in adobo": {
             "name": "chipotle chiles in adobo",
             "id": "11632",
-            "image": ""
+            "image": "pickled-jalapenos.png"
         },
         "chipotle chilies": {
             "name": "chipotle chilies",
             "id": "98839",
-            "image": ""
+            "image": "chile-chipotle.jpg"
         },
         "chipotle peppers in adobo": {
             "name": "chipotle peppers in adobo",
             "id": "99223",
-            "image": ""
+            "image": "canned-chipotle.png"
         },
         "chive & onion cream cheese spread": {
             "name": "chive & onion cream cheese spread",
             "id": "93748",
-            "image": ""
+            "image": "green-onion-cream-cheese-dip.jpg"
         },
         "chocolate": {
             "name": "chocolate",
@@ -903,7 +893,7 @@
         "chocolate sandwich cookies": {
             "name": "chocolate sandwich cookies",
             "id": "18166",
-            "image": ""
+            "image": "oreos.png"
         },
         "chocolate syrup": {
             "name": "chocolate syrup",
@@ -914,11 +904,6 @@
             "name": "chocolate wafer cookies",
             "id": "10118157",
             "image": "chocolate-wafer-cookies.jpg"
-        },
-        "chorizo sausage": {
-            "name": "chorizo sausage",
-            "id": "0",
-            "image": ""
         },
         "cider vinegar": {
             "name": "cider vinegar",
@@ -938,7 +923,7 @@
         "cinnamon stick": {
             "name": "cinnamon stick",
             "id": "1002010",
-            "image": ""
+            "image": "cinnamon.jpg"
         },
         "cinnamon sugar": {
             "name": "cinnamon sugar",
@@ -948,7 +933,7 @@
         "cinnamon swirl bread": {
             "name": "cinnamon swirl bread",
             "id": "18047",
-            "image": ""
+            "image": "cinnamon-raisin-bread.jpg"
         },
         "clam juice": {
             "name": "clam juice",
@@ -963,7 +948,7 @@
         "clarified butter": {
             "name": "clarified butter",
             "id": "93632",
-            "image": ""
+            "image": "ghee.jpg"
         },
         "clove": {
             "name": "clove",
@@ -993,12 +978,12 @@
         "coconut aminos": {
             "name": "coconut aminos",
             "id": "98929",
-            "image": ""
+            "image": "dark-sauce.jpg"
         },
         "coconut butter": {
             "name": "coconut butter",
             "id": "93746",
-            "image": ""
+            "image": "oil-coconut.jpg"
         },
         "coconut cream": {
             "name": "coconut cream",
@@ -1008,7 +993,7 @@
         "coconut extract": {
             "name": "coconut extract",
             "id": "1032050",
-            "image": ""
+            "image": "extract.png"
         },
         "coconut flour": {
             "name": "coconut flour",
@@ -1073,7 +1058,7 @@
         "confectioner's swerve": {
             "name": "confectioner's swerve",
             "id": "99084",
-            "image": ""
+            "image": "sugar-substitute.jpg"
         },
         "cooked bacon": {
             "name": "cooked bacon",
@@ -1083,7 +1068,7 @@
         "cooked brown rice": {
             "name": "cooked brown rice",
             "id": "20041",
-            "image": ""
+            "image": "rice-brown-cooked.png"
         },
         "cooked chicken breast": {
             "name": "cooked chicken breast",
@@ -1093,22 +1078,22 @@
         "cooked ham": {
             "name": "cooked ham",
             "id": "10802",
-            "image": ""
+            "image": "ham-whole.jpg"
         },
         "cooked long grain rice": {
             "name": "cooked long grain rice",
             "id": "10220445",
-            "image": ""
+            "image": "rice-white-long-grain-or-basmatii-cooked.jpg"
         },
         "cooked pasta": {
             "name": "cooked pasta",
             "id": "20421",
-            "image": ""
+            "image": "fusilli.jpg"
         },
         "cooked polenta": {
             "name": "cooked polenta",
             "id": "1008166",
-            "image": ""
+            "image": "cornmeal.png"
         },
         "cooked quinoa": {
             "name": "cooked quinoa",
@@ -1118,7 +1103,7 @@
         "cooked wild rice": {
             "name": "cooked wild rice",
             "id": "20088",
-            "image": ""
+            "image": "rice-wild-uncooked.png"
         },
         "cookies": {
             "name": "cookies",
@@ -1183,7 +1168,7 @@
         "cornish hens": {
             "name": "cornish hens",
             "id": "5307",
-            "image": ""
+            "image": "quail.jpg"
         },
         "cornmeal": {
             "name": "cornmeal",
@@ -1193,12 +1178,12 @@
         "cornstarch": {
             "name": "cornstarch",
             "id": "20027",
-            "image": ""
+            "image": "white-powder.jpg"
         },
         "cotija cheese": {
             "name": "cotija cheese",
             "id": "1001019",
-            "image": ""
+            "image": "feta.png"
         },
         "cottage cheese": {
             "name": "cottage cheese",
@@ -1213,27 +1198,22 @@
         "courgettes": {
             "name": "courgettes",
             "id": "11477",
-            "image": ""
+            "image": "zucchini.jpg"
         },
         "couscous": {
             "name": "couscous",
             "id": "20028",
-            "image": ""
+            "image": "couscous-cooked.jpg"
         },
         "cow pea": {
             "name": "cow pea",
             "id": "16063",
-            "image": ""
+            "image": "black-eyed-peas.jpg"
         },
         "crabmeat": {
             "name": "crabmeat",
             "id": "10015136",
             "image": "crabmeat.jpg"
-        },
-        "cracked pepper": {
-            "name": "cracked pepper",
-            "id": "2030",
-            "image": ""
         },
         "cranberries": {
             "name": "cranberries",
@@ -1258,7 +1238,7 @@
         "cream cheese block": {
             "name": "cream cheese block",
             "id": "1186",
-            "image": ""
+            "image": "cream-cheese.jpg"
         },
         "cream of chicken soup": {
             "name": "cream of chicken soup",
@@ -1268,7 +1248,7 @@
         "cream of tartar": {
             "name": "cream of tartar",
             "id": "18373",
-            "image": ""
+            "image": "white-powder.jpg"
         },
         "creamed corn": {
             "name": "creamed corn",
@@ -1278,12 +1258,12 @@
         "creamy peanut butter": {
             "name": "creamy peanut butter",
             "id": "10116098",
-            "image": ""
+            "image": "peanut-butter.png"
         },
         "creme fraiche": {
             "name": "creme fraiche",
             "id": "1001056",
-            "image": ""
+            "image": "sour-cream.jpg"
         },
         "cremini mushrooms": {
             "name": "cremini mushrooms",
@@ -1308,7 +1288,7 @@
         "crystallized ginger": {
             "name": "crystallized ginger",
             "id": "93751",
-            "image": ""
+            "image": "candied-ginger-or-crystallized-ginger.jpg"
         },
         "cucumber": {
             "name": "cucumber",
@@ -1318,7 +1298,7 @@
         "cumin seeds": {
             "name": "cumin seeds",
             "id": "2014",
-            "image": ""
+            "image": "ground-cumin.jpg"
         },
         "cup cake": {
             "name": "cup cake",
@@ -1338,7 +1318,7 @@
         "dairy free milk": {
             "name": "dairy free milk",
             "id": "10016223",
-            "image": ""
+            "image": "no.jpg"
         },
         "dark brown sugar": {
             "name": "dark brown sugar",
@@ -1353,12 +1333,12 @@
         "dark chocolate candy bars": {
             "name": "dark chocolate candy bars",
             "id": "10019904",
-            "image": ""
+            "image": "dark-chocolate-pieces.jpg"
         },
         "dark chocolate chips": {
             "name": "dark chocolate chips",
             "id": "10019071",
-            "image": ""
+            "image": "chocolate-chips.jpg"
         },
         "dark sesame oil": {
             "name": "dark sesame oil",
@@ -1373,7 +1353,7 @@
         "deep dish pie crust": {
             "name": "deep dish pie crust",
             "id": "18945",
-            "image": ""
+            "image": "pie-crust.jpg"
         },
         "deli ham": {
             "name": "deli ham",
@@ -1383,17 +1363,17 @@
         "deli turkey": {
             "name": "deli turkey",
             "id": "7259",
-            "image": ""
+            "image": "deli-turkey.jpg"
         },
         "dessert oats": {
             "name": "dessert oats",
             "id": "8121",
-            "image": ""
+            "image": "porridge-or-cream-of-wheat.png"
         },
         "dessert wine": {
             "name": "dessert wine",
             "id": "10014057",
-            "image": ""
+            "image": "red-wine.jpg"
         },
         "diced ham": {
             "name": "diced ham",
@@ -1403,7 +1383,7 @@
         "diet pop": {
             "name": "diet pop",
             "id": "14146",
-            "image": ""
+            "image": "soda-can.jpg"
         },
         "dijon mustard": {
             "name": "dijon mustard",
@@ -1423,12 +1403,12 @@
         "hot dog": {
             "name": "hot dog",
             "id": "21118",
-            "image": ""
+            "image": "hotdogs.png"
         },
         "double cream": {
             "name": "double cream",
             "id": "1011053",
-            "image": ""
+            "image": "white-cream.png"
         },
         "dried apricots": {
             "name": "dried apricots",
@@ -1443,12 +1423,12 @@
         "dried cherries": {
             "name": "dried cherries",
             "id": "93822",
-            "image": ""
+            "image": "cherries-dried.jpg"
         },
         "dried chorizo": {
             "name": "dried chorizo",
             "id": "99233",
-            "image": ""
+            "image": "chorizo.jpg"
         },
         "dried cranberries": {
             "name": "dried cranberries",
@@ -1458,12 +1438,12 @@
         "dried dill": {
             "name": "dried dill",
             "id": "2017",
-            "image": ""
+            "image": "dill.jpg"
         },
         "dried onion": {
             "name": "dried onion",
             "id": "11284",
-            "image": ""
+            "image": "onion-powder.jpg"
         },
         "dried porcini mushrooms": {
             "name": "dried porcini mushrooms",
@@ -1473,12 +1453,12 @@
         "dried rubbed sage": {
             "name": "dried rubbed sage",
             "id": "1002038",
-            "image": ""
+            "image": "dried-sage.png"
         },
         "dried thyme": {
             "name": "dried thyme",
             "id": "2042",
-            "image": ""
+            "image": "thyme.jpg"
         },
         "dried tomatoes": {
             "name": "dried tomatoes",
@@ -1488,12 +1468,12 @@
         "dry bread crumbs": {
             "name": "dry bread crumbs",
             "id": "18079",
-            "image": ""
+            "image": "breadcrumbs.jpg"
         },
         "dry milk": {
             "name": "dry milk",
             "id": "1090",
-            "image": ""
+            "image": "milk-powdered.jpg"
         },
         "dry mustard": {
             "name": "dry mustard",
@@ -1503,7 +1483,7 @@
         "dry red wine": {
             "name": "dry red wine",
             "id": "14097",
-            "image": ""
+            "image": "red-wine.jpg"
         },
         "dry roasted peanuts": {
             "name": "dry roasted peanuts",
@@ -1533,7 +1513,7 @@
         "egg vermicelli": {
             "name": "egg vermicelli",
             "id": "20409",
-            "image": ""
+            "image": "egg-noodles.jpg"
         },
         "egg whites": {
             "name": "egg whites",
@@ -1563,7 +1543,7 @@
         "enchilada sauce": {
             "name": "enchilada sauce",
             "id": "6599",
-            "image": ""
+            "image": "harissa.jpg"
         },
         "english cucumber": {
             "name": "english cucumber",
@@ -1573,12 +1553,12 @@
         "english muffin": {
             "name": "english muffin",
             "id": "18439",
-            "image": ""
+            "image": "English-muffins.jpg"
         },
         "erythritol": {
             "name": "erythritol",
             "id": "98887",
-            "image": ""
+            "image": "sugar-in-bowl.png"
         },
         "escarole": {
             "name": "escarole",
@@ -1598,12 +1578,12 @@
         "extra firm tofu": {
             "name": "extra firm tofu",
             "id": "16163",
-            "image": ""
+            "image": "tofu.png"
         },
         "extra virgin olive oil": {
             "name": "extra virgin olive oil",
             "id": "1034053",
-            "image": ""
+            "image": "olive-oil.jpg"
         },
         "farfalle": {
             "name": "farfalle",
@@ -1613,17 +1593,17 @@
         "farro": {
             "name": "farro",
             "id": "10020005",
-            "image": ""
+            "image": "farro-or-spelt.jpg"
         },
         "fat free mayo": {
             "name": "fat free mayo",
             "id": "42193",
-            "image": ""
+            "image": "mayonnaise.png"
         },
         "fat-free less-sodium chicken broth": {
             "name": "fat-free less-sodium chicken broth",
             "id": "6984",
-            "image": ""
+            "image": "chicken-broth.png"
         },
         "fennel": {
             "name": "fennel",
@@ -1638,12 +1618,12 @@
         "fenugreek leaf": {
             "name": "fenugreek leaf",
             "id": "98963",
-            "image": ""
+            "image": "methi.png"
         },
         "fenugreek seeds": {
             "name": "fenugreek seeds",
             "id": "2019",
-            "image": ""
+            "image": "fenugreek.jpg"
         },
         "feta cheese": {
             "name": "feta cheese",
@@ -1653,12 +1633,12 @@
         "fettuccine": {
             "name": "fettuccine",
             "id": "10020409",
-            "image": ""
+            "image": "egg-noodles.jpg"
         },
         "fire roasted tomatoes": {
             "name": "fire roasted tomatoes",
             "id": "98849",
-            "image": ""
+            "image": "tomatoes-canned.png"
         },
         "fish": {
             "name": "fish",
@@ -1688,7 +1668,7 @@
         "fleur de sel": {
             "name": "fleur de sel",
             "id": "1022047",
-            "image": ""
+            "image": "salt.jpg"
         },
         "flour": {
             "name": "flour",
@@ -1703,27 +1683,27 @@
         "fontina cheese": {
             "name": "fontina cheese",
             "id": "1020",
-            "image": ""
+            "image": "fontina.jpg"
         },
         "food dye": {
             "name": "food dye",
             "id": "10711111",
-            "image": ""
+            "image": "food-coloring.png"
         },
         "frank's redhot sauce": {
             "name": "frank's redhot sauce",
             "id": "98878",
-            "image": ""
+            "image": "hot-sauce-or-tabasco.png"
         },
         "free range eggs": {
             "name": "free range eggs",
             "id": "1123",
-            "image": ""
+            "image": "egg.png"
         },
         "french bread": {
             "name": "french bread",
             "id": "18029",
-            "image": ""
+            "image": "crusty-bread.jpg"
         },
         "fresh basil": {
             "name": "fresh basil",
@@ -1733,7 +1713,7 @@
         "fresh bean sprouts": {
             "name": "fresh bean sprouts",
             "id": "11043",
-            "image": ""
+            "image": "bean-sprouts.jpg"
         },
         "fresh chives": {
             "name": "fresh chives",
@@ -1743,47 +1723,47 @@
         "fresh corn": {
             "name": "fresh corn",
             "id": "11167",
-            "image": ""
+            "image": "corn-on-the-cob.jpg"
         },
         "fresh corn kernels": {
             "name": "fresh corn kernels",
             "id": "10011167",
-            "image": ""
+            "image": "corn.png"
         },
         "fresh figs": {
             "name": "fresh figs",
             "id": "9089",
-            "image": ""
+            "image": "figs-fresh.jpg"
         },
         "fresh fruit": {
             "name": "fresh fruit",
             "id": "9431",
-            "image": ""
+            "image": "mixed-fresh-fruit.jpg"
         },
         "fresh herbs": {
             "name": "fresh herbs",
             "id": "10111297",
-            "image": ""
+            "image": "mixed-fresh-herbs.jpg"
         },
         "fresh mint": {
             "name": "fresh mint",
             "id": "2064",
-            "image": ""
+            "image": "mint.jpg"
         },
         "fresh mozzarella": {
             "name": "fresh mozzarella",
             "id": "1026",
-            "image": ""
+            "image": "mozzarella.png"
         },
         "fresh rosemary": {
             "name": "fresh rosemary",
             "id": "2063",
-            "image": ""
+            "image": "rosemary.jpg"
         },
         "fresh thyme leaves": {
             "name": "fresh thyme leaves",
             "id": "2049",
-            "image": ""
+            "image": "thyme.jpg"
         },
         "fried onions": {
             "name": "fried onions",
@@ -1798,32 +1778,32 @@
         "froyo bars": {
             "name": "froyo bars",
             "id": "93629",
-            "image": ""
+            "image": "frozen-yogurt.png"
         },
         "frozen corn": {
             "name": "frozen corn",
             "id": "11913",
-            "image": ""
+            "image": "corn.png"
         },
         "frozen spinach": {
             "name": "frozen spinach",
             "id": "11463",
-            "image": ""
+            "image": "spinach-frozen.jpg"
         },
         "fudge": {
             "name": "fudge",
             "id": "19100",
-            "image": ""
+            "image": "fudge-isolated.jpg"
         },
         "fudge topping": {
             "name": "fudge topping",
             "id": "10019348",
-            "image": ""
+            "image": "chocolate-glaze.png"
         },
         "fun size almond joy bar": {
             "name": "fun size almond joy bar",
             "id": "19065",
-            "image": ""
+            "image": "almond-joy.png"
         },
         "garam masala": {
             "name": "garam masala",
@@ -1863,12 +1843,12 @@
         "gf chocolate cake mix": {
             "name": "gf chocolate cake mix",
             "id": "99040",
-            "image": ""
+            "image": "chocolate-cake.jpg"
         },
         "gin": {
             "name": "gin",
             "id": "10514037",
-            "image": ""
+            "image": "vermouth.jpg"
         },
         "ginger": {
             "name": "ginger",
@@ -1878,12 +1858,12 @@
         "ginger ale": {
             "name": "ginger ale",
             "id": "14136",
-            "image": ""
+            "image": "soda-can.jpg"
         },
         "ginger paste": {
             "name": "ginger paste",
             "id": "93754",
-            "image": ""
+            "image": "ginger-garlic-paste.png"
         },
         "ginger-garlic paste": {
             "name": "ginger-garlic paste",
@@ -1893,12 +1873,12 @@
         "gingersnap cookies": {
             "name": "gingersnap cookies",
             "id": "18172",
-            "image": ""
+            "image": "gingersnaps.png"
         },
         "gnocchi": {
             "name": "gnocchi",
             "id": "98853",
-            "image": ""
+            "image": "gnocchi-isolated.jpg"
         },
         "goat cheese": {
             "name": "goat cheese",
@@ -1918,17 +1898,17 @@
         "gouda cheese": {
             "name": "gouda cheese",
             "id": "1022",
-            "image": ""
+            "image": "gouda.jpg"
         },
         "graham cracker crumbs": {
             "name": "graham cracker crumbs",
             "id": "10018617",
-            "image": ""
+            "image": "graham-crackers.jpg"
         },
         "graham cracker pie crust": {
             "name": "graham cracker pie crust",
             "id": "18942",
-            "image": ""
+            "image": "pie-crust-graham-cracker.jpg"
         },
         "graham crackers": {
             "name": "graham crackers",
@@ -1938,7 +1918,7 @@
         "grain blend": {
             "name": "grain blend",
             "id": "10020088",
-            "image": ""
+            "image": "rice-wild-uncooked.png"
         },
         "grand marnier": {
             "name": "grand marnier",
@@ -1948,7 +1928,7 @@
         "granny smith apples": {
             "name": "granny smith apples",
             "id": "1089003",
-            "image": ""
+            "image": "grannysmith-apple.png"
         },
         "granola": {
             "name": "granola",
@@ -1963,7 +1943,7 @@
         "grape tomatoes": {
             "name": "grape tomatoes",
             "id": "10111529",
-            "image": ""
+            "image": "cherry-tomatoes.png"
         },
         "grapefruit": {
             "name": "grapefruit",
@@ -1983,17 +1963,17 @@
         "great northern beans": {
             "name": "great northern beans",
             "id": "16025",
-            "image": ""
+            "image": "white-beans.jpg"
         },
         "greek yogurt": {
             "name": "greek yogurt",
             "id": "1256",
-            "image": ""
+            "image": "plain-yogurt.jpg"
         },
         "green beans": {
             "name": "green beans",
             "id": "11052",
-            "image": ""
+            "image": "green-beans-or-string-beans.jpg"
         },
         "green bell pepper": {
             "name": "green bell pepper",
@@ -2003,82 +1983,82 @@
         "green chili pepper": {
             "name": "green chili pepper",
             "id": "31015",
-            "image": ""
+            "image": "chili-peppers-green.jpg"
         },
         "green food coloring": {
             "name": "green food coloring",
             "id": "1441111",
-            "image": ""
+            "image": "food-coloring.png"
         },
         "green grapes": {
             "name": "green grapes",
             "id": "1019132",
-            "image": ""
+            "image": "white-grapes.jpg"
         },
         "green olives": {
             "name": "green olives",
             "id": "1029195",
-            "image": ""
+            "image": "green-olives---sliced.jpg"
         },
         "green onions": {
             "name": "green onions",
             "id": "11291",
-            "image": ""
+            "image": "spring-onions.jpg"
         },
         "greens": {
             "name": "greens",
             "id": "21052",
-            "image": ""
+            "image": "mixed-greens-or-mesclun.jpg"
         },
         "grill cheese": {
             "name": "grill cheese",
             "id": "10093624",
-            "image": ""
+            "image": "halloumi.png"
         },
         "grill seasoning": {
             "name": "grill seasoning",
             "id": "1022034",
-            "image": ""
+            "image": "seasoning.png"
         },
         "ground allspice": {
             "name": "ground allspice",
             "id": "2001",
-            "image": ""
+            "image": "allspice-ground.jpg"
         },
         "ground ancho chili": {
             "name": "ground ancho chili",
             "id": "1022009",
-            "image": ""
+            "image": "chili-powder.jpg"
         },
         "ground beef": {
             "name": "ground beef",
             "id": "10023572",
-            "image": ""
+            "image": "fresh-ground-beef.jpg"
         },
         "ground chicken": {
             "name": "ground chicken",
             "id": "5332",
-            "image": ""
+            "image": "meat-ground.jpg"
         },
         "ground chipotle chile pepper": {
             "name": "ground chipotle chile pepper",
             "id": "1052009",
-            "image": ""
+            "image": "chili-powder.jpg"
         },
         "ground cinnamon": {
             "name": "ground cinnamon",
             "id": "2010",
-            "image": ""
+            "image": "cinnamon.jpg"
         },
         "ground cloves": {
             "name": "ground cloves",
             "id": "2011",
-            "image": ""
+            "image": "cloves.jpg"
         },
         "ground coriander seeds": {
             "name": "ground coriander seeds",
             "id": "1002013",
-            "image": ""
+            "image": "ground-coriander.jpg"
         },
         "ground cumin": {
             "name": "ground cumin",
@@ -2088,22 +2068,22 @@
         "ground flaxseed": {
             "name": "ground flaxseed",
             "id": "12220",
-            "image": ""
+            "image": "flax-seeds.png"
         },
         "ground ginger": {
             "name": "ground ginger",
             "id": "2021",
-            "image": ""
+            "image": "ginger.png"
         },
         "ground lamb": {
             "name": "ground lamb",
             "id": "17224",
-            "image": ""
+            "image": "meat-ground.jpg"
         },
         "ground mace": {
             "name": "ground mace",
             "id": "2022",
-            "image": ""
+            "image": "ground-coriander.jpg"
         },
         "ground nutmeg": {
             "name": "ground nutmeg",
@@ -2113,12 +2093,12 @@
         "ground pork": {
             "name": "ground pork",
             "id": "10219",
-            "image": ""
+            "image": "meat-ground.jpg"
         },
         "ground pork sausage": {
             "name": "ground pork sausage",
             "id": "7063",
-            "image": ""
+            "image": "meat-ground.jpg"
         },
         "ground veal": {
             "name": "ground veal",
@@ -2178,27 +2158,27 @@
         "healthy request cream of celery soup": {
             "name": "healthy request cream of celery soup",
             "id": "6987",
-            "image": ""
+            "image": "cream-of-celery-soup.jpg"
         },
         "hemp seeds": {
             "name": "hemp seeds",
             "id": "93602",
-            "image": ""
+            "image": "shelled-hemp-seeds.png"
         },
         "herbes de provence": {
             "name": "herbes de provence",
             "id": "1012042",
-            "image": ""
+            "image": "dried-herbs.png"
         },
         "herbs": {
             "name": "herbs",
             "id": "1002044",
-            "image": ""
+            "image": "mixed-fresh-herbs.jpg"
         },
         "hershey's kisses brand milk chocolates": {
             "name": "hershey's kisses brand milk chocolates",
             "id": "93743",
-            "image": ""
+            "image": "hersheys-kisses-or-chocolate-kisses.jpg"
         },
         "hoisin sauce": {
             "name": "hoisin sauce",
@@ -2238,22 +2218,22 @@
         "instant chocolate pudding mix": {
             "name": "instant chocolate pudding mix",
             "id": "19184",
-            "image": ""
+            "image": "chocolate-pudding.jpg"
         },
         "instant coffee powder": {
             "name": "instant coffee powder",
             "id": "14214",
-            "image": ""
+            "image": "instant-coffee-or-instant-espresso.png"
         },
         "instant espresso powder": {
             "name": "instant espresso powder",
             "id": "10014214",
-            "image": ""
+            "image": "instant-coffee-or-instant-espresso.png"
         },
         "instant lemon pudding mix": {
             "name": "instant lemon pudding mix",
             "id": "19332",
-            "image": ""
+            "image": "no.jpg"
         },
         "instant yeast": {
             "name": "instant yeast",
@@ -2273,7 +2253,7 @@
         "italian cheese blend": {
             "name": "italian cheese blend",
             "id": "93651",
-            "image": ""
+            "image": "shredded-cheese-white.jpg"
         },
         "italian sausages": {
             "name": "italian sausages",
@@ -2323,12 +2303,12 @@
         "jumbo shell pasta": {
             "name": "jumbo shell pasta",
             "id": "10520420",
-            "image": ""
+            "image": "jumbo-shells.jpg"
         },
         "kaffir lime leaves": {
             "name": "kaffir lime leaves",
             "id": "93633",
-            "image": ""
+            "image": "lime-leaves.jpg"
         },
         "kahlua": {
             "name": "kahlua",
@@ -2353,7 +2333,7 @@
         "kitchen bouquet": {
             "name": "kitchen bouquet",
             "id": "93768",
-            "image": ""
+            "image": "dark-sauce.jpg"
         },
         "kiwis": {
             "name": "kiwis",
@@ -2383,22 +2363,22 @@
         "lb cake": {
             "name": "lb cake",
             "id": "18133",
-            "image": ""
+            "image": "pound-cake.jpg"
         },
         "lean ground beef": {
             "name": "lean ground beef",
             "id": "23557",
-            "image": ""
+            "image": "fresh-ground-beef.jpg"
         },
         "lean ground turkey": {
             "name": "lean ground turkey",
             "id": "5662",
-            "image": ""
+            "image": "meat-ground.jpg"
         },
         "lean pork tenderloin": {
             "name": "lean pork tenderloin",
             "id": "10060",
-            "image": ""
+            "image": "pork-tenderloin-raw.png"
         },
         "leeks": {
             "name": "leeks",
@@ -2423,7 +2403,7 @@
         "lemon extract": {
             "name": "lemon extract",
             "id": "12311111",
-            "image": ""
+            "image": "lemon-oil.png"
         },
         "lemon juice": {
             "name": "lemon juice",
@@ -2433,17 +2413,17 @@
         "lemon peel": {
             "name": "lemon peel",
             "id": "9156",
-            "image": ""
+            "image": "zest-lemon.jpg"
         },
         "lemon pepper": {
             "name": "lemon pepper",
             "id": "1012030",
-            "image": ""
+            "image": "seasoning.png"
         },
         "lemon wedges": {
             "name": "lemon wedges",
             "id": "1029150",
-            "image": ""
+            "image": "lemon-wedge.png"
         },
         "lemongrass": {
             "name": "lemongrass",
@@ -2473,7 +2453,7 @@
         "light corn syrup": {
             "name": "light corn syrup",
             "id": "19350",
-            "image": ""
+            "image": "corn-syrup.png"
         },
         "light cream cheese": {
             "name": "light cream cheese",
@@ -2508,7 +2488,7 @@
         "lime wedges": {
             "name": "lime wedges",
             "id": "1029159",
-            "image": ""
+            "image": "lime-wedge.jpg"
         },
         "lime zest": {
             "name": "lime zest",
@@ -2528,7 +2508,7 @@
         "liquid stevia": {
             "name": "liquid stevia",
             "id": "10811111",
-            "image": ""
+            "image": "stevia-drops.png"
         },
         "liquor": {
             "name": "liquor",
@@ -2543,7 +2523,7 @@
         "long-grain rice": {
             "name": "long-grain rice",
             "id": "10220444",
-            "image": ""
+            "image": "rice-white-long-grain-or-basmatii-cooked.jpg"
         },
         "low fat buttermilk": {
             "name": "low fat buttermilk",
@@ -2553,12 +2533,12 @@
         "low fat milk": {
             "name": "low fat milk",
             "id": "1174",
-            "image": ""
+            "image": "milk.png"
         },
         "low fat plain yogurt": {
             "name": "low fat plain yogurt",
             "id": "1117",
-            "image": ""
+            "image": "plain-yogurt.jpg"
         },
         "low fat ricotta cheese": {
             "name": "low fat ricotta cheese",
@@ -2568,12 +2548,12 @@
         "low fat sour cream": {
             "name": "low fat sour cream",
             "id": "1179",
-            "image": ""
+            "image": "sour-cream.jpg"
         },
         "low sodium chicken broth": {
             "name": "low sodium chicken broth",
             "id": "6970",
-            "image": ""
+            "image": "chicken-broth.png"
         },
         "low sodium soy sauce": {
             "name": "low sodium soy sauce",
@@ -2583,12 +2563,12 @@
         "low-sodium chicken stock": {
             "name": "low-sodium chicken stock",
             "id": "1006970",
-            "image": ""
+            "image": "broth.jpg"
         },
         "lower sodium beef broth": {
             "name": "lower sodium beef broth",
             "id": "10093741",
-            "image": ""
+            "image": "beef-broth.png"
         },
         "lump crab": {
             "name": "lump crab",
@@ -2613,22 +2593,22 @@
         "madras curry powder": {
             "name": "madras curry powder",
             "id": "2015",
-            "image": ""
+            "image": "curry-powder.jpg"
         },
         "malt drink mix": {
             "name": "malt drink mix",
             "id": "14311",
-            "image": ""
+            "image": "milk-powdered.jpg"
         },
         "mandarin orange sections": {
             "name": "mandarin orange sections",
             "id": "9383",
-            "image": ""
+            "image": "canned-mandarin-oranges.png"
         },
         "mandarin oranges": {
             "name": "mandarin oranges",
             "id": "9218",
-            "image": ""
+            "image": "mandarin-or-tangerines-or-clementines.jpg"
         },
         "mango": {
             "name": "mango",
@@ -2643,17 +2623,17 @@
         "maraschino cherries": {
             "name": "maraschino cherries",
             "id": "9328",
-            "image": ""
+            "image": "maraschino.jpg"
         },
         "margarine": {
             "name": "margarine",
             "id": "4073",
-            "image": ""
+            "image": "butter-sliced.jpg"
         },
         "marinara sauce": {
             "name": "marinara sauce",
             "id": "10111549",
-            "image": ""
+            "image": "tomato-sauce-or-pasta-sauce.jpg"
         },
         "marjoram": {
             "name": "marjoram",
@@ -2663,7 +2643,7 @@
         "marsala wine": {
             "name": "marsala wine",
             "id": "14057",
-            "image": ""
+            "image": "red-wine.jpg"
         },
         "marshmallow fluff": {
             "name": "marshmallow fluff",
@@ -2678,17 +2658,17 @@
         "masa harina": {
             "name": "masa harina",
             "id": "20317",
-            "image": ""
+            "image": "corn-flour.jpg"
         },
         "mascarpone": {
             "name": "mascarpone",
             "id": "93820",
-            "image": ""
+            "image": "white-cream-fluffy.jpg"
         },
         "mat beans": {
             "name": "mat beans",
             "id": "99144",
-            "image": ""
+            "image": "moth-bean.png"
         },
         "matcha tea": {
             "name": "matcha tea",
@@ -2713,17 +2693,17 @@
         "medjool dates": {
             "name": "medjool dates",
             "id": "9421",
-            "image": ""
+            "image": "dates.jpg"
         },
         "mexican cream": {
             "name": "mexican cream",
             "id": "93772",
-            "image": ""
+            "image": "plain-yogurt.jpg"
         },
         "meyer lemon juice": {
             "name": "meyer lemon juice",
             "id": "1009152",
-            "image": ""
+            "image": "lemon-juice.jpg"
         },
         "milk": {
             "name": "milk",
@@ -2733,7 +2713,7 @@
         "milk chocolate chips": {
             "name": "milk chocolate chips",
             "id": "10019146",
-            "image": ""
+            "image": "chocolate-chips.jpg"
         },
         "mint chutney": {
             "name": "mint chutney",
@@ -2768,7 +2748,7 @@
         "monterey jack cheese": {
             "name": "monterey jack cheese",
             "id": "1001025",
-            "image": ""
+            "image": "shredded-cheese-white.jpg"
         },
         "mushroom": {
             "name": "mushroom",
@@ -2813,17 +2793,17 @@
         "non-fat greek yogurt": {
             "name": "non-fat greek yogurt",
             "id": "1011256",
-            "image": ""
+            "image": "plain-yogurt.jpg"
         },
         "nonfat cool whip": {
             "name": "nonfat cool whip",
             "id": "1200",
-            "image": ""
+            "image": "whipped-cream.jpg"
         },
         "nonfat milk": {
             "name": "nonfat milk",
             "id": "1085",
-            "image": ""
+            "image": "milk.jpg"
         },
         "nori": {
             "name": "nori",
@@ -2838,7 +2818,7 @@
         "nut meal": {
             "name": "nut meal",
             "id": "93620",
-            "image": ""
+            "image": "gluten-free-flour.jpg"
         },
         "nutella": {
             "name": "nutella",
@@ -2863,12 +2843,12 @@
         "oil": {
             "name": "oil",
             "id": "4582",
-            "image": ""
+            "image": "vegetable-oil.jpg"
         },
         "oil packed sun dried tomatoes": {
             "name": "oil packed sun dried tomatoes",
             "id": "11956",
-            "image": ""
+            "image": "sundried-tomatoes.jpg"
         },
         "okra": {
             "name": "okra",
@@ -2878,7 +2858,7 @@
         "old bay seasoning": {
             "name": "old bay seasoning",
             "id": "1052034",
-            "image": ""
+            "image": "seasoning.png"
         },
         "olive oil": {
             "name": "olive oil",
@@ -2888,7 +2868,7 @@
         "olives": {
             "name": "olives",
             "id": "9195",
-            "image": ""
+            "image": "olives-mixed.jpg"
         },
         "onion": {
             "name": "onion",
@@ -2923,12 +2903,12 @@
         "orange juice concentrate": {
             "name": "orange juice concentrate",
             "id": "9214",
-            "image": ""
+            "image": "orange-juice.jpg"
         },
         "orange liqueur": {
             "name": "orange liqueur",
             "id": "10414534",
-            "image": ""
+            "image": "temporary-orange-liqueur.jpg"
         },
         "orange marmalade": {
             "name": "orange marmalade",
@@ -2938,7 +2918,7 @@
         "orange oil": {
             "name": "orange oil",
             "id": "12511111",
-            "image": ""
+            "image": "extract.png"
         },
         "orange zest": {
             "name": "orange zest",
@@ -3013,7 +2993,7 @@
         "parsley flakes": {
             "name": "parsley flakes",
             "id": "2029",
-            "image": ""
+            "image": "dried-parsley.png"
         },
         "parsnip": {
             "name": "parsnip",
@@ -3028,7 +3008,7 @@
         "pasta salad mix": {
             "name": "pasta salad mix",
             "id": "99036",
-            "image": ""
+            "image": "fusilli.jpg"
         },
         "pasta sauce": {
             "name": "pasta sauce",
@@ -3053,12 +3033,12 @@
         "peanut butter chips": {
             "name": "peanut butter chips",
             "id": "93762",
-            "image": ""
+            "image": "peanut-butter-or-butterscotch-chips.jpg"
         },
         "peanut butter cups": {
             "name": "peanut butter cups",
             "id": "19150",
-            "image": ""
+            "image": "peanut-butter-cup.jpg"
         },
         "peanut oil": {
             "name": "peanut oil",
@@ -3073,7 +3053,7 @@
         "pear liqueur": {
             "name": "pear liqueur",
             "id": "98988",
-            "image": ""
+            "image": "light-green-liqueur.png"
         },
         "pearl barley": {
             "name": "pearl barley",
@@ -3098,12 +3078,12 @@
         "pecan pieces": {
             "name": "pecan pieces",
             "id": "10012142",
-            "image": ""
+            "image": "pecans.jpg"
         },
         "pecorino": {
             "name": "pecorino",
             "id": "1038",
-            "image": ""
+            "image": "parmesan.jpg"
         },
         "penne": {
             "name": "penne",
@@ -3113,7 +3093,7 @@
         "peperoncino": {
             "name": "peperoncino",
             "id": "11976",
-            "image": ""
+            "image": "wax-peppers.png"
         },
         "pepper jack cheese": {
             "name": "pepper jack cheese",
@@ -3123,17 +3103,17 @@
         "peppercorns": {
             "name": "peppercorns",
             "id": "1022030",
-            "image": ""
+            "image": "black-pepper.png"
         },
         "peppermint baking chips": {
             "name": "peppermint baking chips",
             "id": "98858",
-            "image": ""
+            "image": "candy-canes.jpg"
         },
         "peppermint extract": {
             "name": "peppermint extract",
             "id": "1022050",
-            "image": ""
+            "image": "vanilla-extract.jpg"
         },
         "pepperoni": {
             "name": "pepperoni",
@@ -3143,7 +3123,7 @@
         "peppers": {
             "name": "peppers",
             "id": "10111333",
-            "image": ""
+            "image": "green-pepper.jpg"
         },
         "pesto": {
             "name": "pesto",
@@ -3158,7 +3138,7 @@
         "pickles": {
             "name": "pickles",
             "id": "11937",
-            "image": ""
+            "image": "dill-pickles.jpg"
         },
         "pico de gallo": {
             "name": "pico de gallo",
@@ -3173,12 +3153,12 @@
         "pimento stuffed olives": {
             "name": "pimento stuffed olives",
             "id": "1049195",
-            "image": ""
+            "image": "olives-stuffed.jpg"
         },
         "pimientos": {
             "name": "pimientos",
             "id": "11943",
-            "image": ""
+            "image": "pimento.png"
         },
         "pine nuts": {
             "name": "pine nuts",
@@ -3208,7 +3188,7 @@
         "pink himalayan salt": {
             "name": "pink himalayan salt",
             "id": "1032047",
-            "image": ""
+            "image": "himalayan-pink-salt.jpg"
         },
         "pinto beans": {
             "name": "pinto beans",
@@ -3223,17 +3203,17 @@
         "pita": {
             "name": "pita",
             "id": "18413",
-            "image": ""
+            "image": "pita-bread.jpg"
         },
         "pizza crust": {
             "name": "pizza crust",
             "id": "93770",
-            "image": ""
+            "image": "pizza-dough.jpg"
         },
         "pizza mix": {
             "name": "pizza mix",
             "id": "98924",
-            "image": ""
+            "image": "brown-flour.jpg"
         },
         "plain greek yogurt": {
             "name": "plain greek yogurt",
@@ -3243,17 +3223,12 @@
         "plain nonfat yogurt": {
             "name": "plain nonfat yogurt",
             "id": "1118",
-            "image": ""
+            "image": "white-cream.png"
         },
         "plain yogurt": {
             "name": "plain yogurt",
             "id": "1001116",
             "image": "plain-yogurt.jpg"
-        },
-        "plantain": {
-            "name": "plantain",
-            "id": "9277",
-            "image": ""
         },
         "plum": {
             "name": "plum",
@@ -3273,12 +3248,12 @@
         "polenta": {
             "name": "polenta",
             "id": "10035137",
-            "image": ""
+            "image": "cornmeal.png"
         },
         "polish sausage": {
             "name": "polish sausage",
             "id": "7059",
-            "image": ""
+            "image": "smoked-sausage.png"
         },
         "pomegranate juice": {
             "name": "pomegranate juice",
@@ -3288,7 +3263,7 @@
         "pomegranate molasses": {
             "name": "pomegranate molasses",
             "id": "10042040",
-            "image": ""
+            "image": "grenadine.jpg"
         },
         "pomegranate seeds": {
             "name": "pomegranate seeds",
@@ -3303,17 +3278,17 @@
         "poppy seeds": {
             "name": "poppy seeds",
             "id": "2033",
-            "image": ""
+            "image": "poppyseed.png"
         },
         "pork": {
             "name": "pork",
             "id": "10010219",
-            "image": ""
+            "image": "pork-tenderloin-raw.png"
         },
         "Pork & Beans": {
             "name": "Pork & Beans",
             "id": "16009",
-            "image": ""
+            "image": "baked-beans.jpg"
         },
         "pork belly": {
             "name": "pork belly",
@@ -3323,7 +3298,7 @@
         "pork butt": {
             "name": "pork butt",
             "id": "10084",
-            "image": ""
+            "image": "boston-butt-or-pork-butt.png"
         },
         "pork chops": {
             "name": "pork chops",
@@ -3333,7 +3308,7 @@
         "pork links": {
             "name": "pork links",
             "id": "1007063",
-            "image": ""
+            "image": "raw-pork-sausage.png"
         },
         "pork loin chops": {
             "name": "pork loin chops",
@@ -3343,12 +3318,12 @@
         "pork loin roast": {
             "name": "pork loin roast",
             "id": "10225",
-            "image": ""
+            "image": "pork-loin.jpg"
         },
         "pork roast": {
             "name": "pork roast",
             "id": "10010225",
-            "image": ""
+            "image": "pork-loin.jpg"
         },
         "pork shoulder": {
             "name": "pork shoulder",
@@ -3358,7 +3333,7 @@
         "pork tenderloin": {
             "name": "pork tenderloin",
             "id": "10218",
-            "image": ""
+            "image": "pork-tenderloin-raw.png"
         },
         "port": {
             "name": "port",
@@ -3368,7 +3343,7 @@
         "portabella mushrooms": {
             "name": "portabella mushrooms",
             "id": "11265",
-            "image": ""
+            "image": "portabello-mushrooms.jpg"
         },
         "pot roast": {
             "name": "pot roast",
@@ -3383,17 +3358,12 @@
         "potato starch": {
             "name": "potato starch",
             "id": "11413",
-            "image": ""
-        },
-        "potatoes": {
-            "name": "potatoes",
-            "id": "11362",
-            "image": ""
+            "image": "white-powder.jpg"
         },
         "poultry seasoning": {
             "name": "poultry seasoning",
             "id": "2034",
-            "image": ""
+            "image": "seasoning.jpg"
         },
         "powdered sugar": {
             "name": "powdered sugar",
@@ -3403,17 +3373,17 @@
         "pretzel sandwiches": {
             "name": "pretzel sandwiches",
             "id": "19047",
-            "image": ""
+            "image": "pretzels.jpg"
         },
         "processed american cheese": {
             "name": "processed american cheese",
             "id": "1253",
-            "image": ""
+            "image": "american-cheese.jpg"
         },
         "prosciutto": {
             "name": "prosciutto",
             "id": "10010123",
-            "image": ""
+            "image": "proscuitto.jpg"
         },
         "provolone cheese": {
             "name": "provolone cheese",
@@ -3438,12 +3408,12 @@
         "pumpkin pie filling": {
             "name": "pumpkin pie filling",
             "id": "11426",
-            "image": ""
+            "image": "pumpkin-puree.jpg"
         },
         "pumpkin pie spice": {
             "name": "pumpkin pie spice",
             "id": "1002035",
-            "image": ""
+            "image": "garam-masala.jpg"
         },
         "pumpkin puree": {
             "name": "pumpkin puree",
@@ -3458,12 +3428,12 @@
         "queso fresco": {
             "name": "queso fresco",
             "id": "1228",
-            "image": ""
+            "image": "camembert.png"
         },
         "quick cooking oats": {
             "name": "quick cooking oats",
             "id": "8402",
-            "image": ""
+            "image": "rolled-oats.jpg"
         },
         "quinoa": {
             "name": "quinoa",
@@ -3490,15 +3460,10 @@
             "id": "9299",
             "image": "raisins.jpg"
         },
-        "rajma masala": {
-            "name": "rajma masala",
-            "id": "10193663",
-            "image": ""
-        },
         "ramen noodles": {
             "name": "ramen noodles",
             "id": "6583",
-            "image": ""
+            "image": "ramen.jpg"
         },
         "ranch dressing": {
             "name": "ranch dressing",
@@ -3508,7 +3473,7 @@
         "ranch dressing mix": {
             "name": "ranch dressing mix",
             "id": "93733",
-            "image": ""
+            "image": "oregano-dried.png"
         },
         "raspberries": {
             "name": "raspberries",
@@ -3523,27 +3488,22 @@
         "raw cashews": {
             "name": "raw cashews",
             "id": "12087",
-            "image": ""
-        },
-        "raw shrimp": {
-            "name": "raw shrimp",
-            "id": "15152",
-            "image": ""
+            "image": "cashews.jpg"
         },
         "ready-to-serve Asian fried rice": {
             "name": "ready-to-serve Asian fried rice",
             "id": "93721",
-            "image": ""
+            "image": "fried-rice.png"
         },
         "real bacon recipe pieces": {
             "name": "real bacon recipe pieces",
             "id": "99229",
-            "image": ""
+            "image": "bacon-bits.jpg"
         },
         "red apples": {
             "name": "red apples",
             "id": "1079003",
-            "image": ""
+            "image": "red-delicious-apples.png"
         },
         "red bell peppers": {
             "name": "red bell peppers",
@@ -3568,7 +3528,7 @@
         "red food coloring": {
             "name": "red food coloring",
             "id": "1451111",
-            "image": ""
+            "image": "food-coloring.png"
         },
         "red grapefruit juice": {
             "name": "red grapefruit juice",
@@ -3583,7 +3543,7 @@
         "red kidney beans": {
             "name": "red kidney beans",
             "id": "16033",
-            "image": ""
+            "image": "kidney-beans.jpg"
         },
         "red lentils": {
             "name": "red lentils",
@@ -3603,7 +3563,7 @@
         "red pepper powder": {
             "name": "red pepper powder",
             "id": "2031",
-            "image": ""
+            "image": "chili-powder.jpg"
         },
         "red potatoes": {
             "name": "red potatoes",
@@ -3613,7 +3573,7 @@
         "red velvet cookie": {
             "name": "red velvet cookie",
             "id": "18157",
-            "image": ""
+            "image": "chocolate-wafer-cookies.jpg"
         },
         "red wine": {
             "name": "red wine",
@@ -3628,7 +3588,7 @@
         "reduced fat shredded cheddar cheese": {
             "name": "reduced fat shredded cheddar cheese",
             "id": "1001168",
-            "image": ""
+            "image": "shredded-cheddar.jpg"
         },
         "refried beans": {
             "name": "refried beans",
@@ -3648,7 +3608,7 @@
         "refrigerated sugar cookie dough": {
             "name": "refrigerated sugar cookie dough",
             "id": "18205",
-            "image": ""
+            "image": "cookie-dough.jpg"
         },
         "rhubarb": {
             "name": "rhubarb",
@@ -3658,12 +3618,12 @@
         "rib tips": {
             "name": "rib tips",
             "id": "98937",
-            "image": ""
+            "image": "no.jpg"
         },
         "rice": {
             "name": "rice",
             "id": "20444",
-            "image": ""
+            "image": "uncooked-white-rice.png"
         },
         "rice flour": {
             "name": "rice flour",
@@ -3673,7 +3633,7 @@
         "rice krispies cereal": {
             "name": "rice krispies cereal",
             "id": "8065",
-            "image": ""
+            "image": "rice-crispy-cereal.png"
         },
         "rice milk": {
             "name": "rice milk",
@@ -3708,12 +3668,12 @@
         "ricotta salata": {
             "name": "ricotta salata",
             "id": "1036",
-            "image": ""
+            "image": "ricotta.png"
         },
         "ritz crackers": {
             "name": "ritz crackers",
             "id": "18621",
-            "image": ""
+            "image": "crackers.jpg"
         },
         "roast beef": {
             "name": "roast beef",
@@ -3723,17 +3683,17 @@
         "roasted chicken": {
             "name": "roasted chicken",
             "id": "5114",
-            "image": ""
+            "image": "rotisserie-chicken.png"
         },
         "roasted nuts": {
             "name": "roasted nuts",
             "id": "12135",
-            "image": ""
+            "image": "nuts-mixed.jpg"
         },
         "roasted peanuts": {
             "name": "roasted peanuts",
             "id": "16092",
-            "image": ""
+            "image": "peanuts.png"
         },
         "roasted red peppers": {
             "name": "roasted red peppers",
@@ -3763,7 +3723,7 @@
         "rotini pasta": {
             "name": "rotini pasta",
             "id": "11320420",
-            "image": ""
+            "image": "fusilli.jpg"
         },
         "rotisserie chicken": {
             "name": "rotisserie chicken",
@@ -3778,12 +3738,12 @@
         "rub": {
             "name": "rub",
             "id": "1012034",
-            "image": ""
+            "image": "seasoning.png"
         },
         "rum extract": {
             "name": "rum extract",
             "id": "12211111",
-            "image": ""
+            "image": "vanilla-extract.jpg"
         },
         "runny honey": {
             "name": "runny honey",
@@ -3808,12 +3768,12 @@
         "rye meal": {
             "name": "rye meal",
             "id": "98905",
-            "image": ""
+            "image": "brown-flour.jpg"
         },
         "saffron threads": {
             "name": "saffron threads",
             "id": "2037",
-            "image": ""
+            "image": "saffron.jpg"
         },
         "sage": {
             "name": "sage",
@@ -3823,7 +3783,7 @@
         "sage leaves": {
             "name": "sage leaves",
             "id": "99226",
-            "image": ""
+            "image": "fresh-sage.png"
         },
         "salad dressing": {
             "name": "salad dressing",
@@ -3863,7 +3823,7 @@
         "salted butter": {
             "name": "salted butter",
             "id": "1001001",
-            "image": ""
+            "image": "butter.jpg"
         },
         "saltine crackers": {
             "name": "saltine crackers",
@@ -3873,7 +3833,7 @@
         "sandwich bun": {
             "name": "sandwich bun",
             "id": "18353",
-            "image": ""
+            "image": "kaiser-roll.png"
         },
         "sauerkraut": {
             "name": "sauerkraut",
@@ -3888,37 +3848,37 @@
         "sausage links": {
             "name": "sausage links",
             "id": "1037063",
-            "image": ""
+            "image": "breakfast-sausage-links.jpg"
         },
         "scotch bonnet chili": {
             "name": "scotch bonnet chili",
             "id": "10011819",
-            "image": ""
+            "image": "habanero-pepper.jpg"
         },
         "sea salt": {
             "name": "sea salt",
             "id": "1012047",
-            "image": ""
+            "image": "salt.jpg"
         },
         "sea scallops": {
             "name": "sea scallops",
             "id": "10015172",
-            "image": ""
+            "image": "scallops.jpg"
         },
         "seasoned bread crumbs": {
             "name": "seasoned bread crumbs",
             "id": "18376",
-            "image": ""
+            "image": "breadcrumbs.jpg"
         },
         "seasoned rice vinegar": {
             "name": "seasoned rice vinegar",
             "id": "1032053",
-            "image": ""
+            "image": "rice-vinegar.png"
         },
         "seasoned salt": {
             "name": "seasoned salt",
             "id": "1042047",
-            "image": ""
+            "image": "garlic-salt.jpg"
         },
         "seasoning": {
             "name": "seasoning",
@@ -3928,7 +3888,7 @@
         "seasoning blend": {
             "name": "seasoning blend",
             "id": "1032027",
-            "image": ""
+            "image": "seasoning.png"
         },
         "seeds": {
             "name": "seeds",
@@ -3943,12 +3903,12 @@
         "semi sweet chocolate chips": {
             "name": "semi sweet chocolate chips",
             "id": "10019903",
-            "image": ""
+            "image": "chocolate-chips.jpg"
         },
         "serrano chile": {
             "name": "serrano chile",
             "id": "11977",
-            "image": ""
+            "image": "serrano-pepper.jpg"
         },
         "sesame oil": {
             "name": "sesame oil",
@@ -3958,7 +3918,7 @@
         "sesame seed hamburger buns": {
             "name": "sesame seed hamburger buns",
             "id": "10018350",
-            "image": ""
+            "image": "hot-dog-buns.jpg"
         },
         "sesame seeds": {
             "name": "sesame seeds",
@@ -3978,22 +3938,22 @@
         "sheeps milk cheese": {
             "name": "sheeps milk cheese",
             "id": "1011019",
-            "image": ""
+            "image": "cheddar-cheese.png"
         },
         "shells": {
             "name": "shells",
             "id": "11020420",
-            "image": ""
+            "image": "shell-pasta.jpg"
         },
         "sherry": {
             "name": "sherry",
             "id": "10214106",
-            "image": ""
+            "image": "dry-sherry.png"
         },
         "sherry vinegar": {
             "name": "sherry vinegar",
             "id": "1012068",
-            "image": ""
+            "image": "dark-sauce.jpg"
         },
         "shiitake mushroom caps": {
             "name": "shiitake mushroom caps",
@@ -4003,17 +3963,17 @@
         "short grain rice": {
             "name": "short grain rice",
             "id": "10120052",
-            "image": ""
+            "image": "uncooked-white-rice.png"
         },
         "short pasta": {
             "name": "short pasta",
             "id": "20499",
-            "image": ""
+            "image": "macaroni.png"
         },
         "short ribs": {
             "name": "short ribs",
             "id": "10013149",
-            "image": ""
+            "image": "beef-short-ribs.jpg"
         },
         "shortbread cookies": {
             "name": "shortbread cookies",
@@ -4023,7 +3983,7 @@
         "shortcrust pastry": {
             "name": "shortcrust pastry",
             "id": "10018338",
-            "image": ""
+            "image": "dough.jpg"
         },
         "shortening": {
             "name": "shortening",
@@ -4033,17 +3993,17 @@
         "shredded cheddar cheese": {
             "name": "shredded cheddar cheese",
             "id": "1001009",
-            "image": ""
+            "image": "shredded-cheddar.jpg"
         },
         "shredded cheese": {
             "name": "shredded cheese",
             "id": "1011026",
-            "image": ""
+            "image": "cheddar-cheese.png"
         },
         "shredded chicken": {
             "name": "shredded chicken",
             "id": "1005114",
-            "image": ""
+            "image": "rotisserie-chicken.png"
         },
         "shredded coconut": {
             "name": "shredded coconut",
@@ -4058,7 +4018,7 @@
         "shredded mozzarella": {
             "name": "shredded mozzarella",
             "id": "1001026",
-            "image": ""
+            "image": "shredded-cheese-white.jpg"
         },
         "silken tofu": {
             "name": "silken tofu",
@@ -4073,7 +4033,7 @@
         "skim milk ricotta": {
             "name": "skim milk ricotta",
             "id": "93630",
-            "image": ""
+            "image": "ricotta.png"
         },
         "skim vanilla greek yogurt": {
             "name": "skim vanilla greek yogurt",
@@ -4113,7 +4073,7 @@
         "slivered almonds": {
             "name": "slivered almonds",
             "id": "10012061",
-            "image": ""
+            "image": "almonds-slivered.png"
         },
         "smoked paprika": {
             "name": "smoked paprika",
@@ -4133,7 +4093,7 @@
         "smooth peanut butter": {
             "name": "smooth peanut butter",
             "id": "16150",
-            "image": ""
+            "image": "peanut-butter.png"
         },
         "snapper fillets": {
             "name": "snapper fillets",
@@ -4148,7 +4108,7 @@
         "soda water": {
             "name": "soda water",
             "id": "14121",
-            "image": ""
+            "image": "sparkling-water.png"
         },
         "sour cream": {
             "name": "sour cream",
@@ -4158,7 +4118,7 @@
         "sourdough bowl": {
             "name": "sourdough bowl",
             "id": "99169",
-            "image": ""
+            "image": "bread-bowl.png"
         },
         "sourdough bread": {
             "name": "sourdough bread",
@@ -4173,7 +4133,7 @@
         "soy protein powder": {
             "name": "soy protein powder",
             "id": "16122",
-            "image": ""
+            "image": "plain-protein-powder.png"
         },
         "soy sauce": {
             "name": "soy sauce",
@@ -4193,7 +4153,7 @@
         "sparkling wine": {
             "name": "sparkling wine",
             "id": "43155",
-            "image": ""
+            "image": "champagne.png"
         },
         "spelt flour": {
             "name": "spelt flour",
@@ -4203,7 +4163,7 @@
         "spicy brown mustard": {
             "name": "spicy brown mustard",
             "id": "1022046",
-            "image": ""
+            "image": "dijon-mustard.jpg"
         },
         "spinach": {
             "name": "spinach",
@@ -4233,7 +4193,7 @@
         "steaks": {
             "name": "steaks",
             "id": "23232",
-            "image": ""
+            "image": "ribeye-raw.jpg"
         },
         "steel cut oats": {
             "name": "steel cut oats",
@@ -4248,7 +4208,7 @@
         "stew meat": {
             "name": "stew meat",
             "id": "10023618",
-            "image": ""
+            "image": "beef-cubes-raw.png"
         },
         "stew vegetables": {
             "name": "stew vegetables",
@@ -4263,7 +4223,7 @@
         "store-bought phyllo": {
             "name": "store-bought phyllo",
             "id": "18338",
-            "image": ""
+            "image": "filo-dough.png"
         },
         "stout": {
             "name": "stout",
@@ -4283,12 +4243,12 @@
         "strawberry jello": {
             "name": "strawberry jello",
             "id": "10219172",
-            "image": ""
+            "image": "jello-strawberry.jpg"
         },
         "stuffing": {
             "name": "stuffing",
             "id": "18082",
-            "image": ""
+            "image": "stuffing-mix.png"
         },
         "stuffing mix": {
             "name": "stuffing mix",
@@ -4298,12 +4258,12 @@
         "sub rolls": {
             "name": "sub rolls",
             "id": "98940",
-            "image": ""
+            "image": "french-rolls.jpg"
         },
         "sugar": {
             "name": "sugar",
             "id": "19335",
-            "image": ""
+            "image": "sugar-in-bowl.png"
         },
         "sugar snap peas": {
             "name": "sugar snap peas",
@@ -4318,7 +4278,7 @@
         "sukrin sweetener": {
             "name": "sukrin sweetener",
             "id": "99190",
-            "image": ""
+            "image": "sugar-substitute.jpg"
         },
         "summer savory": {
             "name": "summer savory",
@@ -4333,7 +4293,7 @@
         "sunflower oil": {
             "name": "sunflower oil",
             "id": "4584",
-            "image": ""
+            "image": "vegetable-oil.jpg"
         },
         "sunflower seeds": {
             "name": "sunflower seeds",
@@ -4343,7 +4303,7 @@
         "sweet chilli sauce": {
             "name": "sweet chilli sauce",
             "id": "98962",
-            "image": ""
+            "image": "fish-sauce.jpg"
         },
         "sweet onion": {
             "name": "sweet onion",
@@ -4358,12 +4318,12 @@
         "sweet pickle juice": {
             "name": "sweet pickle juice",
             "id": "93640",
-            "image": ""
+            "image": "pickle-juice.jpg"
         },
         "sweet pickle relish": {
             "name": "sweet pickle relish",
             "id": "11945",
-            "image": ""
+            "image": "pickle-relish.png"
         },
         "sweet potato": {
             "name": "sweet potato",
@@ -4373,7 +4333,7 @@
         "sweet tea": {
             "name": "sweet tea",
             "id": "14355",
-            "image": ""
+            "image": "tea-bags.jpg"
         },
         "sweetened coconut": {
             "name": "sweetened coconut",
@@ -4403,7 +4363,7 @@
         "taco seasoning mix": {
             "name": "taco seasoning mix",
             "id": "2073",
-            "image": ""
+            "image": "chili-powder.jpg"
         },
         "taco shells": {
             "name": "taco shells",
@@ -4418,7 +4378,7 @@
         "tamari": {
             "name": "tamari",
             "id": "10116124",
-            "image": ""
+            "image": "soy-sauce.jpg"
         },
         "tapioca flour": {
             "name": "tapioca flour",
@@ -4433,7 +4393,7 @@
         "tart apple": {
             "name": "tart apple",
             "id": "1029003",
-            "image": ""
+            "image": "grannysmith-apple.png"
         },
         "tea bags": {
             "name": "tea bags",
@@ -4468,12 +4428,12 @@
         "thick-cut bacon": {
             "name": "thick-cut bacon",
             "id": "10310123",
-            "image": ""
+            "image": "raw-bacon.png"
         },
         "tilapia fillets": {
             "name": "tilapia fillets",
             "id": "15261",
-            "image": ""
+            "image": "raw-tilapia.jpg"
         },
         "toast": {
             "name": "toast",
@@ -4483,7 +4443,7 @@
         "toffee bits": {
             "name": "toffee bits",
             "id": "19383",
-            "image": ""
+            "image": "toffee-pieces.jpg"
         },
         "tofu": {
             "name": "tofu",
@@ -4523,27 +4483,27 @@
         "tomatoes": {
             "name": "tomatoes",
             "id": "11529",
-            "image": ""
+            "image": "tomato.png"
         },
         "top blade steak": {
             "name": "top blade steak",
             "id": "13523",
-            "image": ""
+            "image": "blade-steak.png"
         },
         "top round steak": {
             "name": "top round steak",
             "id": "23636",
-            "image": ""
+            "image": "round-steak.jpg"
         },
         "Top Sirloin": {
             "name": "Top Sirloin",
             "id": "23584",
-            "image": ""
+            "image": "top-sirloin-steak.jpg"
         },
         "tortilla": {
             "name": "tortilla",
             "id": "18364",
-            "image": ""
+            "image": "flour-tortilla.jpg"
         },
         "tortilla chips": {
             "name": "tortilla chips",
@@ -4553,7 +4513,7 @@
         "triple sec": {
             "name": "triple sec",
             "id": "14534",
-            "image": ""
+            "image": "white-rum.jpg"
         },
         "truffle oil": {
             "name": "truffle oil",
@@ -4568,12 +4528,12 @@
         "turbinado sugar": {
             "name": "turbinado sugar",
             "id": "19908",
-            "image": ""
+            "image": "raw-brown-sugar.png"
         },
         "turkey": {
             "name": "turkey",
             "id": "5165",
-            "image": ""
+            "image": "turkey-raw-whole.jpg"
         },
         "turkey breast": {
             "name": "turkey breast",
@@ -4583,7 +4543,7 @@
         "turkey kielbasa": {
             "name": "turkey kielbasa",
             "id": "7955",
-            "image": ""
+            "image": "chicken-or-turkey-sausage.jpg"
         },
         "turmeric": {
             "name": "turmeric",
@@ -4613,27 +4573,27 @@
         "unsweetened applesauce": {
             "name": "unsweetened applesauce",
             "id": "9019",
-            "image": ""
+            "image": "applesauce.png"
         },
         "unsweetened coconut milk": {
             "name": "unsweetened coconut milk",
             "id": "12117",
-            "image": ""
+            "image": "coconut-milk.png"
         },
         "unsweetened shredded coconut": {
             "name": "unsweetened shredded coconut",
             "id": "10012108",
-            "image": ""
+            "image": "shredded-coconut.jpg"
         },
         "vanilla bean": {
             "name": "vanilla bean",
             "id": "93622",
-            "image": ""
+            "image": "vanilla.jpg"
         },
         "vanilla bean paste": {
             "name": "vanilla bean paste",
             "id": "93813",
-            "image": ""
+            "image": "molasses.jpg"
         },
         "vanilla essence": {
             "name": "vanilla essence",
@@ -4653,7 +4613,7 @@
         "vanilla instant pudding mix": {
             "name": "vanilla instant pudding mix",
             "id": "19206",
-            "image": ""
+            "image": "vanilla-pudding.png"
         },
         "vanilla protein powder": {
             "name": "vanilla protein powder",
@@ -4673,22 +4633,22 @@
         "vegan cheese": {
             "name": "vegan cheese",
             "id": "93701",
-            "image": ""
+            "image": "cheddar-cheese.png"
         },
         "vegan chocolate chips": {
             "name": "vegan chocolate chips",
             "id": "98848",
-            "image": ""
+            "image": "chocolate-chips.jpg"
         },
         "vegan margarine": {
             "name": "vegan margarine",
             "id": "4673",
-            "image": ""
+            "image": "light-buttery-spread.png"
         },
         "vegetable broth": {
             "name": "vegetable broth",
             "id": "6615",
-            "image": ""
+            "image": "chicken-broth.png"
         },
         "vegetable oil": {
             "name": "vegetable oil",
@@ -4698,7 +4658,7 @@
         "vegetarian bacon": {
             "name": "vegetarian bacon",
             "id": "16542",
-            "image": ""
+            "image": "raw-bacon.png"
         },
         "vermouth": {
             "name": "vermouth",
@@ -4738,7 +4698,7 @@
         "water-packed tuna": {
             "name": "water-packed tuna",
             "id": "15121",
-            "image": ""
+            "image": "canned-tuna.png"
         },
         "watercress": {
             "name": "watercress",
@@ -4748,7 +4708,7 @@
         "watermelon chunks": {
             "name": "watermelon chunks",
             "id": "9326",
-            "image": ""
+            "image": "watermelon.png"
         },
         "wheat bran": {
             "name": "wheat bran",
@@ -4768,7 +4728,7 @@
         "whipped topping": {
             "name": "whipped topping",
             "id": "42135",
-            "image": ""
+            "image": "whipped-cream.jpg"
         },
         "whipping cream": {
             "name": "whipping cream",
@@ -4783,7 +4743,7 @@
         "white balsamic vinegar": {
             "name": "white balsamic vinegar",
             "id": "1012069",
-            "image": ""
+            "image": "vinegar-(white).jpg"
         },
         "white bread": {
             "name": "white bread",
@@ -4798,7 +4758,7 @@
         "white cheddar": {
             "name": "white cheddar",
             "id": "1011009",
-            "image": ""
+            "image": "cheddar-block.jpg"
         },
         "white chocolate": {
             "name": "white chocolate",
@@ -4833,12 +4793,12 @@
         "white wine vinegar": {
             "name": "white wine vinegar",
             "id": "1002068",
-            "image": ""
+            "image": "vinegar-(white).jpg"
         },
         "whole allspice berries": {
             "name": "whole allspice berries",
             "id": "1002001",
-            "image": ""
+            "image": "allspice-berries.png"
         },
         "whole chicken": {
             "name": "whole chicken",
@@ -4848,12 +4808,12 @@
         "whole coriander seeds": {
             "name": "whole coriander seeds",
             "id": "2013",
-            "image": ""
+            "image": "coriander-seeds.jpg"
         },
         "whole cranberry sauce": {
             "name": "whole cranberry sauce",
             "id": "9081",
-            "image": ""
+            "image": "cranberry-sauce.jpg"
         },
         "whole kernel corn": {
             "name": "whole kernel corn",
@@ -4863,7 +4823,7 @@
         "whole star anise": {
             "name": "whole star anise",
             "id": "1012002",
-            "image": ""
+            "image": "star-anise.jpg"
         },
         "whole wheat bread": {
             "name": "whole wheat bread",
@@ -4878,7 +4838,7 @@
         "whole wheat tortillas": {
             "name": "whole wheat tortillas",
             "id": "93675",
-            "image": ""
+            "image": "tortillas-whole-wheat.jpg"
         },
         "whole-grain mustard": {
             "name": "whole-grain mustard",
@@ -4893,32 +4853,32 @@
         "wine vinegar": {
             "name": "wine vinegar",
             "id": "2068",
-            "image": ""
+            "image": "red-wine-vinegar.jpg"
         },
         "winter squash": {
             "name": "winter squash",
             "id": "10111485",
-            "image": ""
+            "image": "butternut-squash.jpg"
         },
         "won ton wraps": {
             "name": "won ton wraps",
             "id": "10018368",
-            "image": ""
+            "image": "puff-pastry-squares.jpg"
         },
         "worcestershire sauce": {
             "name": "worcestershire sauce",
             "id": "6971",
-            "image": ""
+            "image": "dark-sauce.jpg"
         },
         "wraps": {
             "name": "wraps",
             "id": "10018364",
-            "image": ""
+            "image": "flour-tortilla.jpg"
         },
         "xanthan gum": {
             "name": "xanthan gum",
             "id": "93626",
-            "image": ""
+            "image": "white-powder.jpg"
         },
         "yeast": {
             "name": "yeast",
@@ -4933,7 +4893,7 @@
         "yellow cake mix": {
             "name": "yellow cake mix",
             "id": "18144",
-            "image": ""
+            "image": "yellow-cake.jpg"
         },
         "yellow onion": {
             "name": "yellow onion",

@@ -2,19 +2,26 @@ import json
 import time
 import requests
 
-api_calls = 1  # change to limit calls
+api_calls = 73 # change to limit calls
 
 
 def getIngredientsById(id):
+    # THIS IS THE API INFORMATION WHEN ACCESSING VIA RAPIDAPI
+    # url = f"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/{id}/information"
+    # querystring = {"amount": "150", "unit": "grams"}
+    # headers = {
+    #     'X-RapidAPI-Key': '',
+    #     'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    # }
+    # r = requests.get(url, headers=headers, params=querystring)
+    
     payload = {
         "apiKey": "",  # add apiKey Here
         "amount": 150,
         "unit": "grams"
     }
-
     endpoint = f"https://api.spoonacular.com/food/ingredients/{id}/information"
-
-    r = requests.get(endpoint, params=payload)
+    r = requests.get(endpoint, params=payload) #ORIGINAL FOR SPOONACULAR API CALLS
 
     if r.status_code == 200:
         print("Success")
