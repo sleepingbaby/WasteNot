@@ -7,7 +7,7 @@ api_calls = 1  # change to limit calls
 
 def getIngredientsById(id):
     payload = {
-        "apiKey": "361d1dea26cc492882723a7a431d53c2",  # add apiKey Here
+        "apiKey": "",  # add apiKey Here
         "amount": 150,
         "unit": "grams"
     }
