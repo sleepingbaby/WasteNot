@@ -1,7 +1,7 @@
 @keyframes dropAndRotateAnimationMoney {
   0% {
     transform: translate(-50%, -100%) rotate(0deg);
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     transform: translate(-50%, 100vh) rotate(-360deg);

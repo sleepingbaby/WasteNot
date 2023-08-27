@@ -1,7 +1,7 @@
-@keyframes dropAndRotateAnimationMoney {
+@keyframes dropAndRotateAnimationMeat {
   0% {
     transform: translate(-50%, -100%) rotate(0deg);
-    opacity: 0.2;
+    opacity: 0;
   }
   100% {
     transform: translate(-50%, 100vh) rotate(360deg);
@@ -9,7 +9,7 @@
   }
 }
 
-.money-container2 {
+.meat-container {
   width: 128px;
   height: 128px;
   position: fixed;
@@ -17,9 +17,9 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  animation: dropAndRotateAnimationMoney 7s linear infinite;
+  animation: dropAndRotateAnimationMeat 5s ease-in infinite;
 }
 
-.money-container2 img {
+.meat-container img {
   width: 100%;
 }
