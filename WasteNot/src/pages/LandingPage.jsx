@@ -24,13 +24,18 @@ const LandingPage = () => {
         justifyContent={"space-between"}
         minHeight="100vh"
       >
-        <Stack alignItems={"center"} justifyContent={"center"} mt={8}>
+        <Stack
+          alignItems={"center"}
+          justifyContent={"center"}
+          mt={8}
+          sx={{ zIndex: "5000" }}
+        >
           <Typography
             sx={{
               fontSize: { xs: "300%", sm: "650%" },
               fontWeight: "bold",
               marginBottom: "0px",
-              color: "#066b60",
+              color: "#b8d4db",
               textDecoration: "underline",
             }}
           >
@@ -42,6 +47,7 @@ const LandingPage = () => {
               textAlign: "center",
               fontWeight: "550",
               marginBottom: "6px",
+              color: "#b8d4db",
             }}
           >
             Elevate Every Ingredient, Minimize Food Waste
@@ -49,12 +55,12 @@ const LandingPage = () => {
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#bbd4ce",
+              backgroundColor: "#68a2b1",
               color: "#033015",
               margin: "8px",
               fontWeight: "bolder",
               "&:hover": {
-                backgroundColor: "#679186",
+                backgroundColor: "#1a2e32",
                 color: "white",
               },
             }}

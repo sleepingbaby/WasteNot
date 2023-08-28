@@ -33,7 +33,7 @@ const Navbar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#f5fef9", color: "black" }}
+        sx={{ backgroundColor: "#180221", color: "#f6e7fd" }}
       >
         <Toolbar>
           <IconButton
@@ -45,7 +45,15 @@ const Navbar = () => {
           >
             <MenuOutlined />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: "bold",
+              color: "#f6e7fd",
+              flexGrow: 1,
+            }}
+          >
             WasteNot
           </Typography>
           {auth && (
