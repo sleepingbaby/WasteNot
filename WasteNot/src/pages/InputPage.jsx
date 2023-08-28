@@ -1,5 +1,3 @@
-import React from "react";
-import Navbar from "../components/Navbar";
 import {
   Stack,
   FormGroup,
@@ -7,7 +5,6 @@ import {
   Checkbox,
   TextField,
   Button,
-  Paper,
   Box,
 } from "@mui/material";
 

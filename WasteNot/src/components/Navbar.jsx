@@ -31,24 +31,6 @@ const Navbar = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup
-        sx={{
-          backgroundColor: "#000305",
-          color: "#ffffff",
-          paddingLeft: "16px",
-        }}
-      >
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? "Logout" : "Login"}
-        />
-      </FormGroup>
       <AppBar
         position="static"
         sx={{ backgroundColor: "#f5fef9", color: "black" }}
