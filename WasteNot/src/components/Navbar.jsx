@@ -51,7 +51,7 @@ const Navbar = () => {
       </FormGroup>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#9ed8ff", color: "black" }}
+        sx={{ backgroundColor: "#f5fef9", color: "black" }}
       >
         <Toolbar>
           <IconButton

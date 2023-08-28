@@ -13,9 +13,8 @@
   width: 40px;
   height: 40px;
   position: fixed;
-  z-index: -99999;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  animation: dropAndRotateAnimation 5s linear infinite;
+  animation: dropAndRotateAnimation 6s linear infinite;
 }

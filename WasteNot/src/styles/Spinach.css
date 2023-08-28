@@ -1,4 +1,4 @@
-@keyframes dropAndRotateAnimation {
+@keyframes dropAndRotateAnimationSpinach {
   0% {
     transform: translate(-50%, -100%) rotate(0deg);
     opacity: 0;
@@ -13,11 +13,10 @@
   width: 128px;
   height: 128px;
   position: fixed;
-  z-index: -99999;
-  top: 0;
+  top: -150px;
   left: 50%;
   transform: translateX(-50%);
-  animation: dropAndRotateAnimation 5s ease-in infinite;
+  animation: dropAndRotateAnimationSpinach 7s ease-in infinite;
   animation-delay: 1s;
 }
 

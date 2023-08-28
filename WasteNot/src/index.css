@@ -7,5 +7,14 @@
 
 body {
   min-height: 100vh;
+  height: 100vh;
   background-color: #f5fef9;
+}
+
+#root {
+  height: 100%;
+}
+
+.trashcan {
+  z-index: 5000;
 }

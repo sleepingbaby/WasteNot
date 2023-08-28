@@ -1,20 +1,16 @@
 import LandingPage from "./pages/LandingPage";
-import { Box } from "@mui/material";
-import Carrot from "./components/Carrot";
-import Spinach from "./components/Spinach";
-import Money from "./components/Money";
-// import Money2 from "./components/Money2";
-import Meat from "./components/Meat";
+import { Stack } from "@mui/material";
+import { Outlet, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
+  const location = useLocation();
+  const path = location.pathname;
   return (
-    <Box minHeight="100vh">
-      <Meat />
-      <Carrot />
-      <Spinach />
-      <Money />
-      <LandingPage />
-    </Box>
+    <Stack height="100%" sx={{ backgroundColor: "#f5fef9" }}>
+      {path !== "/" && <Navbar />}
+      <Outlet />
+    </Stack>
   );
 }
 

@@ -13,12 +13,11 @@
   width: 128px;
   height: 128px;
   position: fixed;
-  z-index: -99999;
-  top: 0;
+  top: -150px;
   left: 50%;
   transform: translateX(-50%);
   animation: dropAndRotateAnimationMoney 7s ease-in infinite;
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 .money-container img {
