@@ -6,7 +6,9 @@ import {
   TextField,
   Button,
   Box,
+  Autocomplete,
 } from "@mui/material";
+import { ingredients } from "../data/utilityData";
 
 const InputPage = () => {
   return (
@@ -36,26 +38,34 @@ const InputPage = () => {
           mb={2}
           width="80%"
         >
-          <TextField
-            id="filled-basic"
-            label="Ingredients"
-            variant="filled"
-            sx={{
-              width: "90%",
-              backgroundColor: "#1a2e32",
-              borderRadius: "6px",
-              "& label.Mui-focused": { color: "white" },
-              "& label.MuiInputLabel-root": { color: "white" },
-              "& .MuiFilledInput-underline:after": {
-                borderBottom: "none",
-              },
-              "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                borderBottom: "none",
-              },
-              "& .MuiFilledInput-root:before": {
-                borderBottom: "none",
-              },
-            }}
+          <Autocomplete
+            options={ingredients}
+            sx={{ width: "100%" }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                id="filled-basic"
+                label="Ingredients"
+                variant="filled"
+                sx={{
+                  width: "100%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
+              />
+            )}
           />
           <Button
             variant="contained"
@@ -90,24 +100,20 @@ const InputPage = () => {
           sx={{ display: "flex", flexDirection: "row", padding: "8px" }}
         >
           <FormControlLabel
-            control={<Checkbox sx={{ color: "black" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Vegan"
-            sx={{ color: "black" }}
           />
           <FormControlLabel
-            control={<Checkbox sx={{ color: "black" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Vegetarian"
-            sx={{ color: "black" }}
           />
           <FormControlLabel
-            control={<Checkbox sx={{ color: "black" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Nut-Free"
-            sx={{ color: "black" }}
           />
           <FormControlLabel
-            control={<Checkbox sx={{ color: "black" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Dairy-Free"
-            sx={{ color: "black" }}
           />
         </FormGroup>
         <Button

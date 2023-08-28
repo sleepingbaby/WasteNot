@@ -3,9 +3,6 @@ import {
   Box,
   AppBar,
   Toolbar,
-  FormGroup,
-  FormControlLabel,
-  Switch,
   IconButton,
   Menu,
   MenuItem,
@@ -33,7 +30,10 @@ const Navbar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#180221", color: "#f6e7fd" }}
+        sx={{
+          backgroundColor: "#0a1214",
+          color: "#b8d4db",
+        }}
       >
         <Toolbar>
           <IconButton
@@ -50,7 +50,7 @@ const Navbar = () => {
             component="div"
             sx={{
               fontWeight: "bold",
-              color: "#f6e7fd",
+              color: "#b8d4db",
               flexGrow: 1,
             }}
           >
