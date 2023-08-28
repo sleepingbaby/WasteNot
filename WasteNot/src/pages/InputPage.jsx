@@ -42,7 +42,7 @@ const InputPage = () => {
             variant="filled"
             sx={{
               width: "90%",
-              backgroundColor: "#bbd4ce",
+              backgroundColor: "white",
               borderRadius: "6px",
               "& label.Mui-focused": { color: "#828282" },
               "& .MuiFilledInput-underline:after": {
@@ -68,7 +68,7 @@ const InputPage = () => {
               },
             }}
           >
-            Enter
+            Add
           </Button>
         </Stack>
 
@@ -76,7 +76,7 @@ const InputPage = () => {
           height="70%"
           width="80%"
           sx={{
-            backgroundColor: "#bbd4ce",
+            backgroundColor: "white",
             borderRadius: "6px",
             boxShadow:
               "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
@@ -106,6 +106,22 @@ const InputPage = () => {
             sx={{ color: "white" }}
           />
         </FormGroup>
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#bbd4ce",
+            width: "10%",
+            color: "#033015",
+            margin: "8px",
+            fontWeight: "bolder",
+            "&:hover": {
+              backgroundColor: "#679186",
+              color: "white",
+            },
+          }}
+        >
+          Get Recipes
+        </Button>
       </Box>
     </Stack>
   );
