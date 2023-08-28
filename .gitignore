@@ -25,4 +25,5 @@ dist-ssr
 
 #backend
 env
+.env
 __pycache__
