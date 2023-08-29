@@ -16,6 +16,10 @@ const InputPage = () => {
   const [ingredientList, setIngredientList] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
+  useEffect(() => {
+    console.log(ingredientList);
+  }, [ingredientList]);
+
   const handleAddIngredient = () => {
     if (!newIngredient) {
       return;
@@ -136,7 +140,12 @@ const InputPage = () => {
             }}
           >
             {ingredientList.map((ingredient) => (
-              <Ingredient key={ingredient.id} name={ingredient.label} />
+              <Ingredient
+                key={ingredient.id}
+                name={ingredient.label}
+                ingredientList={ingredientList}
+                setIngredientList={setIngredientList}
+              />
             ))}
           </Stack>
         </Stack>

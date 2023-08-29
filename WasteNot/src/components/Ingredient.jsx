@@ -3,29 +3,40 @@ import {
   Card,
   CardMedia,
   CardContent,
-  Button,
-  CardActions,
+  Stack,
+  Divider,
+  IconButton,
 } from "@mui/material";
+import { Close } from "@mui/icons-material";
 import { ingredientObj } from "../data/utilityData";
 
-const Ingredient = ({ name }) => {
+const Ingredient = ({ name, ingredientList, setIngredientList }) => {
+  const handleDelete = () => {
+    setIngredientList(ingredientList.filter((obj) => name !== obj["label"]));
+  };
   return (
     <Card elevation={3} sx={{ height: 150, width: 100, margin: "16px" }}>
+      <Stack alignItems="flex-end">
+        <IconButton onClick={handleDelete}>
+          <Close fontSize="small" />
+        </IconButton>
+      </Stack>
+
       <CardMedia
-        sx={{ height: "50%" }}
+        sx={{ height: "50%", margin: "8px", marginTop: 0, objectFit: "fit" }}
         image={`https://spoonacular.com/cdn/ingredients_100x100/${ingredientObj[name]["image"]}`}
         title={name}
       />
+      <Divider variant="middle" sx={{ backgroundColor: "black" }} />
       <CardContent
         sx={{
-          backgroundColor: "black",
+          backgroundColor: "white",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "50%",
+          height: "45%",
           padding: 0,
-          paddingTop: "16px",
         }}
       >
         <Typography
@@ -33,17 +44,23 @@ const Ingredient = ({ name }) => {
           variant="h5"
           component="div"
           sx={{
-            fontSize: ".8em",
-            fontWeight: "bold",
+            fontSize: ".6em",
+            fontWeight: "bolder",
             textAlign: "center",
-            color: "white",
+            color: "black",
           }}
         >
           {name}
         </Typography>
-        <Button size="small" sx={{ fontSize: ".5em" }}>
+        {/* <Button
+          variant="text"
+          sx={{
+            fontSize: ".1em",
+            "&.MuiButtonBase-root": { padding: 0, color: "red" },
+          }}
+        >
           Remove
-        </Button>
+        </Button> */}
       </CardContent>
     </Card>
   );
