@@ -9,14 +9,14 @@ export default function Profile() {
       <div className="h-screen w-screen flex items-center justify-center">
         <main className="grid grid-rows-6 border-2 border-gray-300 w-[50%] h-[70%] rounded-3xl bg-gray-200 relative drop-shadow-xl">
           <div className="header row-start-1 row-span-1 bg-green-950 w-full mb-6 rounded-t-3xl  border-2 border-green-950">
-            <div className="mt-16 ml-40 text-4xl text-white">
+            <div className="mt-5 ml-40 text-4xl text-white">
               User's Name
             </div>
           </div>
 
           <div className="profile-picture absolute top-5 left-5 h-32 w-32 rounded-full bg-gray-500"></div>
 
-          <form className="profile-data-outer row-start-2.5 row-span-5 p-7">
+          <form className="profile-data-outer row-start-2.5 row-span-5 p-7 mt-3">
             <div class="profile-data grid gap-4 my-6">
               <div>
                 <label
