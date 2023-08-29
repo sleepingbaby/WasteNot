@@ -1,5 +1,5 @@
 from django.urls import path
-from urls import Spoon_Docs, Recipe_By_ID, Ingredient_By_ID, Chatbot
+from .views import Spoon_Docs, Recipe_By_ID, Ingredient_By_ID, Chatbot
 
 # localhost:8000/api/vi/spoon/
 urlpatterns = [
