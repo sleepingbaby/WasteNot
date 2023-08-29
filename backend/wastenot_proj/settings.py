@@ -28,7 +28,18 @@ SECRET_KEY = env.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+
+# Added the following settings to allow for HTTP Cookies: 
+ALLOWED_HOSTS = ["*"]
+
+CORS_ALLOWED_ORIGINS = ["0.0.0.0"]
+
+CORS_ALLOW_CREDENTIALS = True
+
+SESSION_COOKIE_SECURE = True
+
+SESSION_COOKIE_HTTPONLY = True
 
 
 # Application definition
@@ -44,6 +55,7 @@ INSTALLED_APPS = [
     'recipe_app',
     'user_app',
     'spoon_api_app',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +140,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user_app.User'
