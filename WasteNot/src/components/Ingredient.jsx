@@ -15,7 +15,15 @@ const Ingredient = ({ name, ingredientList, setIngredientList }) => {
     setIngredientList(ingredientList.filter((obj) => name !== obj["label"]));
   };
   return (
-    <Card elevation={3} sx={{ height: 150, width: 100, margin: "16px" }}>
+    <Card
+      elevation={3}
+      sx={{
+        height: 150,
+        width: 100,
+        margin: "16px",
+        "& .MuiIconButton-root": { padding: 0 },
+      }}
+    >
       <Stack alignItems="flex-end">
         <IconButton onClick={handleDelete}>
           <Close fontSize="small" />
@@ -45,7 +53,7 @@ const Ingredient = ({ name, ingredientList, setIngredientList }) => {
           component="div"
           sx={{
             fontSize: ".6em",
-            fontWeight: "bolder",
+            fontWeight: 900,
             textAlign: "center",
             color: "black",
           }}
