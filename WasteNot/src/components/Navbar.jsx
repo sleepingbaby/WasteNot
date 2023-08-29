@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   AppBar,
@@ -16,6 +17,12 @@ import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 const Navbar = () => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/profile");
+  };
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -93,7 +100,7 @@ const Navbar = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClick}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
