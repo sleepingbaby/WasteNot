@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Stack,
   FormGroup,
@@ -9,8 +10,28 @@ import {
   Autocomplete,
 } from "@mui/material";
 import { ingredients } from "../data/utilityData";
+import Ingredient from "../components/Ingredient";
 
 const InputPage = () => {
+  const [ingredientList, setIngredientList] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
+
+  useEffect(() => {
+    console.log(ingredientList);
+  }, [ingredientList]);
+
+  const handleAddIngredient = () => {
+    if (!ingredientList.includes(newIngredient)) {
+      setIngredientList((prevIngredients) => [
+        ...prevIngredients,
+        newIngredient,
+      ]);
+    } else {
+      alert("Ingredient already added!");
+    }
+    setNewIngredient("");
+  };
+
   return (
     <Stack
       alignItems="center"
@@ -40,7 +61,14 @@ const InputPage = () => {
         >
           <Autocomplete
             options={ingredients}
+            isOptionEqualToValue={(option, value) =>
+              option.value === value.value
+            }
             sx={{ width: "100%" }}
+            value={newIngredient}
+            onChange={(event, newValue) => {
+              setNewIngredient(newValue);
+            }}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -81,6 +109,7 @@ const InputPage = () => {
                 color: "white",
               },
             }}
+            onClick={handleAddIngredient}
           >
             Add
           </Button>
@@ -95,7 +124,13 @@ const InputPage = () => {
             boxShadow:
               "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           }}
-        ></Stack>
+        >
+          <Stack direction="row" sx={{ overflow: "scroll", flexWrap: "wrap" }}>
+            {ingredientList.map((ingredient) => (
+              <Ingredient key={ingredient.id} name={ingredient.label} />
+            ))}
+          </Stack>
+        </Stack>
         <FormGroup
           sx={{ display: "flex", flexDirection: "row", padding: "8px" }}
         >
@@ -120,7 +155,7 @@ const InputPage = () => {
           variant="contained"
           sx={{
             backgroundColor: "#68a2b1",
-            width: "10%",
+            width: "300px",
             color: "#033015",
             margin: "8px",
             fontWeight: "bolder",
