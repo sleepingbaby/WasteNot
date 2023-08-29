@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pantryitem_app',
     'recipe_app',
     'user_app',
+    'spoon_api_app',
 ]
 
 MIDDLEWARE = [
