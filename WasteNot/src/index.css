@@ -2,17 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Istok Web", sans-serif;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
 }
 
 body {
   min-height: 100vh;
   height: 100vh;
-  background-color: #f5fef9;
+  background-color: #0a1214;
 }
 
 #root {
   height: 100%;
+  background-color: #0a1214;
 }
 
 .trashcan {
