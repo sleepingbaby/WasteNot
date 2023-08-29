@@ -1,0 +1,7 @@
+from rest_framework.serializers import ModelSerializer
+from .models import PantryItem
+
+class PantryItemSerializer(ModelSerializer):
+    class Meta:
+        model = PantryItem
+        fields = ['id', 'item_name']
