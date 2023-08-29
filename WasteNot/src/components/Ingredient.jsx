@@ -1,11 +1,10 @@
-import React from "react";
 import {
-  Stack,
   Typography,
   Card,
   CardMedia,
   CardContent,
-  Paper,
+  Button,
+  CardActions,
 } from "@mui/material";
 import { ingredientObj } from "../data/utilityData";
 
@@ -13,17 +12,20 @@ const Ingredient = ({ name }) => {
   return (
     <Card elevation={3} sx={{ height: 150, width: 100, margin: "16px" }}>
       <CardMedia
-        sx={{ height: 75 }}
+        sx={{ height: "50%" }}
         image={`https://spoonacular.com/cdn/ingredients_100x100/${ingredientObj[name]["image"]}`}
         title={name}
       />
       <CardContent
         sx={{
           backgroundColor: "black",
-          height: 75,
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          height: "50%",
+          padding: 0,
+          paddingTop: "16px",
         }}
       >
         <Typography
@@ -31,15 +33,17 @@ const Ingredient = ({ name }) => {
           variant="h5"
           component="div"
           sx={{
-            fontSize: "1em",
+            fontSize: ".8em",
             fontWeight: "bold",
+            textAlign: "center",
             color: "white",
-            padding: "8px",
-            marginTop: "8px",
           }}
         >
           {name}
         </Typography>
+        <Button size="small" sx={{ fontSize: ".5em" }}>
+          Remove
+        </Button>
       </CardContent>
     </Card>
   );

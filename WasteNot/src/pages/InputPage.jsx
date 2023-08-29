@@ -16,11 +16,10 @@ const InputPage = () => {
   const [ingredientList, setIngredientList] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
-  useEffect(() => {
-    console.log(ingredientList);
-  }, [ingredientList]);
-
   const handleAddIngredient = () => {
+    if (!newIngredient) {
+      return;
+    }
     if (!ingredientList.includes(newIngredient)) {
       setIngredientList((prevIngredients) => [
         ...prevIngredients,
@@ -125,7 +124,17 @@ const InputPage = () => {
               "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           }}
         >
-          <Stack direction="row" sx={{ overflow: "scroll", flexWrap: "wrap" }}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              overflow: "scroll",
+              flexWrap: "wrap",
+              width: "100%",
+              "&::-webkit-scrollbar": { display: "none" },
+            }}
+          >
             {ingredientList.map((ingredient) => (
               <Ingredient key={ingredient.id} name={ingredient.label} />
             ))}
