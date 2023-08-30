@@ -37,18 +37,16 @@ export default function Profile() {
         <Stack
           id="profile-container"
           sx={{
-            height: { xs: "90%", sm: "70%" },
-            width: { xs: "70%", sm: "50%" },
-            backgroundColor: "#eeeeee",
+            height: { xs: "90%", sm: "90%" },
+            width: { xs: "90%", sm: "50%" },
+            backgroundColor: "#b8d4db",
             borderTopRightRadius: "18px",
             borderTopLeftRadius: "18px",
             borderBottomLeftRadius: "15px",
             borderBottomRightRadius: "15px",
-            boxShadow: `
-0 0 20px rgba(210, 210, 210, 0.2),
-0 0 20px rgba(210, 210, 210, 0.2),
-0 0 20px rgba(210, 210, 210, 0.2)
-`,
+            boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
+                        0 0 20px rgba(210, 210, 210, 0.2),
+                        0 0 20px rgba(210, 210, 210, 0.2)`,
           }}
         >
           <Stack
@@ -58,7 +56,7 @@ export default function Profile() {
             alignItems="center"
             justifyContent="space-around"
             sx={{
-              backgroundColor: "#006064",
+              backgroundColor: "#1a2e32",
               borderTopRightRadius: "15px",
               borderTopLeftRadius: "15px",
               borderColor: "#006064",
@@ -110,6 +108,7 @@ export default function Profile() {
             width="100%"
             justifyContent="center"
             alignItems="center"
+            mt={8}
           >
             <Stack
               id="profile-data-fields"
@@ -122,28 +121,93 @@ export default function Profile() {
               <TextField
                 variant="filled"
                 label="First Name"
-                sx={{ width: "90%" }}
+                sx={{
+                  width: "90%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
               ></TextField>
               <TextField
                 variant="filled"
                 label="Last Name"
-                sx={{ width: "90%" }}
+                sx={{
+                  width: "90%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
               ></TextField>
               <TextField
                 variant="filled"
                 label="Email"
-                sx={{ width: "90%", borderRadius: "15px" }}
+                sx={{
+                  width: "90%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
               ></TextField>
               <TextField
                 variant="filled"
                 label="Password"
-                sx={{ width: "90%" }}
+                sx={{
+                  width: "90%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
               ></TextField>
             </Stack>
             <Stack
               id="buttons"
               direction="row"
               justifySelf="end"
+              gap={4}
               sx={{
                 mb: 2,
               }}
@@ -154,6 +218,7 @@ export default function Profile() {
                 onClick={() => navigate("/ingredients")}
                 sx={{
                   color: "#000000",
+                  "&:hover": { borderRadius: "8px" },
                 }}
               >
                 Cancel
@@ -166,7 +231,14 @@ export default function Profile() {
                 }}
                 // *NAVIGATE BACK TO HOME AFTER JS ADDED
                 sx={{
-                  backgroundColor: "#0097a7",
+                  backgroundColor: "#68a2b1",
+                  color: "#033015",
+                  margin: "8px",
+                  fontWeight: "bolder",
+                  "&:hover": {
+                    backgroundColor: "#1a2e32",
+                    color: "white",
+                  },
                 }}
               >
                 Save Changes
@@ -186,17 +258,15 @@ export default function Profile() {
 
           <Button
             id="delete-button"
-            variant="filled"
+            variant="text"
             onClick={() => {
               confirmDelete();
             }}
             sx={{
-              color: "#ef5350",
-              fontSize: 14,
-              ":hover": {
-                color: "white",
+              color: "#033015",
+              "&:hover": {
+                color: "red",
               },
-              // fontWeight:"300"
             }}
           >
             Delete Account
