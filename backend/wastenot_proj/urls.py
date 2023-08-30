@@ -23,5 +23,4 @@ urlpatterns = [
     path('api/recipe/', include("recipe_app.urls")),
     path('api/pantryitem/', include("pantryitem_app.urls")),
     path('api/user/', include("user_app.urls"))
-
 ]
