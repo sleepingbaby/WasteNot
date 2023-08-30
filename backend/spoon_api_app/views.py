@@ -7,7 +7,13 @@ from dotenv import dotenv_values
 
 env = dotenv_values(".env")
 apiKey = env.get("SPOON_API_KEY")
-pp = pprint.PrettyPrinter(indent=2, depth=2)
+base_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/"
+headers = {
+    'X-RapidAPI-Key': env.get("SPOON_API_KEY_RAPID"),
+    'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    }
+
+
 
 # Create your views here.
 class Spoon_Docs(APIView):
@@ -29,68 +35,60 @@ class Recipe_By_ID(APIView):
     
 class Recipe_By_Ingredients(APIView):
     def get(self, request):
+        # expects a list of ingredient objects to convert to a string of ingredients
         data = request.data
         ingredients = ""
         for item in data:
             ingredients += f',{item["label"]}'
         ingredients = ingredients[1::]
         
-        payload = {
-            "apiKey": apiKey,
+        url = f"{base_url}recipes/findByIngredients"
+        querystring = {
             "ingredients": ingredients,
             "number": 10,
             "limitLicense": True,
             "ranking": 1,
             "ignorePantry": True
         }
-
-        # GET https://api.spoonacular.com/recipes/findByIngredients
-        endpoint = "https://api.spoonacular.com/recipes/findByIngredients"
-        response = requests.get(endpoint, params=payload)
-        print(response.status_code)
-        responseJSON = response.json()
+        res = requests.get(url, headers=headers, params=querystring)
+        responseJSON = res.json()
         return Response(responseJSON)
-    
+
 class Recipe_Random(APIView):
     def get(self, request):
-        payload = {
-            "apiKey": apiKey,
-            "limitLicense": True,
-            "number": 5,
-        }
-
-        endpoint = "https://api.spoonacular.com/recipes/random"
-        response = requests.get(endpoint, params=payload)
-        responseJSON = response.json()
-        # pp.pprint(responseJSON)
+        url = f"{base_url}recipes/random"
+        querystring = {"limitLicense": True, "number": 5}
+        res = requests.get(url, headers=headers, params=querystring)
+        responseJSON = res.json()
         return Response(responseJSON)
 
 
 class Ingredient_By_ID(APIView):
     def get(self, request, ingredient_id):
-        # THIS IS THE API INFORMATION WHEN ACCESSING VIA RAPIDAPI
-        # url = f"https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/{id}/information"
-        # querystring = {"amount": "150", "unit": "grams"}
-        # headers = {
-        #     'X-RapidAPI-Key': '',
-        #     'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-        # }
-        # r = requests.get(url, headers=headers, params=querystring)
-        
-        payload = {
-            "apiKey": apiKey,  # add apiKey Here
-            "amount": 150,
-            "unit": "grams"
-        }
-        
-        endpoint = f"https://api.spoonacular.com/food/ingredients/{ingredient_id}/information"
-        response = requests.get(endpoint, params=payload) #ORIGINAL FOR SPOONACULAR API CALLS
-        responseJSON = response.json()
-        # pp.pprint(responseJSON)
+        url = f"{base_url}food/ingredients/{ingredient_id}/information"
+        querystring = {"amount": "150", "unit": "grams"}
+        res = requests.get(url, headers=headers, params=querystring)
+        responseJSON = res.json()
         return Response(responseJSON)
 
 
 class Chatbot(APIView):
-    pass
+    def get(self, request, contextId=None):
+        pass
+
+
+            # url = f"{base_url}food/converse"
+            # # data = {
+            # #     "text" : "Tell me a recipe with chicken",
+            # #     "contextId": "wastenot_user_12"
+            # # }
+            # querystring = request.data
+            # if not contextId:
+            #     contextId = 2
+            # res  = requests.get(url, headers=headers, params=querystring, contextId=contextId)
+            # responseJSON = res.json()
+        
+            # return Response(responseJSON)
+
 
 
