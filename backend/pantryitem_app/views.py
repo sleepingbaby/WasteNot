@@ -16,7 +16,7 @@ class All_pantry_items(User_permissions): #api/pantryitem/
     def get(self, request):
         items = request.user.pantryitems.all()
         serializeditems = PantryItemSerializer(items, many=True)
-        return Response({"Pantry_items": serializeditems})
+        return Response({"pantry_items": serializeditems.data})
 
 
     def post(self, request):
@@ -24,21 +24,22 @@ class All_pantry_items(User_permissions): #api/pantryitem/
         user = request.user
         item = PantryItem.objects.create(item_name=item_name, user_id=user)
         serializeditem = PantryItemSerializer(item)
-        return Response({"item": serializeditem})
+        return Response({"item": serializeditem.data})
 
 class A_pantry_item(User_permissions): #api/pantryitem/{id}/
     
     def get(self, request, id):
+        print(id, request.user)
         item = get_object_or_404(request.user.pantryitems, id=id)
         serializeditem = PantryItemSerializer(item)
-        return Response({"item": serializeditem})
+        return Response({"item": serializeditem.data})
 
     def put(self, request, id):
         item = get_object_or_404(request.user.pantryitems, id=id)
         item.item_name = request.data['item_name']
         item.save()
         serializeditem = PantryItemSerializer(item)
-        return Response({'new_item': serializeditem})
+        return Response({'new_item': serializeditem.data})
 
     def delete(self, request, id):
         request.user.pantryitems.filter(id=id).delete()

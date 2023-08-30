@@ -4,4 +4,4 @@ from .models import PantryItem
 class PantryItemSerializer(ModelSerializer):
     class Meta:
         model = PantryItem
-        fields = ['id', 'item_name']
+        fields = '__all__'
