@@ -10,10 +10,16 @@ import {
   Typography,
 } from "@mui/material";
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
+import TemporaryDrawer from "./Drawer";
 
 const Navbar = () => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
+  };
 
   const navigate = useNavigate();
 
@@ -23,6 +29,10 @@ const Navbar = () => {
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
+  };
+
+  const goHome = () => {
+    navigate("/");
   };
 
   const handleMenu = (event) => {
@@ -48,17 +58,24 @@ const Navbar = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
+            onClick={handleDrawerToggle}
             sx={{ mr: 2 }}
           >
             <MenuOutlined />
           </IconButton>
+          <TemporaryDrawer
+            open={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+          />
           <Typography
             variant="h6"
             component="div"
+            onClick={goHome}
             sx={{
               fontWeight: "bold",
               color: "#b8d4db",
               flexGrow: 1,
+              "&:hover": { cursor: "pointer" },
             }}
           >
             WasteNot
