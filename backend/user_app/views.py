@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from rest_framework.response import Response
-from rest_framework.status import HTTP_400_BAD_REQUEST
+from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_204_NO_CONTENT
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from .models import User
@@ -22,8 +22,10 @@ class Log_in(APIView):
         user = authenticate(**request.data)
         if user:
             token, created = Token.objects.get_or_create(user=user)
-            life_time = datetime.now() + timedelta(days=7)
+            # Right now, cookies expire after 5-minutes (easier to test functionality this way) --> Feel free to change to greater time.
+            life_time = datetime.now() + timedelta(minutes=5)
             format_life_time = life_time.strftime("%a, %d %b %Y %H:%M:%S GMT")
+            # print(f"Original {life_time}         New: {format_life_time}")
             response = Response({"user": {"email": user.email}})
             response.set_cookie(key="token", value=token.key, httponly=True, secure=True, samesite="Lax", expires=format_life_time)
             return response
@@ -38,7 +40,8 @@ class Sign_up(APIView):
             print(user)
             token, created = Token.objects.get_or_create(user=user)
             response = Response({"user": {"email": user.email}})
-            life_time = datetime.now() + timedelta(days=7)
+            # Right now, cookies expire after 5-minute (easier to test functionality this way) --> Feel free to change to greater time.
+            life_time = datetime.now() + timedelta(minutes=5)
             format_life_time = life_time.strftime("%a, %d %b %Y %H:%M:%S GMT")
             response.set_cookie(key="token", value=token.key, httponly=True, secure=True, samesite="Lax", expires=format_life_time)
             return response
@@ -46,10 +49,25 @@ class Sign_up(APIView):
             return Response("Something went wrong", status=HTTP_400_BAD_REQUEST)
     
 class Info(User_permissions):
-    pass 
+    def get(self, request):
+        return Response({"email": request.user.email})
+    
+    def put(self, request):
+        user = request.user
+        user.first_name = request.data.get("first_name")
+        user.last_name = request.data.get("last_name")
+        user.email = request.data.get("email")
+        user.password = request.data.get("password")
+        return Response({"first_name": user.first_name, "last_name": user.last_name, "email": user.email, "password": user.password})
 
 class Log_out(User_permissions):
-    pass 
+    def post(self, request):
+        request.user.auth_token.delete()
+        response = Response(status=HTTP_204_NO_CONTENT)
+        response.delete_cookie("token")
+        return response 
 
 class Delete(User_permissions):
-    pass 
+    def delete(self, request):
+        request.user.delete()
+        return Response(status=HTTP_204_NO_CONTENT)
