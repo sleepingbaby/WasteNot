@@ -1,22 +1,27 @@
 import React from "react";
-import { Container } from "@mui/material";
-import useTheme from "@mui/material";
-import Box from "@mui/material";
-import MobileStepper from "@mui/material";
-import Paper from "@mui/material";
-import Typography from "@mui/material";
-import Button from "@mui/material";
-import { KeyboardArrowLeft } from "@mui/icons-material";
-import { KeyboardArrowRight } from "@mui/icons-material";
+import Container from "@mui/material/Container";
 import RecipeCarousel from "../components/RecipeCardCarousel";
+import { Box } from "@mui/material";
+import { AddBox } from "@mui/icons-material";
 
 export default function ChooseRecipePage(){
 
 
 
     return (
-        <Container>
-            <RecipeCarousel />
-        </Container>
+        <Box sx={{
+            width: '100%',
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            display: 'flex'
+        }}>
+            <Box sx={{
+                width: 'full',
+                height: 'full'
+            }}>
+                <RecipeCarousel />
+            </Box>
+        </Box>
     )
 }

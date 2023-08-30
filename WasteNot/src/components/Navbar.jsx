@@ -109,6 +109,7 @@ const Navbar = () => {
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={() => navigate('/recipes')}>Recipes</MenuItem>
               </Menu>
             </div>
           )}
