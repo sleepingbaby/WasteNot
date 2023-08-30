@@ -1,11 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   AppBar,
   Toolbar,
-  FormGroup,
-  FormControlLabel,
-  Switch,
   IconButton,
   Menu,
   MenuItem,
@@ -16,6 +14,12 @@ import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 const Navbar = () => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/profile");
+  };
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -31,27 +35,12 @@ const Navbar = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup
-        sx={{
-          backgroundColor: "#000305",
-          color: "#ffffff",
-          paddingLeft: "16px",
-        }}
-      >
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? "Logout" : "Login"}
-        />
-      </FormGroup>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#f5fef9", color: "black" }}
+        sx={{
+          backgroundColor: "#0a1214",
+          color: "#b8d4db",
+        }}
       >
         <Toolbar>
           <IconButton
@@ -63,7 +52,15 @@ const Navbar = () => {
           >
             <MenuOutlined />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: "bold",
+              color: "#b8d4db",
+              flexGrow: 1,
+            }}
+          >
             WasteNot
           </Typography>
           {auth && (
@@ -93,7 +90,7 @@ const Navbar = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClick}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>

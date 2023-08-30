@@ -7,7 +7,7 @@ function App() {
   const location = useLocation();
   const path = location.pathname;
   return (
-    <Stack height="100%" sx={{ backgroundColor: "#f5fef9" }}>
+    <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
       {path !== "/" && <Navbar />}
       <Outlet />
     </Stack>

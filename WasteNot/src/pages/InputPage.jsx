@@ -1,5 +1,4 @@
-import React from "react";
-import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
 import {
   Stack,
   FormGroup,
@@ -7,11 +6,35 @@ import {
   Checkbox,
   TextField,
   Button,
-  Paper,
   Box,
+  Autocomplete,
 } from "@mui/material";
+import { ingredients } from "../data/utilityData";
+import Ingredient from "../components/Ingredient";
 
 const InputPage = () => {
+  const [ingredientList, setIngredientList] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
+
+  useEffect(() => {
+    console.log(ingredientList);
+  }, [ingredientList]);
+
+  const handleAddIngredient = () => {
+    if (!newIngredient) {
+      return;
+    }
+    if (!ingredientList.includes(newIngredient)) {
+      setIngredientList((prevIngredients) => [
+        ...prevIngredients,
+        newIngredient,
+      ]);
+    } else {
+      alert("Ingredient already added!");
+    }
+    setNewIngredient("");
+  };
+
   return (
     <Stack
       alignItems="center"
@@ -22,7 +45,7 @@ const InputPage = () => {
       }}
     >
       <Box
-        backgroundColor="#066B60"
+        backgroundColor="#b8d4db"
         height="90%"
         width="90%"
         borderRadius="8px"
@@ -39,39 +62,59 @@ const InputPage = () => {
           mb={2}
           width="80%"
         >
-          <TextField
-            id="filled-basic"
-            label="Ingredients"
-            variant="filled"
-            sx={{
-              width: "90%",
-              backgroundColor: "#bbd4ce",
-              borderRadius: "6px",
-              "& label.Mui-focused": { color: "#828282" },
-              "& .MuiFilledInput-underline:after": {
-                borderBottom: "none",
-              },
-              "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                borderBottom: "none",
-              },
+          <Autocomplete
+            options={ingredients}
+            isOptionEqualToValue={(option, value) =>
+              option.value === value.value
+            }
+            sx={{ width: "100%" }}
+            value={newIngredient}
+            onChange={(event, newValue) => {
+              setNewIngredient(newValue);
             }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                id="filled-basic"
+                label="Ingredients"
+                variant="filled"
+                sx={{
+                  width: "100%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
+              />
+            )}
           />
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#bbd4ce",
+              backgroundColor: "#68a2b1",
               height: "100%",
               width: "10%",
               color: "#033015",
               margin: "8px",
               fontWeight: "bolder",
               "&:hover": {
-                backgroundColor: "#679186",
+                backgroundColor: "#1a2e32",
                 color: "white",
               },
             }}
+            onClick={handleAddIngredient}
           >
-            Enter
+            Add
           </Button>
         </Stack>
 
@@ -79,36 +122,69 @@ const InputPage = () => {
           height="70%"
           width="80%"
           sx={{
-            backgroundColor: "#bbd4ce",
+            backgroundColor: "#1a2e32",
             borderRadius: "6px",
             boxShadow:
               "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           }}
-        ></Stack>
+        >
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              overflow: "scroll",
+              flexWrap: "wrap",
+              width: "100%",
+              "&::-webkit-scrollbar": { display: "none" },
+            }}
+          >
+            {ingredientList.map((ingredient) => (
+              <Ingredient
+                key={ingredient.id}
+                name={ingredient.label}
+                ingredientList={ingredientList}
+                setIngredientList={setIngredientList}
+              />
+            ))}
+          </Stack>
+        </Stack>
         <FormGroup
           sx={{ display: "flex", flexDirection: "row", padding: "8px" }}
         >
           <FormControlLabel
-            control={<Checkbox sx={{ color: "white" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Vegan"
-            sx={{ color: "white" }}
           />
           <FormControlLabel
-            control={<Checkbox sx={{ color: "white" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Vegetarian"
-            sx={{ color: "white" }}
           />
           <FormControlLabel
-            control={<Checkbox sx={{ color: "white" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Nut-Free"
-            sx={{ color: "white" }}
           />
           <FormControlLabel
-            control={<Checkbox sx={{ color: "white" }} />}
+            control={<Checkbox style={{ color: "#1a2e32" }} />}
             label="Dairy-Free"
-            sx={{ color: "white" }}
           />
         </FormGroup>
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#68a2b1",
+            width: "300px",
+            color: "#033015",
+            margin: "8px",
+            fontWeight: "bolder",
+            "&:hover": {
+              backgroundColor: "#1a2e32",
+              color: "white",
+            },
+          }}
+        >
+          Get Recipes
+        </Button>
       </Box>
     </Stack>
   );
