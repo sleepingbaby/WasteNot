@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import {
   Stack,
   FormGroup,
@@ -8,24 +8,18 @@ import {
   Button,
   Box,
   Autocomplete,
+  Typography,
 } from "@mui/material";
 import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
-import { recipeContext } from "../contexts/RecipeContext";
-import { useNavigate } from "react-router-dom";
 
-const InputPage = () => {
+const Pantry = () => {
+  const [ingredientList, setIngredientList] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
-  const { ingredientList, setIngredientList } = useContext(recipeContext)
-  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(ingredientList);
   }, [ingredientList]);
-
-  const handleGetRecipes = () => {
-    navigate('/recipes')
-  }
 
   const handleAddIngredient = () => {
     if (!newIngredient) {
@@ -51,6 +45,12 @@ const InputPage = () => {
         width: "100%",
       }}
     >
+      <Stack width="90%">
+        <Typography sx={{ color: "white", fontSize: "2rem" }}>
+          Pantry
+        </Typography>
+      </Stack>
+
       <Box
         backgroundColor="#b8d4db"
         height="90%"
@@ -156,46 +156,9 @@ const InputPage = () => {
             ))}
           </Stack>
         </Stack>
-        <FormGroup
-          sx={{ display: "flex", flexDirection: "row", padding: "8px" }}
-        >
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Vegan"
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Vegetarian"
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Nut-Free"
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Dairy-Free"
-          />
-        </FormGroup>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#68a2b1",
-            width: "300px",
-            color: "#033015",
-            margin: "8px",
-            fontWeight: "bolder",
-            "&:hover": {
-              backgroundColor: "#1a2e32",
-              color: "white",
-            },
-          }}
-          onClick={handleGetRecipes}
-        >
-          Get Recipes
-        </Button>
       </Box>
     </Stack>
   );
 };
 
-export default InputPage;
+export default Pantry;

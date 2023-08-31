@@ -4,7 +4,6 @@ from rest_framework.response import Response
 import requests
 from dotenv import dotenv_values
 
-
 env = dotenv_values(".env")
 
 base_url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
@@ -28,7 +27,7 @@ class Recipe_By_ID(APIView):
         return Response(responseJSON)
     
 class Recipe_By_Ingredients(APIView):
-    def get(self, request):
+    def post(self, request):
         # expects a list of ingredient objects to convert to a string of ingredients
         data = request.data
         ingredients = ""
@@ -39,7 +38,7 @@ class Recipe_By_Ingredients(APIView):
         url = f"{base_url}/recipes/findByIngredients"
         querystring = {
             "ingredients": ingredients,
-            "number": 10,
+            "number": 20,
             "limitLicense": True,
             "ranking": 1,
             "ignorePantry": True
@@ -64,4 +63,5 @@ class Ingredient_By_ID(APIView):
         res = requests.get(url, headers=headers, params=querystring)
         responseJSON = res.json()
         return Response(responseJSON)
+
 
