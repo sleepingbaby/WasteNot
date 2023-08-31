@@ -9,31 +9,43 @@ import RecipeCard from './RecipeCard';
 import { useMediaQuery } from '@mui/material';
 import { recipeContext } from '../contexts/RecipeContext';
 import api from '../utilities.jsx'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { useEffect, useState, useRef, useContext } from "react";
+import Box from "@mui/material/Box";
+import RecipeCard from "./RecipeCard";
+import { useMediaQuery } from "@mui/material";
+import { recipeContext } from "../contexts/RecipeContext";
+import api from "../utilities.jsx";
+import Loading from "./Loading";
 
 export default function RecipeCarousel() {
   const [activeStep, setActiveStep] = useState(0);
   const [steps, setSteps] = useState([]);
-  let swiperRef = useRef(null)
-  const { ingredientList } = useContext(recipeContext)
+  let swiperRef = useRef(null);
+  const { ingredientList } = useContext(recipeContext);
 
-  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
-
-//   getting recipes
   useEffect(() => {
     const getSteps = async () => {
-        try {
-            const response = await api.post('spoon/recipe/ingredients/', ingredientList);
-            console.log(ingredientList)
-            setSteps(response.data);
-            console.log(response.data)
-        } catch(error){
-            console.error('There was an error getting your recipes:', error);
-        }
+      try {
+        const response = await api.post(
+          "spoon/recipe/ingredients/",
+          ingredientList
+        );
+        console.log(ingredientList);
+        setSteps(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("There was an error getting your recipes:", error);
+      }
     };
 
     getSteps();
-  }, []);
+  }, [ingredientList]);
 
   const handleNextClick = () => {
     if (swiperRef.current) {
@@ -43,9 +55,9 @@ export default function RecipeCarousel() {
 
   const handleBackClick = () => {
     if (swiperRef.current) {
-        swiperRef.current.slidePrev();
+      swiperRef.current.slidePrev();
     }
-  }
+  };
 
   const transitionDuration = "0.3s";
 
@@ -53,31 +65,43 @@ export default function RecipeCarousel() {
     zIndex: 4,
     transform: 'scale(1.4)',
     transition: `transform ${transitionDuration}`
+
   };
-  
+
   const semiActiveSlideStyle = {
     zIndex: 3,
     transform: 'scale(1.2)',
     transition: `transform ${transitionDuration}`
+
   };
-  
+
   const nonActiveSlideStyle = {
     zIndex: 2,
+
     transform: 'scale(1.0)',
     transition: `transform ${transitionDuration}`
   };
-  
+
   const leastActiveSlideStyle = {
     zIndex: 1,
+
     transform: 'scale(0.9)',
     transition: `transform ${transitionDuration}`
   };
-  
+
   const getSlideStyle = (index, activeStep, totalSteps, isSmallScreen) => {
     if (isSmallScreen) return {};
     if (index === activeStep) return activeSlideStyle;
-    if (index === (activeStep + 1) % totalSteps || index === (activeStep - 1 + totalSteps) % totalSteps) return semiActiveSlideStyle;
-    if (index === (activeStep + 2) % totalSteps || index === (activeStep - 2 + totalSteps) % totalSteps) return nonActiveSlideStyle;
+    if (
+      index === (activeStep + 1) % totalSteps ||
+      index === (activeStep - 1 + totalSteps) % totalSteps
+    )
+      return semiActiveSlideStyle;
+    if (
+      index === (activeStep + 2) % totalSteps ||
+      index === (activeStep - 2 + totalSteps) % totalSteps
+    )
+      return nonActiveSlideStyle;
     return leastActiveSlideStyle;
   };
 
@@ -98,20 +122,54 @@ export default function RecipeCarousel() {
         grabCursor={isSmallScreen ? true : false}
         speed={300}
         slidesPerView={isSmallScreen? 1 : 5}
+    <Box
+      sx={{
+        width: "80vw",
+        flexGrow: 1,
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "center",
+        overflow: "visible",
+      }}
+    >
+      <Swiper
+        loop={true}
+        centeredSlides={true}
+        spaceBetween={25}
+        slidesPerView={isSmallScreen ? 1 : 5}
         navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}
+        pagination={{ clickable: true }}
+        onSlideChange={(swiper) => {
+          setActiveStep(swiper.realIndex), console.log(swiper.activeIndex);
+        }}
+        className="swiper"
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+
         pagination={{clickable: true}}
         onSlideChange={(swiper) => {setActiveStep(swiper.realIndex)}}
         className='swiper'
         onSwiper={(swiper) => { swiperRef.current = swiper; }}
         style={{
             overflowY: 'visible',
+        style={{
+          overflowY: "visible",
         }}
       >
         {steps.map((stepData, index) => (
-          <SwiperSlide key={index} style={getSlideStyle(index, activeStep, steps.length, isSmallScreen)}>
+          <SwiperSlide
+            key={index}
+            style={getSlideStyle(
+              index,
+              activeStep,
+              steps.length,
+              isSmallScreen
+            )}
+          >
             <RecipeCard data={stepData} />
           </SwiperSlide>
         ))}
