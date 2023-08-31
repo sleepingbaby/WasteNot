@@ -2,9 +2,13 @@ import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
 import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import Toggle from "../components/TogglePassword";
 
+
 export default function Profile() {
+  // * NEED REQUESTS, UPDATE ALERT RESPONSES, NAVIGATION AFTER DEACTIVATION
+
   const confirmDelete = () => {
     confirmAlert({
       title: "Confirm account deactivation",
@@ -42,6 +46,9 @@ export default function Profile() {
             borderTopLeftRadius: "18px",
             borderBottomLeftRadius: "15px",
             borderBottomRightRadius: "15px",
+            boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
+                        0 0 20px rgba(210, 210, 210, 0.2),
+                        0 0 20px rgba(210, 210, 210, 0.2)`,
           }}
         >
           <Stack
