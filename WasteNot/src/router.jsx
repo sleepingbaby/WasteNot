@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import InputPage from "./pages/InputPage";
 import Profile from "./pages/Profile";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
