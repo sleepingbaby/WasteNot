@@ -109,6 +109,7 @@ const Navbar = () => {
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
+
               </Menu>
             </div>
           )}
