@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests, pprint
-from requests_oauthlib import OAuth1 # <= Is this needed??
+# from requests_oauthlib import OAuth1 # <= Is this needed??
 from dotenv import dotenv_values
-import random
+# import random
 
 env = dotenv_values(".env")
 apiKey = env.get("SPOON_API_KEY")
@@ -35,7 +35,7 @@ class Recipe_By_ID(APIView):
         return Response(responseJSON)
     
 class Recipe_By_Ingredients(APIView):
-    def get(self, request):
+    def post(self, request):
         # expects a list of ingredient objects to convert to a string of ingredients
         data = request.data
         ingredients = ""
@@ -46,7 +46,7 @@ class Recipe_By_Ingredients(APIView):
         url = f"{base_url}recipes/findByIngredients"
         querystring = {
             "ingredients": ingredients,
-            "number": 10,
+            "number": 20,
             "limitLicense": True,
             "ranking": 1,
             "ignorePantry": True
@@ -74,21 +74,22 @@ class Ingredient_By_ID(APIView):
 
 
 class Chatbot(APIView):
-    
-    def create_context_id(self):
-        return random.randint(1,100)
-        
     def get(self, request, contextId=None):
+        pass
 
-            url = f"{base_url}food/converse"
-            text = request.data.get("text", "")
-            if not contextId:
-                contextId = self.create_context_id()
 
-            querystring = {"text": text, "contextId": contextId}
-            res  = requests.get(url, headers=headers, params=querystring)
-            # print(f"contextId: {contextId}")
-            
-            responseJSON = res.json()
+            # url = f"{base_url}food/converse"
+            # # data = {
+            # #     "text" : "Tell me a recipe with chicken",
+            # #     "contextId": "wastenot_user_12"
+            # # }
+            # querystring = request.data
+            # if not contextId:
+            #     contextId = 2
+            # res  = requests.get(url, headers=headers, params=querystring, contextId=contextId)
+            # responseJSON = res.json()
         
-            return Response(responseJSON)
+            # return Response(responseJSON)
+
+
+
