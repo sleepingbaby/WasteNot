@@ -9,16 +9,6 @@ import RecipeCard from './RecipeCard';
 import { useMediaQuery } from '@mui/material';
 import { recipeContext } from '../contexts/RecipeContext';
 import api from '../utilities.jsx'
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { useEffect, useState, useRef, useContext } from "react";
-import Box from "@mui/material/Box";
-import RecipeCard from "./RecipeCard";
-import { useMediaQuery } from "@mui/material";
-import { recipeContext } from "../contexts/RecipeContext";
-import api from "../utilities.jsx";
 import Loading from "./Loading";
 
 export default function RecipeCarousel() {
@@ -106,22 +96,7 @@ export default function RecipeCarousel() {
   };
 
   return (
-    <Box sx={{
-      width: '80vw',
-      flexGrow: 1,
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      overflow: 'visible'
-    }}>
-      <Swiper 
-        loop={true}
-        centeredSlides={true}
-        spaceBetween= '10vw'
-        effect={isSmallScreen ? 'cards' : 'slide'}
-        grabCursor={isSmallScreen ? true : false}
-        speed={300}
-        slidesPerView={isSmallScreen? 1 : 5}
+
     <Box
       sx={{
         width: "80vw",
@@ -150,15 +125,8 @@ export default function RecipeCarousel() {
           swiperRef.current = swiper;
         }}
 
-        pagination={{clickable: true}}
-        onSlideChange={(swiper) => {setActiveStep(swiper.realIndex)}}
-        className='swiper'
-        onSwiper={(swiper) => { swiperRef.current = swiper; }}
         style={{
-            overflowY: 'visible',
-        style={{
-          overflowY: "visible",
-        }}
+            overflowY: 'visible'}}
       >
         {steps.map((stepData, index) => (
           <SwiperSlide

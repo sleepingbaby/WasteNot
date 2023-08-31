@@ -52,8 +52,8 @@ const Ingredient = ({ name, ingredientList, setIngredientList }) => {
           variant="h5"
           component="div"
           sx={{
-            fontSize: ".6em",
-            fontWeight: 900,
+            fontSize: ".7em",
+            fontWeight: "bold",
             textAlign: "center",
             color: "black",
           }}
