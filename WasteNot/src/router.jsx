@@ -5,7 +5,6 @@ import InputPage from "./pages/InputPage";
 import Profile from "./pages/Profile";
 import Pantry from "./pages/Pantry";
 import ChooseRecipePage from "./pages/ChooseRecipePage";
-import Loading from "./components/Loading";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +14,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <LandingPage />,
+      },
+      {
+        path: "/signup",
+        element: <SignupPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
       {
         path: "/ingredients",
