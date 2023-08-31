@@ -2,13 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import LandingPage from "./pages/LandingPage";
 import InputPage from "./pages/InputPage";
-<<<<<<< HEAD
 import Profile from "./pages/Profile";
-=======
-import Profile from "./components/Profile";
 import ChooseRecipePage from "./pages/ChooseRecipePage";
->>>>>>> d0384c0 (basic carousel)
-
 
 const router = createBrowserRouter([
   {
@@ -29,8 +24,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/recipes",
-        element: <ChooseRecipePage />
-      }
+        element: <ChooseRecipePage />,
+      },
     ],
   },
 ]);
