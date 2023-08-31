@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import ChooseRecipePage from "./pages/ChooseRecipePage";
 >>>>>>> d0384c0 (basic carousel)
 
+
 const router = createBrowserRouter([
   {
     path: "/",
