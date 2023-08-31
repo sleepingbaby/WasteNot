@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import InputPage from "./pages/InputPage";
 import Profile from "./pages/Profile";
 import Pantry from "./pages/Pantry";
+import ChooseRecipePage from "./pages/ChooseRecipePage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/pantry",
         element: <Pantry />,
+      },
+      {
+        path: "/recipes",
+        element: <ChooseRecipePage />,
       },
     ],
   },

@@ -4,6 +4,7 @@ from rest_framework.response import Response
 import requests, pprint
 from requests_oauthlib import OAuth1 # <= Is this needed??
 from dotenv import dotenv_values
+import random
 
 env = dotenv_values(".env")
 apiKey = env.get("SPOON_API_KEY")
@@ -73,22 +74,21 @@ class Ingredient_By_ID(APIView):
 
 
 class Chatbot(APIView):
-    def get(self, request, contextId=None):
-        pass
-
-
-            # url = f"{base_url}food/converse"
-            # # data = {
-            # #     "text" : "Tell me a recipe with chicken",
-            # #     "contextId": "wastenot_user_12"
-            # # }
-            # querystring = request.data
-            # if not contextId:
-            #     contextId = 2
-            # res  = requests.get(url, headers=headers, params=querystring, contextId=contextId)
-            # responseJSON = res.json()
+    
+    def create_context_id(self):
+        return random.randint(1,100)
         
-            # return Response(responseJSON)
+    def get(self, request, contextId=None):
 
+            url = f"{base_url}food/converse"
+            text = request.data.get("text", "")
+            if not contextId:
+                contextId = self.create_context_id()
 
-
+            querystring = {"text": text, "contextId": contextId}
+            res  = requests.get(url, headers=headers, params=querystring)
+            # print(f"contextId: {contextId}")
+            
+            responseJSON = res.json()
+        
+            return Response(responseJSON)

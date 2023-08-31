@@ -2,11 +2,8 @@ import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
 import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function Profile() {
-  // * NEED REQUESTS, UPDATE ALERT RESPONSES, NAVIGATION AFTER DEACTIVATION
-
   const confirmDelete = () => {
     confirmAlert({
       title: "Confirm account deactivation",
