@@ -1,3 +1,14 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-cards';
+import { useEffect, useState, useRef, useContext } from 'react';
+import Box from '@mui/material/Box';
+import RecipeCard from './RecipeCard';
+import { useMediaQuery } from '@mui/material';
+import { recipeContext } from '../contexts/RecipeContext';
+import api from '../utilities.jsx'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,7 +29,6 @@ export default function RecipeCarousel() {
 
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
-  //   getting recipes
   useEffect(() => {
     const getSteps = async () => {
       try {
@@ -49,24 +59,34 @@ export default function RecipeCarousel() {
     }
   };
 
+  const transitionDuration = "0.3s";
+
   const activeSlideStyle = {
     zIndex: 4,
-    transform: "scale(1.4)",
+    transform: 'scale(1.4)',
+    transition: `transform ${transitionDuration}`
+
   };
 
   const semiActiveSlideStyle = {
     zIndex: 3,
-    transform: "scale(1.2)",
+    transform: 'scale(1.2)',
+    transition: `transform ${transitionDuration}`
+
   };
 
   const nonActiveSlideStyle = {
     zIndex: 2,
-    transform: "scale(1.0)",
+
+    transform: 'scale(1.0)',
+    transition: `transform ${transitionDuration}`
   };
 
   const leastActiveSlideStyle = {
     zIndex: 1,
-    transform: "scale(0.9)",
+
+    transform: 'scale(0.9)',
+    transition: `transform ${transitionDuration}`
   };
 
   const getSlideStyle = (index, activeStep, totalSteps, isSmallScreen) => {
@@ -86,6 +106,22 @@ export default function RecipeCarousel() {
   };
 
   return (
+    <Box sx={{
+      width: '80vw',
+      flexGrow: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+      overflow: 'visible'
+    }}>
+      <Swiper 
+        loop={true}
+        centeredSlides={true}
+        spaceBetween= '10vw'
+        effect={isSmallScreen ? 'cards' : 'slide'}
+        grabCursor={isSmallScreen ? true : false}
+        speed={300}
+        slidesPerView={isSmallScreen? 1 : 5}
     <Box
       sx={{
         width: "80vw",
@@ -113,6 +149,13 @@ export default function RecipeCarousel() {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
+
+        pagination={{clickable: true}}
+        onSlideChange={(swiper) => {setActiveStep(swiper.realIndex)}}
+        className='swiper'
+        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        style={{
+            overflowY: 'visible',
         style={{
           overflowY: "visible",
         }}
