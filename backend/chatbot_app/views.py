@@ -19,12 +19,15 @@ class SpoonacularBot:
             'X-RapidAPI-Key': env.get("SPOON_API_KEY_RAPID"),
             'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         }
-        quearystring = {"contextID" : self.context_id, "text": query}
+        querystring = {"contextID" : self.context_id, "text": query}
         
-        print("making API call", quearystring)
-        res = requests.get(url, headers=headers, params=quearystring)
+        res = requests.get(url, headers=headers, params=querystring)
+
+        if res.status_code == 500:
+            return "Nothing Here"
+        
         data = res.json()
-        # data = {"answerText": "No"}
+        # doens't
         content = data.get("answerText", "")
 
         if "media" in data:
@@ -47,7 +50,6 @@ class SpoonacularBot:
             "Convert something with '2 cups of butter in grams'",
             "If you want more results, just say 'more'",
             "For more similar results say 'more like the first/second/third...'",
-            "Let spoonacular tell you a joke, just say 'tell me a joke'.",
             "Want to learn some food trivia, just say 'food trivia'.",
         ]
 
