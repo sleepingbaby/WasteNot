@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +8,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  text-transform: capitalize;
 }
 
 body {
@@ -24,3 +24,9 @@ body {
 .trashcan {
   z-index: 5000;
 }
+
+.autocomplete {
+  text-transform: capitalize;
+}
+
+/* Loading Animation */
