@@ -1,4 +1,4 @@
-import * as PantryItems from "../data/PantryItems.json";
+import * as PantryItems from "./data/PantryItems.json";
 console.log(PantryItems);
 
 let autoCompleteArr = [];
