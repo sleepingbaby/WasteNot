@@ -44,9 +44,6 @@ export default function Profile() {
             borderTopLeftRadius: "18px",
             borderBottomLeftRadius: "15px",
             borderBottomRightRadius: "15px",
-            boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
-                        0 0 20px rgba(210, 210, 210, 0.2),
-                        0 0 20px rgba(210, 210, 210, 0.2)`,
           }}
         >
           <Stack

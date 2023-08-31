@@ -3,6 +3,7 @@ import App from "./App";
 import LandingPage from "./pages/LandingPage";
 import InputPage from "./pages/InputPage";
 import Profile from "./pages/Profile";
+import Pantry from "./pages/Pantry";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/pantry",
+        element: <Pantry />,
       },
     ],
   },

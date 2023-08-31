@@ -60,15 +60,6 @@ const Ingredient = ({ name, ingredientList, setIngredientList }) => {
         >
           {name}
         </Typography>
-        {/* <Button
-          variant="text"
-          sx={{
-            fontSize: ".1em",
-            "&.MuiButtonBase-root": { padding: 0, color: "red" },
-          }}
-        >
-          Remove
-        </Button> */}
       </CardContent>
     </Card>
   );
