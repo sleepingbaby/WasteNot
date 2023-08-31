@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import {
   Stack,
   FormGroup,
@@ -11,14 +11,21 @@ import {
 } from "@mui/material";
 import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
+import { recipeContext } from "../contexts/RecipeContext";
+import { useNavigate } from "react-router-dom";
 
 const InputPage = () => {
-  const [ingredientList, setIngredientList] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+  const { ingredientList, setIngredientList } = useContext(recipeContext)
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(ingredientList);
   }, [ingredientList]);
+
+  const handleGetRecipes = () => {
+    navigate('/recipes')
+  }
 
   const handleAddIngredient = () => {
     if (!newIngredient) {
@@ -182,6 +189,7 @@ const InputPage = () => {
               color: "white",
             },
           }}
+          onClick={handleGetRecipes}
         >
           Get Recipes
         </Button>

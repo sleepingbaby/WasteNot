@@ -2,31 +2,36 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import Box from '@mui/material/Box';
 import RecipeCard from './RecipeCard';
 import { useMediaQuery } from '@mui/material';
+import { recipeContext } from '../contexts/RecipeContext';
+import api from '../utilities.jsx'
 
 export default function RecipeCarousel() {
   const [activeStep, setActiveStep] = useState(0);
   const [steps, setSteps] = useState([]);
   let swiperRef = useRef(null)
+  const { ingredientList } = useContext(recipeContext)
 
   const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
 //   getting recipes
-//   useEffect(() => {
-//     const getSteps = async () => {
-//         try {
-//             const response = await api.get();
-//             setSteps(response.data);
-//         } catch(error){
-//             console.error('There was an error getting your recipes:', error);
-//         }
-//     };
+  useEffect(() => {
+    const getSteps = async () => {
+        try {
+            const response = await api.post('spoon/recipe/ingredients/', ingredientList);
+            console.log(ingredientList)
+            setSteps(response.data);
+            console.log(response.data)
+        } catch(error){
+            console.error('There was an error getting your recipes:', error);
+        }
+    };
 
-//     getSteps();
-//   }, []);
+    getSteps();
+  }, []);
 
   const handleNextClick = () => {
     if (swiperRef.current) {
@@ -68,26 +73,12 @@ export default function RecipeCarousel() {
     return leastActiveSlideStyle;
   };
 
-  const exampleSteps = [
-    {title: 'mac', description: 'cheesy'},
-    {title: 'burger', description: 'meaty'},
-    {title: 'chicken', description: 'wow chicken'},
-    {title: 'soup', description: 'soupy'},
-    {title: 'casserole', description: 'loaf'},
-    {title: 'borsch', description: 'mmmmm'},
-    {title: 'ribeye', description: 'cool'},
-    {title: 'porkchops', description: 'puerco'},
-    {title: 'corned beef', description: 'corned'},
-    {title: 'curry', description: 'curry'},
-    {title: 'bibimbap', description: 'uh'}
-  ];
-
   return (
     <Box sx={{ width: '80vw' , flexGrow: 1, display: 'flex', justifyContent: 'center', alignContent: 'center', overflow: 'visible' }}>
       <Swiper 
         loop={true}
         centeredSlides={true}
-        spaceBetween={20}
+        spaceBetween={25}
         slidesPerView={isSmallScreen? 1 : 5}
         navigation={{
             nextEl: '.swiper-button-next',
@@ -101,9 +92,8 @@ export default function RecipeCarousel() {
             overflowY: 'visible'
         }}
       >
-        {exampleSteps.map((stepData, index) => (
-        //   <SwiperSlide key={index} style={index === (activeStep) ? activeSlideStyle : nonActiveSlideStyle}>
-          <SwiperSlide key={index} style={getSlideStyle(index, activeStep, exampleSteps.length, isSmallScreen)}>
+        {steps.map((stepData, index) => (
+          <SwiperSlide key={index} style={getSlideStyle(index, activeStep, steps.length, isSmallScreen)}>
             <RecipeCard data={stepData} />
           </SwiperSlide>
         ))}
