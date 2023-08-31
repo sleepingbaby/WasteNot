@@ -27,8 +27,6 @@ class SpoonacularBot:
             return "Nothing Here"
         
         data = res.json()
-        # doens't
-        content = data.get("answerText", "")
 
         if "media" in data:
             media_content = []
