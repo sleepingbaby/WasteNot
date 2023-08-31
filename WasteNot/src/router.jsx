@@ -5,6 +5,8 @@ import InputPage from "./pages/InputPage";
 import Profile from "./pages/Profile";
 import Pantry from "./pages/Pantry";
 import ChooseRecipePage from "./pages/ChooseRecipePage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 const router = createBrowserRouter([
   {
@@ -39,10 +41,10 @@ const router = createBrowserRouter([
         path: "/recipes",
         element: <ChooseRecipePage />,
       },
-      {
-        path: "/loading",
-        element: <Loading />,
-      },
+      // {
+      //   path: "/loading",
+      //   element: <Loading />,
+      // },
     ],
   },
 ]);
