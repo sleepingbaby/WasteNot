@@ -14,8 +14,8 @@ export default function ChooseRecipePage() {
     >
       <Box
         sx={{
-          width: "100vw",
-          height: "100vh",
+          width: "full",
+          height: "full",
         }}
       >
         <RecipeCarousel />
