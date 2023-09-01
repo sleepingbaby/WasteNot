@@ -191,6 +191,7 @@ export default function SignupPage() {
               <TextField
                 variant="filled"
                 label="Password"
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 sx={{
                   width: "90%",
