@@ -16,7 +16,7 @@ class SpoonacularBot:
     def react(self, query):
         url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/converse"
         headers = {
-            'X-RapidAPI-Key': env.get("SPOON_API_KEY_RAPID"),
+            'X-RapidAPI-Key': env.get("SPOON_API_KEY_CHATBOT"),
             'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         }
         querystring = {"contextID" : self.context_id, "text": query}
