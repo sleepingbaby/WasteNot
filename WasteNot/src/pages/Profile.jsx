@@ -10,14 +10,20 @@ import { useEffect } from "react";
 
 export default function Profile() {
   // * NEED REQUESTS, UPDATE ALERT RESPONSES, NAVIGATION AFTER DEACTIVATION
- useEffect(( ) => {
+ 
   const deactivateUser = async () => {
     try {
       const response = await api.put("user/status", {"is_active": "f"});
+      console.log(response)
+      alert("Account deactivated. We hope to see you again")
     } catch {
       console.error(error);
     }
   }
+ 
+
+ useEffect(() => {
+  deactivateUser()
  },[])
 
 
@@ -28,8 +34,7 @@ export default function Profile() {
       buttons: [
         {
           label: "Yes",
-          onClick: () => {deactivateUser();
-            alert("Account deactivated. We hope to see you again")},
+          onClick: () => {},
         },
         {
           label: "No, take me back!",
