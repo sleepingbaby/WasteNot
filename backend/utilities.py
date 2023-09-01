@@ -16,3 +16,5 @@ class HttpOnlyTokenAuthentication(TokenAuthentication):
 
         # The original TokenAuthentication class handles token validation and user retrieval
         return self.authenticate_credentials(auth_token)
+    
+
