@@ -51,7 +51,7 @@ class Sign_up(APIView):
     
 class Info(User_permissions):
     def get(self, request):
-        return Response({"email": request.user.email, "first_name": request.user.first_name, "last_name": request.user.last_name, "password": request.user.password})
+        return Response({"email": request.user.email, "first_name": request.user.first_name, "last_name": request.user.last_name})
     
     def put(self, request):
         user = request.user
