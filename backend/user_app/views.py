@@ -22,12 +22,12 @@ class Log_in(APIView):
         user = authenticate(**request.data)
         if user:
             token, created = Token.objects.get_or_create(user=user)
-            # Right now, cookies expire after 30-minutes (easier to test functionality this way) --> Feel free to change to greater time.
-            life_time = datetime.now() + timedelta(minutes=30)
+            # Right now, cookies expire after 1 day --> Feel free to change to greater or less time.
+            life_time = datetime.now() + timedelta(days=1)
             format_life_time = life_time.strftime("%a, %d %b %Y %H:%M:%S GMT")
             # print(f"Original {life_time}         New: {format_life_time}")
             # response = Response({"user": {"email": user.email}})
-            response = Response({"user": {"email": user.email, "first_name": user.first_name, "last_name": user.last_name, "password": user.password}})
+            response = Response({"user": {"email": user.email,"first_name": user.first_name, "last_name": user.last_name}})
             response.set_cookie(key="token", value=token.key, httponly=True, secure=True, samesite="Lax", expires=format_life_time)
             return response
         else:
@@ -40,9 +40,9 @@ class Sign_up(APIView):
             user = User.objects.create_user(**request.data)
             print(user)
             token, created = Token.objects.get_or_create(user=user)
-            response = Response({"user": {"email": user.email, "first_name": user.first_name, "last_name": user.last_name, "password": user.password}})
-            # Right now, cookies expire after 30-minute (easier to test functionality this way) --> Feel free to change to greater time.
-            life_time = datetime.now() + timedelta(minutes=30)
+            response = Response({"user": {"email": user.email, "first_name": user.first_name, "last_name": user.last_name}})
+            # Right now, cookies expire after 1-day --> Feel free to change to greater or less time.
+            life_time = datetime.now() + timedelta(days=1)
             format_life_time = life_time.strftime("%a, %d %b %Y %H:%M:%S GMT")
             response.set_cookie(key="token", value=token.key, httponly=True, secure=True, samesite="Lax", expires=format_life_time)
             return response

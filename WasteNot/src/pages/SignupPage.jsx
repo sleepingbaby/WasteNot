@@ -28,8 +28,9 @@ export default function SignupPage() {
         })
         let user = response.data.user;
         setUser(user);
+        setPassword("");
         console.log(user)
-        navigate("/") // Testing to see if it will nav to a new page
+        navigate("/") 
     }
 
     

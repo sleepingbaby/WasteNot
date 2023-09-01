@@ -16,16 +16,17 @@ export default function LoginPage() {
     const logIn = async(e) => {
         e.preventDefault();
         let response = await api.post("user/login/", {
-            email: email,
-            password: password
+            "email": email,
+            "password": password
         })
         .catch((err)=>{
             alert("Something went wrong")
         })
         let user = response.data.user;
         setUser(user);
+        setPassword("");
         console.log(user)
-        navigate("/") // Testing to see if it will nav to a new page
+        navigate("/")
     }
     
     
