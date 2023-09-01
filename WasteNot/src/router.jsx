@@ -5,10 +5,11 @@ import InputPage from "./pages/InputPage";
 import Profile from "./pages/Profile";
 import Pantry from "./pages/Pantry";
 import ChooseRecipePage from "./pages/ChooseRecipePage";
-import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import { Login } from "@mui/icons-material";
 import ChatBotComponent from "./components/ChatBotComponent";
+import SignupPage from "./pages/SignupPage";
+
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
         path: "/chat",
         element: <ChatBotComponent />,
       },
+
+      // {
+      //   path: "/loading",
+      //   element: <Loading />,
+      // },
     ],
   },
 ]);

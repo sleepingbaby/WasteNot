@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
 import "./index.css";
+import './styles/Font.css'
 import { ThemeProvider, createTheme } from "@mui/material";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Inter, san-serif",
+    fontFamily: "Poppins, san-serif",
   },
 });
 

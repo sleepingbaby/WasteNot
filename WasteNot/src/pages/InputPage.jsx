@@ -13,10 +13,11 @@ import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
 import { recipeContext } from "../contexts/RecipeContext";
 import { useNavigate } from "react-router-dom";
+import CustomPaper from "../components/CustomPaper";
 
 const InputPage = () => {
   const [newIngredient, setNewIngredient] = useState("");
-  const { ingredientList, setIngredientList } = useContext(recipeContext)
+  const { ingredientList, setIngredientList } = useContext(recipeContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,8 +25,8 @@ const InputPage = () => {
   }, [ingredientList]);
 
   const handleGetRecipes = () => {
-    navigate('/recipes')
-  }
+    navigate("/recipes");
+  };
 
   const handleAddIngredient = () => {
     if (!newIngredient) {
@@ -71,10 +72,17 @@ const InputPage = () => {
         >
           <Autocomplete
             options={ingredients}
+            PaperComponent={CustomPaper}
+            className="autocomplete"
             isOptionEqualToValue={(option, value) =>
               option.value === value.value
             }
-            sx={{ width: "100%" }}
+            sx={{
+              width: "100%",
+              "& + .MuiAutocomplete-popper .MuiAutocomplete-option": {
+                textTransform: "capitalize",
+              },
+            }}
             value={newIngredient}
             onChange={(event, newValue) => {
               setNewIngredient(newValue);
