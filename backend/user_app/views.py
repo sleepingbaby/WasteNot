@@ -35,6 +35,7 @@ class Log_in(APIView):
 
 class Sign_up(APIView):
     def post(self, request):
+        print(request.data)
         try: 
             request.data["username"] = request.data["email"]
             user = User.objects.create_user(**request.data)
