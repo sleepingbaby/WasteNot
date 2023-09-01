@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'recipe_app',
     'user_app',
     'spoon_api_app',
+    'chatbot_app',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
