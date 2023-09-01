@@ -4,10 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import Toggle from "../components/TogglePassword";
+import api from "../utilities.jsx";
+import { useEffect } from "react";
 
 
 export default function Profile() {
   // * NEED REQUESTS, UPDATE ALERT RESPONSES, NAVIGATION AFTER DEACTIVATION
+ useEffect(( ) => {
+  const deactivateUser = async () => {
+    try {
+      const response = await api.put("user/status", {"is_active": "f"});
+    } catch {
+      console.error(error);
+    }
+  }
+ },[])
+
 
   const confirmDelete = () => {
     confirmAlert({
@@ -16,7 +28,8 @@ export default function Profile() {
       buttons: [
         {
           label: "Yes",
-          onClick: () => alert("Account deactivated. We hope to see you again"),
+          onClick: () => {deactivateUser();
+            alert("Account deactivated. We hope to see you again")},
         },
         {
           label: "No, take me back!",
