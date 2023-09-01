@@ -1,10 +1,28 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { Paper, Box, Stack } from "@mui/material";
+import { Paper, Box, Stack, Button } from "@mui/material";
 import '../styles/Font.css';
 import { BorderAllRounded, BorderStyleRounded } from "@mui/icons-material";
+import api from "../utilities.jsx";
 
 export default function RecipeCard({ data }) {
+
+    const handleFavorite = async (id) => {
+
+        try {
+            const recipeResponse = await api.get(`spoon/recipe/${id}/`)
+            console.log(recipeResponse.data)
+
+            if (recipeResponse){
+                const response = await api.post('recipe/', recipeResponse.data)
+            }
+
+            alert('Your recipe was added')
+
+        } catch (error) {
+            console.log('problem favoriting your recipe:', error)
+        }
+    }
 
     return (
 
@@ -42,28 +60,40 @@ export default function RecipeCard({ data }) {
                     textAlign: 'center'
                 }}>
                     <Stack sx={{
-                        height: '40%',
-                        width: '100%',
-                        backgroundImage: `url(${data.image})`,
-                        backgroundSize: 'cover',
-                        boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;'
-                    }} style={{ borderRadius: '3%' }}>
-                    </Stack>
-                    <Typography sx={{
-                        fontSize: {
-                            xs: '3vw',
-                            sm: '1.5vw',
-                            md: '1vw',
-                        },
-                        borderTop: 1,
-                        borderBottom: 1,
-                        marginTop: '1vh'
+                        height: '100%',
+                        width:'100%'
                     }}>
-                        {data.title}
-                    </Typography>
+                        <Stack sx={{
+                            height: '40%',
+                            width: '100%',
+                            backgroundImage: `url(${data.image})`,
+                            backgroundSize: 'cover',
+                            boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;'
+                        }} style={{ borderRadius: '3%' }}>
+                        </Stack>
+                        <Typography sx={{
+                            fontSize: {
+                                xs: '3vw',
+                                sm: '1.5vw',
+                                md: '1vw',
+                            },
+                            borderTop: 1,
+                            borderBottom: 1,
+                            marginTop: '1vh'
+                        }}>
+                            {data.title}
+                        </Typography>
 
-                    <Typography>{data.descriptions}</Typography>
-
+                        <Typography>{data.descriptions}</Typography>
+                    </Stack>
+                    <Button onClick={() => handleFavorite(data.id)} variant="contained" sx={{
+                        backgroundColor: '#68A2B1',
+                        ':hover': {
+                            backgroundColor: '#8ED7EA'
+                        }
+                    }}>
+                        Favorite
+                    </Button>
                 </Stack>
                 {/* <Stack sx={{
                     justifyContent: 'center',
