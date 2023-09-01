@@ -3,6 +3,8 @@ import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import Toggle from "../components/TogglePassword";
+
 
 export default function Profile() {
   // * NEED REQUESTS, UPDATE ALERT RESPONSES, NAVIGATION AFTER DEACTIVATION
@@ -181,27 +183,7 @@ export default function Profile() {
                   },
                 }}
               ></TextField>
-              <TextField
-                variant="filled"
-                label="Password"
-                sx={{
-                  width: "90%",
-                  backgroundColor: "white",
-                  input: { color: "#1a2e32" },
-                  borderRadius: "6px",
-                  "& label.Mui-focused": { color: "#1a2e32" },
-                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
-                  "& .MuiFilledInput-underline:after": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiFilledInput-root:before": {
-                    borderBottom: "none",
-                  },
-                }}
-              ></TextField>
+              <Toggle label="Password" />
             </Stack>
             <Stack
               id="buttons"
@@ -263,7 +245,7 @@ export default function Profile() {
               confirmDelete();
             }}
             sx={{
-              color: "#033015",
+              color: "#FFFFFF",
               "&:hover": {
                 color: "red",
               },

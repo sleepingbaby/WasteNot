@@ -119,7 +119,8 @@ const Navbar = () => {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
-                <MenuItem onClick={handleClick}>Logout</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+
               </Menu>
             </div>
           )}

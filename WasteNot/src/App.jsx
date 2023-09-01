@@ -1,9 +1,9 @@
-import LandingPage from "./pages/LandingPage";
 import { Stack } from "@mui/material";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { useState, useEffect, useRef } from "react";
 import { api } from "./utilities.jsx";
+import { RecipeContextProvider } from "./contexts/RecipeContext";
 
 function App() {
 
@@ -36,11 +36,15 @@ function App() {
     lastVisited.current = location.pathname
   }, [location])
 
+  
   return (
-    <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
-      {path !== "/" && <Navbar />}
-      <Outlet context={{ user, setUser }}/>
-    </Stack>
+    <RecipeContextProvider>
+      <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
+        {path !== "/" && <Navbar />}
+        <Outlet context={{ user, setUser }}/>
+      </Stack>
+    </RecipeContextProvider>
+
   );
 }
 
