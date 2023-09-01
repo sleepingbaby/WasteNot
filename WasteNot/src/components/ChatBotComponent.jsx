@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import ChatBot from "react-simple-chatbot";
+// import ChatBot from "react-simple-chatbot";
 import api from "../utilities.jsx";
 // import { Box, createTheme, ThemeProvider, Stack } from "@mui/material";
 import {  Stack } from "@mui/material";
