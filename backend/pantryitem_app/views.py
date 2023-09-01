@@ -12,6 +12,7 @@ from rest_framework.status import (
 
 # Create your views here.
 class All_pantry_items(User_permissions): #api/pantryitem/
+
     
     def get(self, request):
         items = request.user.pantryitems.all()
@@ -20,11 +21,17 @@ class All_pantry_items(User_permissions): #api/pantryitem/
 
 
     def post(self, request):
-        item_name = request.data['item_name']
-        user = request.user
-        item = PantryItem.objects.create(item_name=item_name, user_id=user)
-        serializeditem = PantryItemSerializer(item)
-        return Response({"item": serializeditem.data})
+        request.data["user_id"] = request.user
+        # item_name = request.data['item_name']
+        # print(item_name)
+        # user = request.user
+        # item = PantryItem.objects.create(item_name=item_name, user_id=user)
+        item = PantryItem.objects.create(**request.data)
+        # serializeditem = PantryItemSerializer(item)
+        items = request.user.pantryitems.all()
+        serializeditems = PantryItemSerializer(items, many=True)
+        # return Response({"item": serializeditem.data})
+        return Response({"pantry_items": serializeditems.data})
 
 class A_pantry_item(User_permissions): #api/pantryitem/{id}/
     
