@@ -22,12 +22,12 @@ class Log_in(APIView):
         user = authenticate(**request.data)
         if user:
             token, created = Token.objects.get_or_create(user=user)
-            # Right now, cookies expire after 30-minutes (easier to test functionality this way) --> Feel free to change to greater time.
-            life_time = datetime.now() + timedelta(minutes=30)
+            # Right now, cookies expire after 1 day --> Feel free to change to greater or less time.
+            life_time = datetime.now() + timedelta(days=1)
             format_life_time = life_time.strftime("%a, %d %b %Y %H:%M:%S GMT")
             # print(f"Original {life_time}         New: {format_life_time}")
             # response = Response({"user": {"email": user.email}})
-            response = Response({"user": {"email": user.email, "first_name": user.first_name, "last_name": user.last_name, "password": user.password}})
+            response = Response({"user": {"email": user.email,"first_name": user.first_name, "last_name": user.last_name}})
             response.set_cookie(key="token", value=token.key, httponly=True, secure=True, samesite="Lax", expires=format_life_time)
             return response
         else:
@@ -40,9 +40,9 @@ class Sign_up(APIView):
             user = User.objects.create_user(**request.data)
             print(user)
             token, created = Token.objects.get_or_create(user=user)
-            response = Response({"user": {"email": user.email, "first_name": user.first_name, "last_name": user.last_name, "password": user.password}})
-            # Right now, cookies expire after 30-minute (easier to test functionality this way) --> Feel free to change to greater time.
-            life_time = datetime.now() + timedelta(minutes=30)
+            response = Response({"user": {"email": user.email, "first_name": user.first_name, "last_name": user.last_name}})
+            # Right now, cookies expire after 1-day --> Feel free to change to greater or less time.
+            life_time = datetime.now() + timedelta(days=1)
             format_life_time = life_time.strftime("%a, %d %b %Y %H:%M:%S GMT")
             response.set_cookie(key="token", value=token.key, httponly=True, secure=True, samesite="Lax", expires=format_life_time)
             return response
@@ -51,7 +51,7 @@ class Sign_up(APIView):
     
 class Info(User_permissions):
     def get(self, request):
-        return Response({"email": request.user.email, "first_name": request.user.first_name, "last_name": request.user.last_name, "password": request.user.password})
+        return Response({"email": request.user.email, "first_name": request.user.first_name, "last_name": request.user.last_name})
     
     def put(self, request):
         user = request.user
@@ -59,6 +59,7 @@ class Info(User_permissions):
         user.last_name = request.data.get("last_name")
         user.email = request.data.get("email")
         user.password = request.data.get("password")
+        user.save()
         return Response({"first_name": user.first_name, "last_name": user.last_name, "email": user.email, "password": user.password})
 
 class Log_out(User_permissions):
@@ -68,7 +69,10 @@ class Log_out(User_permissions):
         response.delete_cookie("token")
         return response 
 
-class Delete(User_permissions):
-    def delete(self, request):
-        request.user.delete()
-        return Response(status=HTTP_204_NO_CONTENT)
+class Active_status(User_permissions):
+    def put(self, request):
+        user = request.user
+        user.is_active = request.data.get("is_active")
+        user.save()
+        return Response( { "is_active":user.is_active })
+    

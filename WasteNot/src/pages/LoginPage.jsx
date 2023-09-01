@@ -3,7 +3,8 @@ import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import { useOutletContext } from "react-router-dom";
-import api from "../utilities.jsx";
+import  api  from "../utilities.jsx";
+
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -12,22 +13,23 @@ export default function LoginPage() {
   const { setUser } = useOutletContext();
   const navigate = useNavigate();
 
-  const logIn = async (e) => {
-    e.preventDefault();
-    let response = await api
-      .post("user/login/", {
-        email: email,
-        password: password,
-      })
-      .catch((err) => {
-        alert("Something went wrong");
-      });
-    let user = response.data.user;
-    setUser(user);
-    console.log(user);
-    navigate("/"); // Testing to see if it will nav to a new page
-  };
 
+  const logIn = async(e) => {
+      e.preventDefault();
+      let response = await api.post("user/login/", {
+          "email": email,
+          "password": password
+      })
+      .catch((err)=>{
+          alert("Something went wrong")
+      })
+      let user = response.data.user;
+      setUser(user);
+      setPassword("");
+      console.log(user)
+      navigate("/")
+  }
+    
   return (
     <>
       <Stack

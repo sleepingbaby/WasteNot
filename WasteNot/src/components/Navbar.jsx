@@ -11,11 +11,14 @@ import {
 } from "@mui/material";
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
+import { api } from "../utilities.jsx";
+import { useOutletContext } from "react-router-dom";
 
 const Navbar = () => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  // const { user, setUser } = useOutletContext();
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -42,6 +45,14 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const logOut = async () => {
+    let response = await api.post("user/logout/");
+    if (response.status === 204) {
+      setUser(null);
+      navigate("/")
+    }
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
