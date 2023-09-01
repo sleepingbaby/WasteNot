@@ -1,8 +1,12 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# WasteNot
 
-Currently, two official plugins are available:
+WasteNot is a valuable app that addresses the important issue of food waste by providing users with practical solutions for using leftover ingredients effectively. The combination of React, Django, and external APIs makes it a powerful and user-friendly tool for promoting sustainable cooking practices.
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Client:** React (Vite), Material UI, React Router, Swiper
+
+**Server:** Django, Rest Framework, Token Authentication
+
+**APIs:** Spoonacular (for recipe suggestions), OpenAI (for strict recipe generation)
+
