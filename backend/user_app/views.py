@@ -72,3 +72,19 @@ class Delete(User_permissions):
     def delete(self, request):
         request.user.delete()
         return Response(status=HTTP_204_NO_CONTENT)
+    
+
+# # User request a new password and inputs their email address to confirm.     
+# class Request_link(APIView):
+#     def post(self, request):
+#         print("request.data['email']")
+#         input_email = request.data
+#         verified_user = User.objects.get("email" == input_email)
+#         if verified_user:
+#             token = Token.generate_key
+#         return Response(status=HTTP_204_NO_CONTENT)
+
+
+# class Password_reset(APIView):
+#     def post(self, request):
+#         pass
