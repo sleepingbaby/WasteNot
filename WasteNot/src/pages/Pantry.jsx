@@ -9,16 +9,19 @@ import {
 } from "@mui/material";
 import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
+import api from "../utilities.jsx";
 
 const Pantry = () => {
   const [ingredientList, setIngredientList] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
   useEffect(() => {
-    console.log(ingredientList);
-  }, [ingredientList]);
+    getPantryItems();
+  // }, [ingredientList]);
+  }, []);
 
-  const handleAddIngredient = () => {
+  const handleAddIngredient = (e) => {
+    e.preventDefault();
     if (!newIngredient) {
       return;
     }
@@ -27,11 +30,25 @@ const Pantry = () => {
         ...prevIngredients,
         newIngredient,
       ]);
+      addPantryItem(newIngredient);
     } else {
       alert("Ingredient already added!");
     }
     setNewIngredient("");
   };
+
+  const getPantryItems = async() => {
+    let response = await api.get('pantryitem/');
+    setIngredientList(response.data.pantry_items)
+  }
+
+  const addPantryItem = async(newIngredient) => {
+    let response = await api.post('pantryitem/', {
+      "item_id" : newIngredient.id,
+      "image" : newIngredient.image,
+      "label" : newIngredient.label
+    });
+  }
 
   return (
     <Stack
@@ -116,7 +133,7 @@ const Pantry = () => {
                 color: "white",
               },
             }}
-            onClick={handleAddIngredient}
+            onClick={(e) => handleAddIngredient(e)}
           >
             Add
           </Button>

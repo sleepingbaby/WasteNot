@@ -18,7 +18,7 @@ function App() {
     <RecipeContextProvider>
       <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
         {path !== "/" && <Navbar />}
-        <Outlet />
+        <Outlet context={{ setUser }}/>
       </Stack>
     </RecipeContextProvider>
 
