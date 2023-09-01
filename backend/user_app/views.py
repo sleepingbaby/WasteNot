@@ -59,6 +59,7 @@ class Info(User_permissions):
         user.last_name = request.data.get("last_name")
         user.email = request.data.get("email")
         user.password = request.data.get("password")
+        user.save()
         return Response({"first_name": user.first_name, "last_name": user.last_name, "email": user.email, "password": user.password})
 
 class Log_out(User_permissions):
@@ -68,7 +69,10 @@ class Log_out(User_permissions):
         response.delete_cookie("token")
         return response 
 
-class Delete(User_permissions):
-    def delete(self, request):
-        request.user.delete()
-        return Response(status=HTTP_204_NO_CONTENT)
+class Active_status(User_permissions):
+    def put(self, request):
+        user = request.user
+        user.is_active = request.data.get("is_active")
+        user.save()
+        return Response( { "is_active":user.is_active })
+    
