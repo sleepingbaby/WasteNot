@@ -17,7 +17,7 @@ function App() {
   const whoAmI = async () => {
     // console.log("whoAmI function ran")
       const response = await api.get("user/");
-      console.log(response)
+      // console.log(response)
       if (response.data) {
         setUser(response.data)
         if (lastVisited.current) {
