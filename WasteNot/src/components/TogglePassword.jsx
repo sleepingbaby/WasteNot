@@ -5,10 +5,12 @@ import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import { useOutletContext } from "react-router-dom";
 
-export default function Toggle({ label }) {
+export default function Toggle({ label}) {
+  const {user, setUser } = useOutletContext()
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [password, setPassword] = useState("120px");
+  const [password, setPassword] = useState("");
 
   const handleChange = (e) => {
     setPassword(e.target.value);
