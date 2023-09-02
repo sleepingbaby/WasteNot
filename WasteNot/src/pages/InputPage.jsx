@@ -8,6 +8,7 @@ import {
   Button,
   Box,
   Autocomplete,
+  Switch,
 } from "@mui/material";
 import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
@@ -68,6 +69,7 @@ const InputPage = () => {
           alignItems="center"
           justifyContent="center"
           mb={2}
+          mt={2}
           width="80%"
         >
           <Autocomplete
@@ -165,7 +167,11 @@ const InputPage = () => {
           </Stack>
         </Stack>
         <FormGroup
-          sx={{ display: "flex", flexDirection: "row", padding: "8px" }}
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "row",
+            padding: "8px",
+          }}
         >
           <FormControlLabel
             control={<Checkbox style={{ color: "#1a2e32" }} />}
@@ -184,6 +190,7 @@ const InputPage = () => {
             label="Dairy-Free"
           />
         </FormGroup>
+        <Switch />
         <Button
           variant="contained"
           sx={{
