@@ -18,12 +18,18 @@ import CustomPaper from "../components/CustomPaper";
 
 const InputPage = () => {
   const [newIngredient, setNewIngredient] = useState("");
+  const [isStrict, setIsStrict] = useState(false);
   const { ingredientList, setIngredientList } = useContext(recipeContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     console.log(ingredientList);
   }, [ingredientList]);
+
+  const handleSwitchChange = () => {
+    setIsStrict(!isStrict);
+    console.log(isStrict);
+  };
 
   const handleGetRecipes = () => {
     navigate("/recipes");
@@ -190,7 +196,12 @@ const InputPage = () => {
             label="Dairy-Free"
           />
         </FormGroup>
-        <Switch />
+
+        <FormControlLabel
+          control={<Switch checked={isStrict} onChange={handleSwitchChange} />}
+          label="Strict Search"
+        />
+
         <Button
           variant="contained"
           sx={{

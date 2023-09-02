@@ -1,15 +1,14 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-cards';
-import { useEffect, useState, useRef, useContext } from 'react';
-import Box from '@mui/material/Box';
-import RecipeCard from './RecipeCard';
-import { useMediaQuery } from '@mui/material';
-import { recipeContext } from '../contexts/RecipeContext';
-import api from '../utilities.jsx'
-import Loading from "./Loading";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-cards";
+import { useEffect, useState, useRef, useContext } from "react";
+import Box from "@mui/material/Box";
+import RecipeCard from "./RecipeCard";
+import { useMediaQuery } from "@mui/material";
+import { recipeContext } from "../contexts/RecipeContext";
+import api from "../utilities.jsx";
 
 export default function RecipeCarousel() {
   const [activeStep, setActiveStep] = useState(0);
@@ -53,30 +52,28 @@ export default function RecipeCarousel() {
 
   const activeSlideStyle = {
     zIndex: 4,
-    transform: 'scale(1.4)',
-    transition: `transform ${transitionDuration}`
-
+    transform: "scale(1.4)",
+    transition: `transform ${transitionDuration}`,
   };
 
   const semiActiveSlideStyle = {
     zIndex: 3,
-    transform: 'scale(1.2)',
-    transition: `transform ${transitionDuration}`
-
+    transform: "scale(1.2)",
+    transition: `transform ${transitionDuration}`,
   };
 
   const nonActiveSlideStyle = {
     zIndex: 2,
 
-    transform: 'scale(1.0)',
-    transition: `transform ${transitionDuration}`
+    transform: "scale(1.0)",
+    transition: `transform ${transitionDuration}`,
   };
 
   const leastActiveSlideStyle = {
     zIndex: 1,
 
-    transform: 'scale(0.9)',
-    transition: `transform ${transitionDuration}`
+    transform: "scale(0.9)",
+    transition: `transform ${transitionDuration}`,
   };
 
   const getSlideStyle = (index, activeStep, totalSteps, isSmallScreen) => {
@@ -96,7 +93,6 @@ export default function RecipeCarousel() {
   };
 
   return (
-
     <Box
       sx={{
         width: "80vw",
@@ -124,9 +120,9 @@ export default function RecipeCarousel() {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-
         style={{
-            overflowY: 'visible'}}
+          overflowY: "visible",
+        }}
       >
         {steps.map((stepData, index) => (
           <SwiperSlide
