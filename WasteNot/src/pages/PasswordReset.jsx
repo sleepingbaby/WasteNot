@@ -1,32 +1,23 @@
 import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
-import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate } from "react-router-dom";
-import { confirmAlert } from "react-confirm-alert";
-import { useOutletContext } from "react-router-dom";
 import  api  from "../utilities.jsx";
 
 import { useState } from "react";
 
-export default function LoginPage() {
+export default function PasswordReset() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { setUser } = useOutletContext();
   const navigate = useNavigate();
 
 
   const logIn = async(e) => {
       e.preventDefault();
-      let response = await api.post("user/login/", {
-          "email": email,
-          "password": password
+      let response = await api.post("user/password-reset/", {
+          "email": email
       })
       .catch((err)=>{
           alert("Something went wrong")
       })
-      let user = response.data.user;
-      setUser(user);
-      setPassword("");
-      console.log(user)
+      alert("Request sent. Check your email for further instructions.")
       navigate("/")
   }
     
@@ -42,7 +33,7 @@ export default function LoginPage() {
         <Stack
           id="profile-container"
           sx={{
-            height: { xs: "90%", sm: "90%" },
+            height: { xs: "50%", sm: "50%" },
             width: { xs: "90%", sm: "50%" },
             backgroundColor: "#b8d4db",
             borderTopRightRadius: "18px",
@@ -63,29 +54,7 @@ export default function LoginPage() {
               borderTopLeftRadius: "15px",
               borderColor: "#006064",
             }}
-          >
-            <Stack
-              id="avatar-backdrop"
-              justifyContent="center"
-              alignItems="center"
-              mt={{ xs: 0, sm: 10 }}
-              sx={{
-                borderRadius: "50%",
-                backgroundColor: "white",
-                height: { xs: "50px", sm: "120px" },
-                width: { xs: "50px", sm: "120px" },
-                border: "2px solid #90a4ae",
-                boxShadow: 2,
-              }}
-            >
-              <Avatar
-                size=""
-                sx={{
-                  height: { xs: "40px", sm: "100px" },
-                  width: { xs: "40px", sm: "100px" },
-                }}
-              ></Avatar>
-            </Stack>
+          >            
             <Typography
               component={"h2"}
               id="user-header"
@@ -101,7 +70,7 @@ export default function LoginPage() {
                 },
               }}
             >
-              Log In
+              Password Reset Request
             </Typography>
           </Stack>
           <Stack
@@ -120,6 +89,7 @@ export default function LoginPage() {
               height="100%"
               width="100%"
             >
+                Enter your user email
               <TextField
                 variant="filled"
                 label="Email"
@@ -142,42 +112,6 @@ export default function LoginPage() {
                   },
                 }}
               ></TextField>
-              <TextField
-                variant="filled"
-                label="Password"
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                sx={{
-                  width: "90%",
-                  backgroundColor: "white",
-                  input: { color: "#1a2e32" },
-                  borderRadius: "6px",
-                  "& label.Mui-focused": { color: "#1a2e32" },
-                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
-                  "& .MuiFilledInput-underline:after": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiFilledInput-root:before": {
-                    borderBottom: "none",
-                  },
-                }}
-              ></TextField>
-              <Button
-                id="cancel-button"
-                variant="text"
-                onClick={() => navigate("/password-reset")}
-                sx={{
-                  color: "#aa0000",
-                  alignSelf: "flex-start",
-                  marginLeft: "45px",
-                  "&:hover": { borderRadius: "8px" },
-                }}
-              >
-                Forgot Password?
-              </Button>
             </Stack>
             <Stack
               id="buttons"
@@ -191,7 +125,7 @@ export default function LoginPage() {
               <Button
                 id="cancel-button"
                 variant="text"
-                onClick={() => navigate("/ingredients")}
+                onClick={() => navigate("/login")}
                 sx={{
                   color: "#000000",
                   "&:hover": { borderRadius: "8px" },
@@ -214,7 +148,7 @@ export default function LoginPage() {
                   },
                 }}
               >
-                Log In
+                Reset Request
               </Button>
             </Stack>
           </Stack>

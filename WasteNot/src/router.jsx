@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import { Login } from "@mui/icons-material";
 import ChatBotComponent from "./components/ChatBotComponent";
 import SignupPage from "./pages/SignupPage";
+import PasswordReset from "./pages/PasswordReset";
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/recipes",
         element: <ChooseRecipePage />,
+      },
+      {
+        path: "/password-reset",
+        element: <PasswordReset />,
       },
       {
         path: "/chat",
