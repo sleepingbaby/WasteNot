@@ -1,26 +1,35 @@
 import { Stack, Typography, TextField, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import  api  from "../utilities.jsx";
+import { useNavigate, useParams } from "react-router-dom";
+import api from "../utilities.jsx";
 
 import { useState } from "react";
 
-export default function PasswordReset() {
-  const [email, setEmail] = useState("");
+export default function PasswordResetConfirm() {
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const { id, token } = useParams()
   const navigate = useNavigate();
 
+  const resetPassword = async (e) => {
+    e.preventDefault();
+    if (password && password === password2) {
+      console.log(password, token)
+      let response = await api
+        .post(`user/password_reset/confirm/`, {
+          password: password,
+          token: token,
+          id: id
+        })
+        .catch((err) => {
+          alert("Something went wrong");
+        });
+      alert("password reset", response);
+      navigate("/login");
+    } else {
+      alert("Passwords do not match");
+    }
+  };
 
-  const logIn = async(e) => {
-      e.preventDefault();
-      let response = await api.post("user/password_reset/", {
-          "email": email
-      })
-      .catch((err)=>{
-          alert("Something went wrong")
-      })
-      alert("Request sent. Check your email for further instructions.")
-      navigate("/")
-  }
-    
   return (
     <>
       <Stack
@@ -54,7 +63,7 @@ export default function PasswordReset() {
               borderTopLeftRadius: "15px",
               borderColor: "#006064",
             }}
-          >            
+          >
             <Typography
               component={"h2"}
               id="user-header"
@@ -66,11 +75,11 @@ export default function PasswordReset() {
                   xs: "28px", // Extra small screens
                   sm: "36px", // Small screens
                   md: "48px", // Medium screens
-                  lg: "48px", // Large screens
+                  lg: "64px", // Large screens
                 },
               }}
             >
-              Password Reset Request
+              Password Reset
             </Typography>
           </Stack>
           <Stack
@@ -89,11 +98,43 @@ export default function PasswordReset() {
               height="100%"
               width="100%"
             >
-                Enter your user email
+              Enter a new password
               <TextField
                 variant="filled"
                 label="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
+                sx={{
+                  width: "90%",
+                  backgroundColor: "white",
+                  input: { color: "#1a2e32" },
+                  borderRadius: "6px",
+                  "& label.Mui-focused": { color: "#1a2e32" },
+                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
+                  "& .MuiFilledInput-underline:after": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                    borderBottom: "none",
+                  },
+                  "& .MuiFilledInput-root:before": {
+                    borderBottom: "none",
+                  },
+                }}
+              ></TextField>
+            </Stack>
+            <Stack
+              id="profile-data-fields"
+              gap={4}
+              alignItems="center"
+              justifyContent="center"
+              height="100%"
+              width="100%"
+            >
+              Re-Enter Password
+              <TextField
+                variant="filled"
+                label="Email"
+                onChange={(e) => setPassword2(e.target.value)}
                 sx={{
                   width: "90%",
                   backgroundColor: "white",
@@ -136,7 +177,7 @@ export default function PasswordReset() {
               <Button
                 id="save-button"
                 variant="contained"
-                onClick={(e) => logIn(e)}
+                onClick={(e) => resetPassword(e)}
                 sx={{
                   backgroundColor: "#68a2b1",
                   color: "#033015",
@@ -148,7 +189,7 @@ export default function PasswordReset() {
                   },
                 }}
               >
-                Reset Request
+                Reset Password
               </Button>
             </Stack>
           </Stack>
