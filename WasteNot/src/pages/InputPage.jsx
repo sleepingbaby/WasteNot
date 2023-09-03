@@ -22,17 +22,16 @@ const InputPage = () => {
   const { ingredientList, setIngredientList } = useContext(recipeContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(ingredientList);
-  }, [ingredientList]);
-
   const handleSwitchChange = () => {
     setIsStrict(!isStrict);
-    console.log(isStrict);
   };
 
   const handleGetRecipes = () => {
-    navigate("/recipes");
+    if (isStrict) {
+      navigate("/strict_recipes");
+    } else {
+      navigate("/recipes");
+    }
   };
 
   const handleAddIngredient = () => {

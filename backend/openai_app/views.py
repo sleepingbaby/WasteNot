@@ -30,7 +30,7 @@ class GPT3RecipeView(APIView):
                 else:
                     return Response({"error": "Failed to get a response from OpenAI API. "}, status = response.status_code)
             else:
-                return Response({"error": "Invvalid request data structure. "}, status=400)
+                return Response({"error": "Invalid request data structure. "}, status=400)
         except Exception as e:
             return Response({"error": str(e)}, status=500)
         

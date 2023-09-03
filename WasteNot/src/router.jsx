@@ -10,7 +10,7 @@ import { Login } from "@mui/icons-material";
 import ChatBotComponent from "./components/ChatBotComponent";
 import SignupPage from "./pages/SignupPage";
 import PasswordReset from "./pages/PasswordReset";
-
+import RecipesStrict from "./pages/RecipesStrict";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/chat",
         element: <ChatBotComponent />,
+      },
+      {
+        path: "/strict_recipes",
+        element: <RecipesStrict />,
       },
 
       // {

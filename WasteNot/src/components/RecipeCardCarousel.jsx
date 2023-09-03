@@ -25,7 +25,6 @@ export default function RecipeCarousel() {
           "spoon/recipe/ingredients/",
           ingredientList
         );
-        console.log(ingredientList);
         setSteps(response.data);
         console.log(response.data);
       } catch (error) {
