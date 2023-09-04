@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     # 'django_rest_passwordreset',
     'corsheaders',
-
+    # 'user_app.apps.UserAppConfig',
 ]
 
 MIDDLEWARE = [

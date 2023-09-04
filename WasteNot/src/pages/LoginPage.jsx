@@ -1,9 +1,9 @@
 import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
 import RecyclingIcon from "@mui/icons-material/Recycling";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
-import { useOutletContext } from "react-router-dom";
-import  api  from "../utilities.jsx";
+import api from "../utilities.jsx";
+import Toggle from "../components/TogglePassword.jsx";
 
 import { useState } from "react";
 
@@ -13,23 +13,27 @@ export default function LoginPage() {
   const { setUser } = useOutletContext();
   const navigate = useNavigate();
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
-  const logIn = async(e) => {
-      e.preventDefault();
-      let response = await api.post("user/login/", {
-          "email": email,
-          "password": password
+  const logIn = async (e) => {
+    e.preventDefault();
+    let response = await api
+      .post("user/login/", {
+        email: email,
+        password: password,
       })
-      .catch((err)=>{
-          alert("Something went wrong")
-      })
-      let user = response.data.user;
-      setUser(user);
-      setPassword("");
-      console.log(user)
-      navigate("/")
-  }
-    
+      .catch((err) => {
+        alert("Something went wrong");
+      });
+    let user = response.data.user;
+    setUser(user);
+    setPassword("");
+    console.log(user);
+    navigate("/ingredients", { replace: true });
+  };
+
   return (
     <>
       <Stack
@@ -142,29 +146,11 @@ export default function LoginPage() {
                   },
                 }}
               ></TextField>
-              <TextField
-                variant="filled"
+              <Toggle
                 label="Password"
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                sx={{
-                  width: "90%",
-                  backgroundColor: "white",
-                  input: { color: "#1a2e32" },
-                  borderRadius: "6px",
-                  "& label.Mui-focused": { color: "#1a2e32" },
-                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
-                  "& .MuiFilledInput-underline:after": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiFilledInput-root:before": {
-                    borderBottom: "none",
-                  },
-                }}
-              ></TextField>
+                value={password}
+                onChange={handlePasswordChange}
+              />
               <Button
                 id="cancel-button"
                 variant="text"
@@ -191,13 +177,13 @@ export default function LoginPage() {
               <Button
                 id="cancel-button"
                 variant="text"
-                onClick={() => navigate("/ingredients")}
+                onClick={() => navigate("/signup")}
                 sx={{
                   color: "#000000",
                   "&:hover": { borderRadius: "8px" },
                 }}
               >
-                Cancel
+                Need an account?
               </Button>
               <Button
                 id="save-button"

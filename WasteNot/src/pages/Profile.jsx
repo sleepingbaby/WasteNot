@@ -7,7 +7,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import api from "../utilities.jsx";
 import { useEffect, useState } from "react";
 
-// * NEED REQUESTS, UPDATE ALERT RESPONSES, NAVIGATION AFTER DEACTIVATION
+//* NEED TO FIX STATE ONLY REFLECTED ON REFRESH
 export default function Profile() {
   const navigate = useNavigate();
   const { user } = useOutletContext();
@@ -16,6 +16,19 @@ export default function Profile() {
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
+  const updateUser = async () => {
+    try {
+      const response = await api.put("user/", {
+        first_name,
+        last_name,
+        email,
+      });
+      window.alert("Profile Successfully Updated");
+      navigate("/ingredients");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     if (user !== null) {
@@ -25,29 +38,16 @@ export default function Profile() {
     }
   }, [user]);
 
-  const updateUser = async () => {
+  const deactivateUser = async () => {
     try {
-      const response = await api.put("user/", {
-        first_name,
-        last_name,
-        email,
-      });
-      alert("Profile Successfully Updated");
+      const response = await api.put("user/status/", { is_active: "f" });
+      console.log(response);
+      window.alert("Account deactivated. We hope to see you again");
+      navigate("/ingredients");
     } catch (error) {
       console.error(error);
     }
   };
-
-
-  const deactivateUser = async () => {
-    try {
-      const response = await api.put("user/status/", {"is_active": "f"});
-      console.log(response)
-      alert("Account deactivated. We hope to see you again")
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   const confirmDelete = () => {
     confirmAlert({
@@ -56,7 +56,7 @@ export default function Profile() {
       buttons: [
         {
           label: "Yes",
-          onClick: deactivateUser
+          onClick: deactivateUser,
         },
         {
           label: "No, take me back!",
@@ -64,7 +64,6 @@ export default function Profile() {
       ],
     });
   };
-
   return (
     <>
       {user && (
@@ -139,8 +138,7 @@ export default function Profile() {
                     lg: "64px", // Large screens
                   },
                 }}
-              >
-              </Typography>
+              ></Typography>
             </Stack>
             <Stack
               id="profile-container"
@@ -225,7 +223,6 @@ export default function Profile() {
                     },
                   }}
                 ></TextField>
-                  {/* <Toggle label="Password" value={password}/> */}
               </Stack>
               <Stack
                 id="buttons"
@@ -282,7 +279,6 @@ export default function Profile() {
               variant="text"
               onClick={() => {
                 confirmDelete();
-                
               }}
               sx={{
                 color: "#FFFFFF",

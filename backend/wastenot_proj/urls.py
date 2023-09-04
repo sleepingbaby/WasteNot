@@ -24,5 +24,6 @@ urlpatterns = [
     path('api/pantryitem/', include("pantryitem_app.urls")),
     path('api/user/', include("user_app.urls")),
     path('api/chatbot/', include("chatbot_app.urls")),
-    path('api/strictsearch/', include("openai_app.urls"))
+    path('api/strictsearch/', include("openai_app.urls")),
+
 ]
