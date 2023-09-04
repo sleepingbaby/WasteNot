@@ -1,37 +1,42 @@
 import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
 import RecyclingIcon from "@mui/icons-material/Recycling";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
-import { useOutletContext } from "react-router-dom";
-import  api  from "../utilities.jsx";
+import api from "../utilities.jsx";
+import Toggle from "../components/TogglePassword.jsx";
 
 import { useState } from "react";
 
 export default function SignupPage() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const { setUser } = useOutletContext();
-    const navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setUser } = useOutletContext();
+  const navigate = useNavigate();
 
-    const signUp = async(e) => {
-        e.preventDefault();
-        let response = await api.post("user/signup/", {
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-            password: password
-        })
-        .catch((err)=>{
-            alert("Something went wrong")
-        })
-        let user = response.data.user;
-        setUser(user);
-        setPassword("");
-        console.log(user)
-        navigate("/login") 
-    }
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const signUp = async (e) => {
+    e.preventDefault();
+    let response = await api
+      .post("user/signup/", {
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password,
+      })
+      .catch((err) => {
+        alert("Something went wrong");
+      });
+    let user = response.data.user;
+    setUser(user);
+    setPassword("");
+    console.log(user);
+    navigate("/login");
+  };
   return (
     <>
       <Stack
@@ -188,29 +193,11 @@ export default function SignupPage() {
                   },
                 }}
               ></TextField>
-              <TextField
-                variant="filled"
+              <Toggle
                 label="Password"
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                sx={{
-                  width: "90%",
-                  backgroundColor: "white",
-                  input: { color: "#1a2e32" },
-                  borderRadius: "6px",
-                  "& label.Mui-focused": { color: "#1a2e32" },
-                  "& label.MuiInputLabel-root": { color: "#1a2e32" },
-                  "& .MuiFilledInput-underline:after": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                    borderBottom: "none",
-                  },
-                  "& .MuiFilledInput-root:before": {
-                    borderBottom: "none",
-                  },
-                }}
-              ></TextField>
+                value={password}
+                onChange={handlePasswordChange}
+              />
             </Stack>
             <Stack
               id="buttons"
