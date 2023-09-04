@@ -44,7 +44,7 @@ export default function RecipeCard({ data }) {
             sm: "1vw",
           },
           backgroundRepeat: "no-repeat",
-          backgroundColor: "#78CCB6",
+          backgroundColor: "white",
           border: 6,
           borderColor: "#68A2B1",
         }}

@@ -3,6 +3,7 @@ from rest_framework.response import Response
 import json
 import requests
 from dotenv import dotenv_values
+from django.http import JsonResponse
 
 env = dotenv_values(".env")
 # Create your views here.
@@ -34,3 +35,23 @@ class GPT3RecipeView(APIView):
         except Exception as e:
             return Response({"error": str(e)}, status=500)
         
+
+def search_recipe_image(request, recipe_name):
+    if request.method == 'GET':
+        print(recipe_name)
+
+
+        # Make a request to the Google Custom Search API for a general web search
+        response = requests.get(
+            f'https://www.googleapis.com/customsearch/v1?key={env.get("GOOGLE_SEARCH_API_KEY")}&cx={env.get("GOOGLE_SEARCH_CX_KEY")}&q={recipe_name}&searchType=image'
+        )
+
+        data = response.json()
+
+        print(data);
+        # Extract the first image URL from the search results
+        first_image_link = data.get('items', [])[0].get('link', '')
+
+        return JsonResponse({'image_url': first_image_link})
+
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
