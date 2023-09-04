@@ -11,6 +11,8 @@ import ChatBotComponent from "./components/ChatBotComponent";
 import SignupPage from "./pages/SignupPage";
 import PasswordReset from "./pages/PasswordReset";
 import RecipesStrict from "./pages/RecipesStrict";
+import PasswordResetConfirm from "./pages/PasswordResetConfirm";
+
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/password-reset",
         element: <PasswordReset />,
+      },
+      {
+        path: "/password-reset-confirm/:id/:token",
+        element: <PasswordResetConfirm />,
       },
       {
         path: "/chat",
