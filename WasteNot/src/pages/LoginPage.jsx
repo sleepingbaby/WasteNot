@@ -27,7 +27,7 @@ export default function LoginPage() {
       setUser(user);
       setPassword("");
       console.log(user)
-      navigate("/")
+      navigate("/ingredients", { replace: true })
   }
     
   return (
@@ -191,13 +191,13 @@ export default function LoginPage() {
               <Button
                 id="cancel-button"
                 variant="text"
-                onClick={() => navigate("/ingredients")}
+                onClick={() => navigate("/signup")}
                 sx={{
                   color: "#000000",
                   "&:hover": { borderRadius: "8px" },
                 }}
               >
-                Cancel
+                Need an account?
               </Button>
               <Button
                 id="save-button"

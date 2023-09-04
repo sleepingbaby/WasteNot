@@ -30,7 +30,7 @@ export default function SignupPage() {
         setUser(user);
         setPassword("");
         console.log(user)
-        navigate("/") 
+        navigate("/login") 
     }
   return (
     <>
@@ -224,13 +224,13 @@ export default function SignupPage() {
               <Button
                 id="cancel-button"
                 variant="text"
-                onClick={() => navigate("/ingredients")}
+                onClick={() => navigate("/login")}
                 sx={{
                   color: "#000000",
                   "&:hover": { borderRadius: "8px" },
                 }}
               >
-                Cancel
+                Already have an account?
               </Button>
               <Button
                 id="save-button"
