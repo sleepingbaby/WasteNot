@@ -15,7 +15,6 @@ function App() {
 
   const whoAmI = async () => {
     const response = await api.get("user/");
-    console.log("response.data", response.data)
     if (response.data) {
       setUser(response.data);
       if (lastVisited.current) {
@@ -27,8 +26,7 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("user in whoam i", user)
-    whoAmI();
+      whoAmI();
   }, []);
 
   useEffect(() => {
@@ -39,7 +37,6 @@ function App() {
     <RecipeContextProvider>
       <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
         {path !== "/" && <Navbar user={user} setUser={setUser} />}
-
         <Outlet context={{ user, setUser }} />
       </Stack>
     </RecipeContextProvider>

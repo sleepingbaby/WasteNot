@@ -29,10 +29,6 @@ const Navbar = ({ user, setUser }) => {
     navigate("/profile");
   };
 
-  // const handleChange = (event) => {
-  //   setAuth(event.target.checked);
-  // };
-
   const goHome = () => {
     navigate("/");
   };
@@ -49,16 +45,11 @@ const Navbar = ({ user, setUser }) => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
-
-      navigate("/");
-    }
-  };
-
       setAnchorEl(null);
       navigate("/login");
     }
   };
-  console.log("user in navbar", user);
+
 
   useEffect(() => {
     if (user) {
@@ -92,6 +83,7 @@ const Navbar = ({ user, setUser }) => {
           <TemporaryDrawer
             open={drawerOpen}
             onClose={() => setDrawerOpen(false)}
+            user={user}
           />
           <Typography
             variant="h6"
@@ -134,9 +126,6 @@ const Navbar = ({ user, setUser }) => {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
-
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-
                 <MenuItem onClick={logOut}>Logout</MenuItem>
 
               </Menu>
