@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from datetime import datetime, timedelta
 from rest_framework.authtoken.models import Token
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_204_NO_CONTENT
 from rest_framework.authentication import TokenAuthentication
@@ -85,9 +85,8 @@ class Info(User_permissions):
         user.first_name = request.data.get("first_name")
         user.last_name = request.data.get("last_name")
         user.email = request.data.get("email")
-        user.password = request.data.get("password")
         user.save()
-        return Response({"first_name": user.first_name, "last_name": user.last_name, "email": user.email, "password": user.password})
+        return Response({"first_name": user.first_name, "last_name": user.last_name, "email": user.email})
 
 class Log_out(User_permissions):
     def post(self, request):
@@ -101,5 +100,6 @@ class Active_status(User_permissions):
         user = request.user
         user.is_active = request.data.get("is_active")
         user.save()
+        logout(request)
         return Response( { "is_active":user.is_active })
     

@@ -6,7 +6,6 @@ import { api } from "./utilities.jsx";
 import { RecipeContextProvider } from "./contexts/RecipeContext";
 
 function App() {
-
   const location = useLocation();
   const path = location.pathname;
   const lastVisited = useRef();
@@ -15,38 +14,35 @@ function App() {
   const navigate = useNavigate();
 
   const whoAmI = async () => {
-    // console.log("whoAmI function ran")
-      const response = await api.get("user/");
-      // console.log(response)
-      if (response.data) {
-        setUser(response.data)
-        if (lastVisited.current) {
-          navigate(lastVisited.current)
-        } else {
-          navigate("/")
-        }
+    const response = await api.get("user/");
+    console.log("response.data", response.data)
+    if (response.data) {
+      setUser(response.data);
+      if (lastVisited.current) {
+        navigate(lastVisited.current);
+      } else {
+        navigate("/");
       }
+    }
   };
 
   useEffect(() => {
+    console.log("user in whoam i", user)
     whoAmI();
   }, []);
 
   useEffect(() => {
-    lastVisited.current = location.pathname
-  }, [location])
+    lastVisited.current = location.pathname;
+  }, [location]);
 
-  
   return (
     <RecipeContextProvider>
       <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
-        {path !== "/" && <Navbar />}
+        {path !== "/" && <Navbar user={user} setUser={setUser} />}
 
-        <Outlet context={{ user, setUser }}/>
-
+        <Outlet context={{ user, setUser }} />
       </Stack>
     </RecipeContextProvider>
-
   );
 }
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -12,13 +12,11 @@ import {
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
 import { api } from "../utilities.jsx";
-import { useOutletContext } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user, setUser }) => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  // const { user, setUser } = useOutletContext();
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -27,12 +25,13 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    setAnchorEl(null);
     navigate("/profile");
   };
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  // const handleChange = (event) => {
+  //   setAuth(event.target.checked);
+  // };
 
   const goHome = () => {
     navigate("/");
@@ -50,9 +49,25 @@ const Navbar = () => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
-      navigate("/")
+
+      navigate("/");
     }
-  }
+  };
+
+      setAnchorEl(null);
+      navigate("/login");
+    }
+  };
+  console.log("user in navbar", user);
+
+  useEffect(() => {
+    if (user) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  }, [user]);
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -91,7 +106,7 @@ const Navbar = () => {
           >
             WasteNot
           </Typography>
-          {auth && (
+          {auth ? (
             <div>
               <IconButton
                 size="large"
@@ -119,9 +134,38 @@ const Navbar = () => {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
+
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
 
+                <MenuItem onClick={logOut}>Logout</MenuItem>
+
               </Menu>
+            </div>
+          ) : (
+            <div>
+              <Typography
+                variant="body1"
+                component="div"
+                onClick={() => navigate("/signup")}
+                sx={{
+                  color: "#b8d4db",
+                  marginRight: "20px",
+                  cursor: "pointer",
+                }}
+              >
+                Create Account
+              </Typography>
+              <Typography
+                variant="body1"
+                component="div"
+                onClick={() => navigate("/login")}
+                sx={{
+                  color: "#b8d4db",
+                  cursor: "pointer",
+                }}
+              >
+                Log In
+              </Typography>
             </div>
           )}
         </Toolbar>

@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import {
   Stack,
   FormGroup,
@@ -8,6 +8,7 @@ import {
   Button,
   Box,
   Autocomplete,
+  Switch,
 } from "@mui/material";
 import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
@@ -17,15 +18,20 @@ import CustomPaper from "../components/CustomPaper";
 
 const InputPage = () => {
   const [newIngredient, setNewIngredient] = useState("");
+  const [isStrict, setIsStrict] = useState(false);
   const { ingredientList, setIngredientList } = useContext(recipeContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(ingredientList);
-  }, [ingredientList]);
+  const handleSwitchChange = () => {
+    setIsStrict(!isStrict);
+  };
 
   const handleGetRecipes = () => {
-    navigate("/recipes");
+    if (isStrict) {
+      navigate("/strict_recipes");
+    } else {
+      navigate("/recipes");
+    }
   };
 
   const handleAddIngredient = () => {
@@ -68,6 +74,7 @@ const InputPage = () => {
           alignItems="center"
           justifyContent="center"
           mb={2}
+          mt={2}
           width="80%"
         >
           <Autocomplete
@@ -165,7 +172,11 @@ const InputPage = () => {
           </Stack>
         </Stack>
         <FormGroup
-          sx={{ display: "flex", flexDirection: "row", padding: "8px" }}
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "row",
+            padding: "8px",
+          }}
         >
           <FormControlLabel
             control={<Checkbox style={{ color: "#1a2e32" }} />}
@@ -184,6 +195,12 @@ const InputPage = () => {
             label="Dairy-Free"
           />
         </FormGroup>
+
+        <FormControlLabel
+          control={<Switch checked={isStrict} onChange={handleSwitchChange} />}
+          label="Strict Search"
+        />
+
         <Button
           variant="contained"
           sx={{

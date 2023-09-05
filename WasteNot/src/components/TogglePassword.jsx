@@ -1,18 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { TextField } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 
-export default function Toggle({ label }) {
+export default function Toggle({ label, value, onChange }) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [password, setPassword] = useState("120px");
-
-  const handleChange = (e) => {
-    setPassword(e.target.value);
-  };
 
   const handleVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -45,8 +39,8 @@ export default function Toggle({ label }) {
           },
         }}
         type={isPasswordVisible ? "text" : "password"}
-        value={password}
-        onChange={handleChange}
+        value={value}
+        onChange={onChange}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
