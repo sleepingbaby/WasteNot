@@ -7,27 +7,31 @@ import { useState } from "react";
 export default function PasswordResetConfirm() {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const { id, token } = useParams()
+  const { token } = useParams();
   const navigate = useNavigate();
 
   const resetPassword = async (e) => {
     e.preventDefault();
     if (password && password === password2) {
-      console.log(password, token)
       let response = await api
-        .post(`user/password_reset/confirm/`, {
+        .post("user/password_reset/confirm/", {
           password: password,
           token: token,
-          id: id
         })
         .catch((err) => {
-          alert("Something went wrong");
+          alert(err.response.data.password);
         });
-      alert("password reset", response);
-      navigate("/login");
+      if (response.status === 200) {
+        alert("password reset", response);
+        navigate("/login");
+      }
     } else {
       alert("Passwords do not match");
     }
+  };
+
+  const handleChange = (e) => {
+    setPassword(e);
   };
 
   return (
@@ -101,8 +105,9 @@ export default function PasswordResetConfirm() {
               Enter a new password
               <TextField
                 variant="filled"
-                label="Email"
-                onChange={(e) => setPassword(e.target.value)}
+                label="Password"
+                type="password"
+                onChange={(e) => handleChange(e.target.value)}
                 sx={{
                   width: "90%",
                   backgroundColor: "white",
@@ -133,7 +138,8 @@ export default function PasswordResetConfirm() {
               Re-Enter Password
               <TextField
                 variant="filled"
-                label="Email"
+                label="Password"
+                type="password"
                 onChange={(e) => setPassword2(e.target.value)}
                 sx={{
                   width: "90%",

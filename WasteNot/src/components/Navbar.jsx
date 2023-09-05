@@ -45,6 +45,9 @@ const Navbar = ({ user, setUser }) => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
+      navigate("/");
+    } else {
+
       setAnchorEl(null);
       navigate("/login");
     }
