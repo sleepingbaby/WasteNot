@@ -2,9 +2,6 @@ import { Stack } from "@mui/material";
 import Meat2 from "./Meat2";
 import Hamburger from "./Hamburger";
 
-const backgroundImageUrl =
-  "https://cdn.dribbble.com/users/393062/screenshots/14492170/media/67f661f7f825b62980571026e1280675.gif";
-
 const Loading = () => {
   return (
     // <Stack
