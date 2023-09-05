@@ -1,8 +1,9 @@
 import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import api from "../utilities.jsx";
 import Toggle from "../components/TogglePassword.jsx";
+
 
 import { useState } from "react";
 
@@ -30,6 +31,7 @@ export default function LoginPage() {
     setUser(user);
     setPassword("");
     console.log(user);
+    navigate("/");
     navigate("/ingredients", { replace: true });
   };
 

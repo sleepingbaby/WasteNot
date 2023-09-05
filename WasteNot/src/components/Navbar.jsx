@@ -49,6 +49,11 @@ const Navbar = ({ user, setUser }) => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
+
+      navigate("/");
+    }
+  };
+
       setAnchorEl(null);
       navigate("/login");
     }
@@ -62,6 +67,7 @@ const Navbar = ({ user, setUser }) => {
       setAuth(false);
     }
   }, [user]);
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -128,7 +134,11 @@ const Navbar = ({ user, setUser }) => {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
+
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+
                 <MenuItem onClick={logOut}>Logout</MenuItem>
+
               </Menu>
             </div>
           ) : (

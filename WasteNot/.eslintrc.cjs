@@ -18,4 +18,7 @@ module.exports = {
     ],
     "react/prop-types": "off"
   },
+  "rules": {
+    "react/prop-types": "off"
+  }
 }
