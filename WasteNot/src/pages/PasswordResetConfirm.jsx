@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function PasswordResetConfirm() {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const { id, token } = useParams()
+  const { token } = useParams()
   const navigate = useNavigate();
 
   const resetPassword = async (e) => {
@@ -15,13 +15,13 @@ export default function PasswordResetConfirm() {
     if (password && password === password2) {
       console.log(password, token)
       let response = await api
-        .post(`user/password_reset/confirm/`, {
+        .post("user/password_reset/confirm/", {
           password: password,
-          token: token,
-          id: id
+          token: token
         })
         .catch((err) => {
-          alert("Something went wrong");
+          alert(err);
+          console.error(err)
         });
       alert("password reset", response);
       navigate("/login");
