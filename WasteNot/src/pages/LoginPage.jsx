@@ -1,5 +1,4 @@
 import { Stack, Avatar, Typography, TextField, Button } from "@mui/material";
-import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import api from "../utilities.jsx";

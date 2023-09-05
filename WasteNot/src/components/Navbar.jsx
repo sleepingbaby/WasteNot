@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   AppBar,
@@ -17,7 +17,6 @@ const Navbar = ({ user, setUser }) => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
- 
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -50,7 +49,7 @@ const Navbar = ({ user, setUser }) => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
-      setAnchorEl(null)
+      setAnchorEl(null);
       navigate("/login");
     }
   };

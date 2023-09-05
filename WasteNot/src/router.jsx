@@ -6,13 +6,11 @@ import Profile from "./pages/Profile";
 import Pantry from "./pages/Pantry";
 import ChooseRecipePage from "./pages/ChooseRecipePage";
 import LoginPage from "./pages/LoginPage";
-import { Login } from "@mui/icons-material";
 import ChatBotComponent from "./components/ChatBotComponent";
 import SignupPage from "./pages/SignupPage";
 import PasswordReset from "./pages/PasswordReset";
 import RecipesStrict from "./pages/RecipesStrict";
 import PasswordResetConfirm from "./pages/PasswordResetConfirm";
-
 
 const router = createBrowserRouter([
   {
