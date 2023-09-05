@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 //* NEED TO FIX STATE ONLY REFLECTED ON REFRESH
 export default function Profile() {
   const navigate = useNavigate();
-  const { user } = useOutletContext();
+  const { user, setUser } = useOutletContext();
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -23,6 +23,8 @@ export default function Profile() {
         last_name,
         email,
       });
+      console.log("response", response.data)
+      setUser(response.data)
       window.alert("Profile Successfully Updated");
       navigate("/ingredients");
     } catch (error) {
@@ -32,6 +34,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (user !== null) {
+      console.log("useeffect", user)
       setFirstName(user.first_name);
       setLastName(user.last_name);
       setEmail(user.email);
@@ -41,7 +44,7 @@ export default function Profile() {
   const deactivateUser = async () => {
     try {
       const response = await api.put("user/status/", { is_active: "f" });
-      console.log(response);
+      setUser(null)
       window.alert("Account deactivated. We hope to see you again");
       navigate("/ingredients");
     } catch (error) {
@@ -138,7 +141,7 @@ export default function Profile() {
                     lg: "64px", // Large screens
                   },
                 }}
-              ></Typography>
+              >{user.first_name} {user.last_name}</Typography>
             </Stack>
             <Stack
               id="profile-container"

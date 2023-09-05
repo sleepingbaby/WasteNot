@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Import useState
+import React, { useState, useEffect } from "react"; // Import useState
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
@@ -20,17 +20,18 @@ import {
 } from "@mui/icons-material";
 import ListItemComponent from "./ListItemComponent";
 
-function TemporaryDrawer({ open, onClose }) {
+function TemporaryDrawer({ open, onClose, user }) {
+
   const navbarItemsTop = [
-    { name: "Get Recipes", component: <Fastfood /> },
-    { name: "Pantry", component: <Kitchen /> },
-    { name: "Recipes", component: <MenuBook /> },
-    { name: "Favorites", component: <Favorite /> },
+    { name: "Get Recipes", component: <Fastfood />, showIfLoggedOut: true },
+    { name: "Pantry", component: <Kitchen />, showIfLoggedOut: false },
+    { name: "Recipes", component: <MenuBook />, showIfLoggedOut: false },
+    { name: "Favorites", component: <Favorite />, showIfLoggedOut: false },
   ];
   const navbarItemsBottom = [
-    { name: "Profile", component: <AccountBox /> },
-    { name: "About", component: <Info /> },
-    { name: "Contact", component: <ContactPage /> },
+    { name: "Profile", component: <AccountBox />, showIfLoggedOut: false },
+    { name: "About", component: <Info />, showIfLoggedOut: true },
+    { name: "Contact", component: <ContactPage />, showIfLoggedOut: true },
   ];
 
   const list = (anchor) => (
@@ -44,23 +45,28 @@ function TemporaryDrawer({ open, onClose }) {
       onKeyDown={onClose} // Use the onClose prop to close the drawer
     >
       <List>
-        {navbarItemsTop.map((item) => (
-          <ListItemComponent
-            key={item.name}
-            name={item.name}
-            component={item.component}
-          />
-        ))}
+        {navbarItemsTop.map(
+          (item) =>
+           (user || item.showIfLoggedOut) && (
+              <ListItemComponent
+                key={item.name}
+                name={item.name}
+                component={item.component}
+              />
+            )
+        )}
       </List>
       <Divider />
       <List>
-        {navbarItemsBottom.map((item) => (
-          <ListItemComponent
-            key={item.name}
-            name={item.name}
-            component={item.component}
-          />
-        ))}
+        {navbarItemsBottom.map((item) =>
+          (user || item.showIfLoggedOut) && (
+            <ListItemComponent
+              key={item.name}
+              name={item.name}
+              component={item.component}
+            />
+          )
+        )}
       </List>
     </Box>
   );
