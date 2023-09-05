@@ -12,15 +12,20 @@ export default function SignupPage() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("")
   const { setUser } = useOutletContext();
   const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+  const handlePasswordChange2 = (e) => {
+    setPassword2(e.target.value);
+  };
 
   const signUp = async (e) => {
     e.preventDefault();
+    if (password == password2) {
     let response = await api
       .post("user/signup/", {
         first_name: firstName,
@@ -36,6 +41,9 @@ export default function SignupPage() {
     setPassword("");
     console.log(user);
     navigate("/login");
+    } else {
+      alert("Passwords do not match.")
+    }
   };
   return (
     <>
@@ -197,6 +205,11 @@ export default function SignupPage() {
                 label="Password"
                 value={password}
                 onChange={handlePasswordChange}
+              />
+              <Toggle
+                label="Confirm Password"
+                value={password2}
+                onChange={handlePasswordChange2}
               />
             </Stack>
             <Stack
