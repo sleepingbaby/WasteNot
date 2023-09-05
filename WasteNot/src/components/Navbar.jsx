@@ -51,9 +51,7 @@ const Navbar = ({ user, setUser }) => {
       setUser(null);
 
       navigate("/");
-    }
-  };
-
+    } else {
       setAnchorEl(null);
       navigate("/login");
     }
