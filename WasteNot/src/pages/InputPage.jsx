@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   Stack,
   FormGroup,
@@ -19,8 +19,13 @@ import CustomPaper from "../components/CustomPaper";
 const InputPage = () => {
   const [newIngredient, setNewIngredient] = useState("");
   const [isStrict, setIsStrict] = useState(false);
-  const { ingredientList, setIngredientList } = useContext(recipeContext);
+  const { ingredientList, setIngredientList, getPantryItems } = useContext(recipeContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getPantryItems();
+    console.log(location.pathname);
+  }, []);
 
   const handleSwitchChange = () => {
     setIsStrict(!isStrict);
