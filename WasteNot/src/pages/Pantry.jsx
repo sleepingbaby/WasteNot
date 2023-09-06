@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import {
   Stack,
   TextField,
@@ -10,14 +10,14 @@ import {
 import { ingredients } from "../data/utilityData";
 import Ingredient from "../components/Ingredient";
 import api from "../utilities.jsx";
+import { recipeContext } from "../contexts/RecipeContext";
 
 const Pantry = () => {
-  const [ingredientList, setIngredientList] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+  const { getPantryItems, pantryList, setPantryList } = useContext(recipeContext);
 
   useEffect(() => {
     getPantryItems();
-  // }, [ingredientList]);
   }, []);
 
   const handleAddIngredient = (e) => {
@@ -25,8 +25,8 @@ const Pantry = () => {
     if (!newIngredient) {
       return;
     }
-    if (!ingredientList.includes(newIngredient)) {
-      setIngredientList((prevIngredients) => [
+    if (!pantryList.includes(newIngredient)) {
+      setPantryList((prevIngredients) => [
         ...prevIngredients,
         newIngredient,
       ]);
@@ -37,13 +37,8 @@ const Pantry = () => {
     setNewIngredient("");
   };
 
-  const getPantryItems = async() => {
-    let response = await api.get('pantryitem/');
-    setIngredientList(response.data.pantry_items)
-  }
-
   const addPantryItem = async(newIngredient) => {
-    let response = await api.post('pantryitem/', {
+    await api.post('pantryitem/', {
       "item_id" : newIngredient.id,
       "image" : newIngredient.image,
       "label" : newIngredient.label
@@ -160,12 +155,13 @@ const Pantry = () => {
               "&::-webkit-scrollbar": { display: "none" },
             }}
           >
-            {ingredientList.map((ingredient) => (
+            {pantryList.map((ingredient) => (
               <Ingredient
                 key={ingredient.id}
+                id={ingredient.id}
                 name={ingredient.label}
-                ingredientList={ingredientList}
-                setIngredientList={setIngredientList}
+                ingredientList={pantryList}
+                setIngredientList={setPantryList}
               />
             ))}
           </Stack>
