@@ -106,26 +106,35 @@ export default function Profile() {
               }}
             >
               <Stack
-                id="avatar-backdrop"
-                justifyContent="center"
-                alignItems="center"
-                mt={{ xs: 0, sm: 10 }}
-                sx={{
-                  borderRadius: "50%",
-                  backgroundColor: "white",
-                  height: { xs: "50px", sm: "120px" },
-                  width: { xs: "50px", sm: "120px" },
-                  border: "2px solid #90a4ae",
-                  boxShadow: 2,
-                }}
+              id="avatar-container"
+              sx={{
+               pt:"22px"
+                
+              }}
               >
-                <Avatar
-                  size=""
+                <Stack
+                  id="avatar-backdrop"
+                  justifyContent="center"
+                  alignItems="center"
+                  mt={{ xs: 0, sm: 10 }}
                   sx={{
-                    height: { xs: "40px", sm: "100px" },
-                    width: { xs: "40px", sm: "100px" },
+                    borderRadius: "50%",
+                    backgroundColor: "white",
+                    height: { xs: "50px", sm: "150px" },
+                    width: { xs: "50px", sm: "150px" },
+                    border: "2px solid #90a4ae",
+                    boxShadow: 2,
+                    
                   }}
-                ></Avatar>
+                >
+                  <Avatar
+                    size="avatar-image"
+                    sx={{
+                      height: { xs: "40px", sm: "130px" },
+                      width: { xs: "40px", sm: "130px" },
+                    }}
+                  ></Avatar>
+              </Stack>
               </Stack>
               <Typography
                 component={"h2"}
@@ -134,14 +143,15 @@ export default function Profile() {
                 sx={{
                   color: "white",
                   fontWeight: "300",
+                  pt: "120px",
                   fontSize: {
-                    xs: "28px", // Extra small screens
-                    sm: "36px", // Small screens
-                    md: "48px", // Medium screens
-                    lg: "64px", // Large screens
+                    xs: "36px", // Extra small screens
+                    sm: "48px", // Small screens
+                    md: "64px", // Medium screens
+                    lg: "84px", // Large screens
                   },
                 }}
-              >{user.first_name} {user.last_name}</Typography>
+              >{user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1)} {user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1)}</Typography>
             </Stack>
             <Stack
               id="profile-container"
