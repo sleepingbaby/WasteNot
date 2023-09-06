@@ -58,10 +58,10 @@ const Contact = () => {
     },
     {
       name: "Pete",
-      fact: "I like dogs",
-      github: "https://github.com/jayaruhbee",
-      linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      fact: "The New York Jets are going to win the Super Bowl this year",
+      github: "https://github.com/pxolsen",
+      linkedin: "https://www.linkedin.com/in/peter-olsen",
+      image: "src/assets/Olsen_Headshot_1.png",
     },
   ];
 
