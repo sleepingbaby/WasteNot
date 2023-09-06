@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { ingredientObj } from "../data/utilityData";
-import { useOutletContext} from "react-router-dom";
 import api from "../utilities.jsx";
 
 const Ingredient = ({ id, name, ingredientList, setIngredientList }) => {
@@ -17,7 +16,6 @@ const Ingredient = ({ id, name, ingredientList, setIngredientList }) => {
   const handleDelete = () => {
     setIngredientList(ingredientList.filter((obj) => name !== obj["label"]));
     if (location.pathname === "/Pantry") {
-      console.log("deleting from pantry")
       deletePantryItem();
     }
   };

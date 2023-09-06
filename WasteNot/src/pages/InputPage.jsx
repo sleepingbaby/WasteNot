@@ -24,7 +24,6 @@ const InputPage = () => {
 
   useEffect(() => {
     getPantryItems();
-    console.log(location.pathname);
   }, []);
 
   const handleSwitchChange = () => {

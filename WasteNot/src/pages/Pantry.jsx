@@ -18,7 +18,6 @@ const Pantry = () => {
 
   useEffect(() => {
     getPantryItems();
-    console.log(location.pathname);
   }, []);
 
   const handleAddIngredient = (e) => {
