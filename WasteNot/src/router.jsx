@@ -11,6 +11,7 @@ import SignupPage from "./pages/SignupPage";
 import PasswordReset from "./pages/PasswordReset";
 import RecipesStrict from "./pages/RecipesStrict";
 import PasswordResetConfirm from "./pages/PasswordResetConfirm";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/strict_recipes",
         element: <RecipesStrict />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
 
       // {
