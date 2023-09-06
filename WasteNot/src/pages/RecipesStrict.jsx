@@ -58,6 +58,7 @@ const RecipesStrict = () => {
   if (showRecipes) {
     recipe = strictList[`recipe${recipeNumber}`];
   }
+  const foo = undefined;
 
   return (
     <Stack
@@ -66,7 +67,7 @@ const RecipesStrict = () => {
       alignItems="center"
       justifyContent="center"
     >
-      {showRecipes ? (
+      {foo ? (
         <Stack direction="row" alignItems="center" justifyContent="center">
           <ChevronLeft
             onClick={handleLeftClick}

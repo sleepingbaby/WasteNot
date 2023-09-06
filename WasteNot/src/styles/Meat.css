@@ -25,7 +25,7 @@
 }
 @keyframes moveLeftToCenter {
   0% {
-    transform: translate(calc(-100vw + 60px));
+    transform: translate(calc(-20vw + 60px));
   }
   100% {
     transform: translateX(0);
@@ -38,20 +38,19 @@
   position: absolute;
   top: 38%;
   transform: translateY(-50%);
-  animation: moveLeftToCenter 5s linear infinite;
+  animation: moveLeftToCenter 2s linear infinite;
 }
 .meat2-container img {
   width: 100%;
 }
 
 .hamburger-container {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   position: absolute;
-  top: 39%;
-  transform: translateY(-50%);
-  animation: moveCenterToRight 5s linear infinite;
-  animation-delay: 5s;
+  top: 38%;
+  animation: moveCenterToRight 2s linear infinite;
+  animation-delay: 1.3s;
 }
 .hamburger-container img {
   width: 100%;
@@ -61,6 +60,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(20vw);
   }
 }
