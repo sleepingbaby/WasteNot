@@ -60,7 +60,7 @@ const Contact = () => {
       name: "Pete",
       fact: "The New York Jets are going to win the Super Bowl this year",
       github: "https://github.com/pxolsen",
-      linkedin: "https://www.linkedin.com/in/peter-olsen",
+      linkedin: "https://www.linkedin.com/in/peterolsen",
       image: "src/assets/Olsen_Headshot_1.jpeg",
     },
   ];
