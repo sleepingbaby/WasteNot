@@ -19,10 +19,13 @@ class All_recipes(User_permissions):
         return Response({"recipes": serializedrecipes.data})
 
     def post(self, request):
-        request.data['user_id'] = request.user
-        recipe = Recipe.objects.create(**request.data)
-        serializedrecipe = RecipeSerializer(recipe)
-        return Response({"recipe": serializedrecipe.data}, status=HTTP_201_CREATED)
+        request.data['user_id'] = request.user.id
+        serializedrecipe = RecipeSerializer(data=request.data)
+        if serializedrecipe.is_valid():
+            serializedrecipe.save()
+            return Response({"recipe": serializedrecipe.data}, status=HTTP_201_CREATED)
+        else:
+            return Response(serializedrecipe.errors, status=HTTP_400_BAD_REQUEST)
 
 class A_recipe(User_permissions):
 
