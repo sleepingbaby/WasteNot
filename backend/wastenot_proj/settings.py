@@ -167,3 +167,11 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 # PASSWORD_RESET_EMAIL_TEMPLATE_NAME = 'user_app/password_reset_email.html'
+
+AWS_ACCESS_KEY_ID = env.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = "waste-not"
+AWS_S3_REGION_NAME = "us-east-2"
+AWS_DEFAULT_ACL = None
+AWS_QUERYSTRING_AUTH = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
