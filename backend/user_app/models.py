@@ -8,6 +8,6 @@ class User(AbstractUser):
     last_name = models.CharField(validators=[validate_name])
     email = models.EmailField(unique=True)
     img_url = models.CharField()
-    profile_picture = models.ImageField()
+    profile_picture = models.ImageField(upload_to="profile-pictures/", blank=True, null=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = [first_name, last_name]

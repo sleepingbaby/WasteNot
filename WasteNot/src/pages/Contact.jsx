@@ -23,10 +23,10 @@ const Contact = () => {
     },
     {
       name: "Jesse",
-      fact: "I like broccoli",
-      github: "https://github.com/jayaruhbee",
-      linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      fact: "Fixing things makes me happy!",
+      github: "https://github.com/jessejamesva",
+      linkedin: "https://www.linkedin.com/in/jesse-j-vargas",
+      image: "src/assets/JesseVBackground.png",
     },
     {
       name: "Jessi",

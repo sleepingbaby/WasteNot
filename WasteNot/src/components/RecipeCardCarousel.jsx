@@ -33,6 +33,7 @@ export default function RecipeCarousel() {
     };
 
     getSteps();
+    console.log(steps)
   }, [ingredientList]);
 
   const handleNextClick = () => {
