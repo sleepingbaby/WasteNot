@@ -153,7 +153,6 @@ export default function Profile() {
                 sx={{
                   color: "white",
                   fontWeight: "300",
-                  pt: "120px",
                   fontSize: {
                     xs: "36px", // Extra small screens
                     sm: "48px", // Small screens
