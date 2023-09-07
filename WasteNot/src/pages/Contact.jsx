@@ -33,7 +33,7 @@ const Contact = () => {
       fact: "I'm also a Registered Dental Hygienist!",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/Jessi-Headshot.png",
     },
     {
       name: "Josh",
@@ -79,7 +79,7 @@ const Contact = () => {
           height: { xs: "95%", sm: "95%" },
           width: { xs: "90%", sm: "90%" },
           backgroundColor: "#b8d4db",
-          borderRadius: "18px",
+          borderRadius: "8px",
           boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
             0 0 20px rgba(210, 210, 210, 0.2),
             0 0 20px rgba(210, 210, 210, 0.2)`,
@@ -94,10 +94,9 @@ const Contact = () => {
           id="header-bg"
           sx={{
             bgcolor: "background.paper",
-            borderTopRightRadius: "18px",
-            borderTopLeftRadius: "18px",
-            pt: 8,
-            pb: 6,
+            borderTopRightRadius: "8px",
+            borderTopLeftRadius: "8px",
+            py:2,
           }}
         >
           <Container maxWidth="md">
@@ -107,7 +106,6 @@ const Contact = () => {
               variant="h2"
               align="center"
               color="text.primary"
-              gutterBottom
             >
               Meet The Engineers
             </Typography>
@@ -131,7 +129,7 @@ const Contact = () => {
                     <CardMedia
                       component="div"
                       sx={{
-                        pt: "56.25%",
+                        pt: "56.25%", height:"300px"
                       }}
                       image={card.image}
                     />

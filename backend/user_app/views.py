@@ -75,6 +75,11 @@ class Sign_up(APIView):
             return response
         except:
             return Response("Something went wrong", status=HTTP_400_BAD_REQUEST)
+
+# class Sign_up(APIView):
+#     def post(self, request):
+#         if request.method == "POST" and request.FILES:
+            
     
 class Info(User_permissions):
     def get(self, request):
