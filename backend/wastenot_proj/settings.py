@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_rest_passwordreset',
     'corsheaders',
+    'storages',
     # 'user_app.apps.UserAppConfig',
 ]
 
