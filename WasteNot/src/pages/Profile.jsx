@@ -15,18 +15,27 @@ export default function Profile() {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [file, setFile] = useState(null);
+  const [profilePic, setProfilePic] = useState("")
 
-  const updateUser = async () => {
+  const updateUser = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("profile_picture", file);
+    formData.append("first_name", first_name);
+    formData.append("last_name", last_name);
+    formData.append("email", email);
     try {
-      const response = await api.put("user/", {
-        first_name,
-        last_name,
-        email,
+      const response = await api.put("user/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
       });
-      console.log("response", response.data)
+      // console.log("response", response.data)
       setUser(response.data)
+      console.log("updateUser", user)
       window.alert("Profile Successfully Updated");
-      navigate("/ingredients");
+      navigate("/profile");
     } catch (error) {
       console.error(error);
     }
@@ -38,6 +47,7 @@ export default function Profile() {
       setFirstName(user.first_name);
       setLastName(user.last_name);
       setEmail(user.email);
+      setProfilePic(user.profile_picture)
     }
   }, [user]);
 
@@ -169,6 +179,7 @@ export default function Profile() {
                 height="100%"
                 width="100%"
               >
+                <form onSubmit={updateUser}>
                 <TextField
                   variant="filled"
                   label=""
@@ -236,6 +247,29 @@ export default function Profile() {
                     },
                   }}
                 ></TextField>
+                <img src={user.profile_picture ? user.profile_picture : "src/assets/beef.png"} />
+                {/* <img src={profilePic} alt="" /> */}
+                <input type="file" accept="image/*" onChange={(e) => {setFile(e.target.files[0])}}/>
+                <Button
+                  id="save-button"
+                  variant="contained"
+                  // onClick={updateUser}
+                  type="submit"
+                  // *NAVIGATE BACK TO HOME AFTER JS ADDED
+                  sx={{
+                    backgroundColor: "#68a2b1",
+                    color: "#033015",
+                    margin: "8px",
+                    fontWeight: "bolder",
+                    "&:hover": {
+                      backgroundColor: "#1a2e32",
+                      color: "white",
+                    },
+                  }}
+                >
+                  Save Changes
+                </Button>
+                </form>
               </Stack>
               <Stack
                 id="buttons"
@@ -249,7 +283,7 @@ export default function Profile() {
                 <Button
                   id="cancel-button"
                   variant="text"
-                  onClick={() => navigate("/ingredients")}
+                  onClick={() => navigate("/profile")}
                   sx={{
                     color: "#000000",
                     "&:hover": { borderRadius: "8px" },
@@ -257,7 +291,7 @@ export default function Profile() {
                 >
                   Cancel
                 </Button>
-                <Button
+                {/* <Button
                   id="save-button"
                   variant="contained"
                   onClick={updateUser}
@@ -274,7 +308,7 @@ export default function Profile() {
                   }}
                 >
                   Save Changes
-                </Button>
+                </Button> */}
               </Stack>
             </Stack>
           </Stack>
