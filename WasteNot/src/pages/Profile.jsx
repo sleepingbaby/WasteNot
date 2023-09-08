@@ -138,6 +138,18 @@ export default function Profile() {
                   }}
                 >
                 <Avatar
+                    size="avatar-image"
+                    sx={{
+                      height: { xs: "40px", sm: "130px" },
+                      width: { xs: "40px", sm: "130px" },
+                    }}
+                  >
+                    <img
+                      src={profilePic ? profilePic : "src/assets/beef.png"} // Use profilePic state here
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </Avatar>
+                {/* <Avatar
                   size="avatar-image"
                   sx={{
                     height: { xs: "40px", sm: "130px" },
@@ -148,7 +160,7 @@ export default function Profile() {
                     src={user.profile_picture ? user.profile_picture : "src/assets/beef.png"}
                     style={{ width: "100%", height: "100%" }} // Add this style
                   />
-              </Avatar>
+              </Avatar> */}
               </Stack>
               </Stack>
               <Typography
@@ -275,14 +287,28 @@ export default function Profile() {
                   }}
                 >
                   Change Photo
+
                   <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      setFile(e.target.files[0]);
+                      const selectedImage = e.target.files[0];
+                      if (selectedImage) {
+                        setProfilePic(URL.createObjectURL(selectedImage)); // Set the temporary URL
+                      }
+                    }}
+                    style={{ display: 'none' }}
+                  />
+
+                  {/* <input
                     type="file"
                     accept="image/*"
                     onChange={(e) => {
                       setFile(e.target.files[0]);
                     }}
                     style={{ display: 'none' }} // Hide the original input element
-                  />
+                  /> */}
                 </Button>
                   <Button
                     id="save-button"
@@ -302,7 +328,27 @@ export default function Profile() {
                   >
                     Save Changes
                   </Button>
-                <Button
+                  <Button
+                    id="cancel-button"
+                    variant="text"
+                    onClick={() => {
+                      window.location.reload(); // Refreshing the page to return to the original profile prior to changes since the changes were cancelled --> Is there a better way to do this?
+                      navigate("/profile");
+                    }}
+                    sx={{
+                      backgroundColor: "#68a2b1",
+                      color: "#033015",
+                      margin: "8px",
+                      fontWeight: "bolder",
+                      "&:hover": {
+                        backgroundColor: "#1a2e32",
+                        color: "white",
+                      },
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                {/* <Button
                   id="cancel-button"
                   variant="text"
                   onClick={() => navigate("/profile")}
@@ -322,7 +368,8 @@ export default function Profile() {
                   }}
                 >
                   Cancel
-                </Button>
+                </Button> */}
+
               </Stack>
                 </form>
               </Stack>
