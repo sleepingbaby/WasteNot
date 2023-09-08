@@ -137,13 +137,18 @@ export default function Profile() {
                     
                   }}
                 >
-                  <Avatar
-                    size="avatar-image"
-                    sx={{
-                      height: { xs: "40px", sm: "130px" },
-                      width: { xs: "40px", sm: "130px" },
-                    }}
-                  ></Avatar>
+                <Avatar
+                  size="avatar-image"
+                  sx={{
+                    height: { xs: "40px", sm: "130px" },
+                    width: { xs: "40px", sm: "130px" },
+                  }}
+                >
+                  <img
+                    src={user.profile_picture ? user.profile_picture : "src/assets/beef.png"}
+                    style={{ width: "100%", height: "100%" }} // Add this style
+                  />
+              </Avatar>
               </Stack>
               </Stack>
               <Typography
@@ -246,30 +251,6 @@ export default function Profile() {
                     },
                   }}
                 ></TextField>
-                <img src={user.profile_picture ? user.profile_picture : "src/assets/beef.png"} />
-                {/* <img src={profilePic} alt="" /> */}
-                <input type="file" accept="image/*" onChange={(e) => {setFile(e.target.files[0])}}/>
-                <Button
-                  id="save-button"
-                  variant="contained"
-                  // onClick={updateUser}
-                  type="submit"
-                  // *NAVIGATE BACK TO HOME AFTER JS ADDED
-                  sx={{
-                    backgroundColor: "#68a2b1",
-                    color: "#033015",
-                    margin: "8px",
-                    fontWeight: "bolder",
-                    "&:hover": {
-                      backgroundColor: "#1a2e32",
-                      color: "white",
-                    },
-                  }}
-                >
-                  Save Changes
-                </Button>
-                </form>
-              </Stack>
               <Stack
                 id="buttons"
                 direction="row"
@@ -280,21 +261,8 @@ export default function Profile() {
                 }}
               >
                 <Button
-                  id="cancel-button"
-                  variant="text"
-                  onClick={() => navigate("/profile")}
-                  sx={{
-                    color: "#000000",
-                    "&:hover": { borderRadius: "8px" },
-                  }}
-                >
-                  Cancel
-                </Button>
-                {/* <Button
-                  id="save-button"
                   variant="contained"
-                  onClick={updateUser}
-                  // *NAVIGATE BACK TO HOME AFTER JS ADDED
+                  component="label" // Make it behave like a label for a file input
                   sx={{
                     backgroundColor: "#68a2b1",
                     color: "#033015",
@@ -306,8 +274,57 @@ export default function Profile() {
                     },
                   }}
                 >
-                  Save Changes
-                </Button> */}
+                  Change Photo
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      setFile(e.target.files[0]);
+                    }}
+                    style={{ display: 'none' }} // Hide the original input element
+                  />
+                </Button>
+                  <Button
+                    id="save-button"
+                    variant="contained"
+                    onClick={updateUser}
+                    // *NAVIGATE BACK TO HOME AFTER JS ADDED
+                    sx={{
+                      backgroundColor: "#68a2b1",
+                      color: "#033015",
+                      margin: "8px",
+                      fontWeight: "bolder",
+                      "&:hover": {
+                        backgroundColor: "#1a2e32",
+                        color: "white",
+                      },
+                    }}
+                  >
+                    Save Changes
+                  </Button>
+                <Button
+                  id="cancel-button"
+                  variant="text"
+                  onClick={() => navigate("/profile")}
+                  // sx={{
+                  //   color: "#000000",
+                  //   "&:hover": { borderRadius: "8px" },
+                  // }}
+                  sx={{
+                    backgroundColor: "#68a2b1",
+                    color: "#033015",
+                    margin: "8px",
+                    fontWeight: "bolder",
+                    "&:hover": {
+                      backgroundColor: "#1a2e32",
+                      color: "white",
+                    },
+                  }}
+                >
+                  Cancel
+                </Button>
+              </Stack>
+                </form>
               </Stack>
             </Stack>
           </Stack>
