@@ -332,8 +332,8 @@ export default function Profile() {
                     id="cancel-button"
                     variant="text"
                     onClick={() => {
-                      window.location.reload(); // Refreshing the page to return to the original profile prior to changes since the changes were cancelled --> Is there a better way to do this?
-                      navigate("/profile");
+                      // window.location.reload(); // Refreshing the page to return to the original profile prior to changes since the changes were cancelled --> Is there a better way to do this?
+                      navigate("/ingredients");
                     }}
                     sx={{
                       backgroundColor: "#68a2b1",
