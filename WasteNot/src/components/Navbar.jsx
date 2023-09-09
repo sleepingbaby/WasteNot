@@ -8,6 +8,7 @@ import {
   Menu,
   MenuItem,
   Typography,
+  Avatar
 } from "@mui/material";
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
@@ -62,6 +63,7 @@ const Navbar = ({ user, setUser }) => {
     }
   }, [user]);
 
+  console.log("user", user)
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -111,7 +113,8 @@ const Navbar = ({ user, setUser }) => {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                {user && user.profile_picture ? <Avatar src={user.profile_picture}/> : 
+                 <AccountCircle /> }
               </IconButton>
               <Menu
                 id="menu-appbar"

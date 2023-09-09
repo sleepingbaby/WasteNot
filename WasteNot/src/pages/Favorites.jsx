@@ -50,48 +50,24 @@ import ChatBotComponent from "../components/ChatBotComponent.jsx";
             alignItems="center"
         >
 
-  <Container>
-     <Button
-    onClick={handleClickOpen}
-    sx={{
-      backgroundColor: "#68a2b1",
-      color: "#033015",
-      margin: "80px",
-      fontWeight: "bolder",
-      "&:hover": {
-        backgroundColor: "#1a2e32",
-        color: "white",
-      },
-    }}
-  >
-   {wasteBotOpen ? "End Chat" :  "Open Chat"} 
-  </Button>
-  <Dialog open={wasteBotOpen} onClose={handleClose}>  
- <ChatBotComponent/> 
-  {/* <DialogActions>
-            <Button onClick={handleClose}>End</Button>
-  
-          </DialogActions> */}
-  </Dialog>
-  
-  </Container>
             <Stack
                 id="recipe-container"
                 sx={{
-                    height: { xs: "95%", sm: "95%" },
-                    width: { xs: "90%", sm: "90%" },
-                    backgroundColor: "#b8d4db",
-                    borderRadius: "8px",
-                    boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
-                        0 0 20px rgba(210, 210, 210, 0.2),
-                        0 0 20px rgba(210, 210, 210, 0.2)`,
-                    overflow: "scroll",
-                    "::-webkit-scrollbar": {
-                        width: "0",
-                        background: "transparent",
-                    },
+                  height: { xs: "95%", sm: "95%" },
+                  width: { xs: "90%", sm: "90%" },
+                  backgroundColor: "#b8d4db",
+                  borderRadius: "8px",
+                  boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
+                  0 0 20px rgba(210, 210, 210, 0.2),
+                  0 0 20px rgba(210, 210, 210, 0.2)`,
+                  overflow: "scroll",
+                  "::-webkit-scrollbar": {
+                    width: "0",
+                    background: "transparent",
+                  },
                 }}
             >
+             
             <Box
               id="header-bg"
               sx={{
@@ -110,7 +86,28 @@ import ChatBotComponent from "../components/ChatBotComponent.jsx";
                   Your Favorites
                 </Typography>
               </Container>
+              
             </Box>
+            <Container>
+                   <Button
+                  onClick={handleClickOpen}
+                  sx={{
+                    backgroundColor: "#68a2b1",
+                    color: "#033015",
+                    fontWeight: "bolder",
+                    "&:hover": {
+                      backgroundColor: "#1a2e32",
+                      color: "white",
+                    },
+                  }}
+                >
+                 {wasteBotOpen ? "End Chat" :  "Open Chat"} 
+                </Button>
+                <Dialog open={wasteBotOpen} onClose={handleClose}>  
+               <ChatBotComponent/> 
+                </Dialog>
+                
+                </Container>
                <Container sx={{ py: 8 }}>
                     <Grid container spacing={3} justifyContent={"center"}>
                         {fav.map((recipe,i) => (

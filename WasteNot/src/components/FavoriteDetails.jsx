@@ -76,7 +76,7 @@ const FavoriteCard = ({ recipe }) => {
             <CardMedia
               component="img"
               alt={recipe.title}
-              height="400"
+              height="300"
               width="300"
               image={recipe.image}
               sx={{
