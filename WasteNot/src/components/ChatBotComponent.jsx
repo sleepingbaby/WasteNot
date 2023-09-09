@@ -14,6 +14,20 @@ export default function ChatBotComponent() {
   let wasteBotMessage = {};
 
 
+  const sendInitialGuidance = () => {
+    const initialMessage = {
+      id: messages.length + 1,
+      text: "Welcome to WasteBot! You can ask me questions about ingredient subtitution, macronutrients, or unit conversions!",
+      sender: "wasteBot",
+    };
+    setMessages([...messages, initialMessage]);
+  };
+
+  useEffect(() => {
+    // Send initial guidance when component mounts
+    sendInitialGuidance();
+  }, []);
+
 
   const handleSubmit = async () => {
     if (userInput.trim() === "") return;
