@@ -14,6 +14,7 @@ import PasswordResetConfirm from "./pages/PasswordResetConfirm";
 import Contact from "./pages/Contact";
 import Favorites from "./pages/Favorites";
 import About from "./pages/About";
+import FullRecipe from "./components/FullRecipe";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/details/:recipeId",
+        element: <FullRecipe />,
       },
 
       // {

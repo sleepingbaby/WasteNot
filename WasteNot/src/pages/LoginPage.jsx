@@ -154,7 +154,7 @@ export default function LoginPage() {
                 mb: 2,
               }}
             >
-              <Button
+              {/* <Button
                 id="cancel-button"
                 variant="text"
                 onClick={() => navigate("/signup")}
@@ -164,7 +164,7 @@ export default function LoginPage() {
                 }}
               >
                 Need an account?
-              </Button>
+              </Button> */}
               <Button
                 id="save-button"
                 variant="contained"
