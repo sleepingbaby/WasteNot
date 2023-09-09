@@ -6,12 +6,27 @@ import {
     Container,
     Typography,
     Grid,
+    Dialog,
+    Button,
+    DialogActions,
   } from "@mui/material";
   import api from "../utilities.jsx";
+import ChatBotComponent from "../components/ChatBotComponent.jsx";
 
 
   const Favorites = () => {
     const [fav, setFav] = useState([]);
+    const [wasteBotOpen,setWasteBotOpen] = useState(false)
+
+    const handleClickOpen = () => {
+      setWasteBotOpen(true);
+    };
+  
+    const handleClose = () => {
+      setWasteBotOpen(false);
+    };
+
+ 
 
     useEffect(() => {
         const getFavorites = async () => {
@@ -34,6 +49,32 @@ import {
             justifyContent="center"
             alignItems="center"
         >
+
+  <Container>
+     <Button
+    onClick={handleClickOpen}
+    sx={{
+      backgroundColor: "#68a2b1",
+      color: "#033015",
+      margin: "80px",
+      fontWeight: "bolder",
+      "&:hover": {
+        backgroundColor: "#1a2e32",
+        color: "white",
+      },
+    }}
+  >
+   {wasteBotOpen ? "End Chat" :  "Open Chat"} 
+  </Button>
+  <Dialog open={wasteBotOpen} onClose={handleClose}>  
+ <ChatBotComponent/> 
+  {/* <DialogActions>
+            <Button onClick={handleClose}>End</Button>
+  
+          </DialogActions> */}
+  </Dialog>
+  
+  </Container>
             <Stack
                 id="recipe-container"
                 sx={{

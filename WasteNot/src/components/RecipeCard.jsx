@@ -96,6 +96,8 @@ export default function RecipeCard({ data }) {
               backgroundColor: "#68A2B1",
               ":hover": {
                 backgroundColor: "#8ED7EA",
+                display:"flex",
+                flexDirection: ""
               },
             }}
           >

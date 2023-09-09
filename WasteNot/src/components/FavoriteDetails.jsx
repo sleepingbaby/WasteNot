@@ -90,7 +90,6 @@ const FavoriteCard = ({ recipe }) => {
             </ExpandFav>
           </CardActions>
         </div>
-        {/* <Button>Made?</Button> */}
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <Divider />
           <Typography
