@@ -8,7 +8,7 @@ import {
   Menu,
   MenuItem,
   Typography,
-  Avatar
+  Avatar,
 } from "@mui/material";
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
@@ -18,6 +18,7 @@ const Navbar = ({ user, setUser }) => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [userChoice, setUserChoice] = useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -42,18 +43,19 @@ const Navbar = ({ user, setUser }) => {
     setAnchorEl(null);
   };
 
+  const userAction = () => {
+    setUserChoice(!userChoice);
+  };
   const logOut = async () => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
       navigate("/");
     } else {
-
       setAnchorEl(null);
       navigate("/login");
     }
   };
-
 
   useEffect(() => {
     if (user) {
@@ -62,8 +64,6 @@ const Navbar = ({ user, setUser }) => {
       setAuth(false);
     }
   }, [user]);
-
-  console.log("user", user)
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -113,8 +113,11 @@ const Navbar = ({ user, setUser }) => {
                 onClick={handleMenu}
                 color="inherit"
               >
-                {user && user.profile_picture ? <Avatar src={user.profile_picture}/> : 
-                 <AccountCircle /> }
+                {user && user.profile_picture ? (
+                  <Avatar src={user.profile_picture} />
+                ) : (
+                  <AccountCircle />
+                )}
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -133,34 +136,37 @@ const Navbar = ({ user, setUser }) => {
               >
                 <MenuItem onClick={handleClick}>Profile</MenuItem>
                 <MenuItem onClick={logOut}>Logout</MenuItem>
-
               </Menu>
             </div>
           ) : (
-            <div>
-              <Typography
-                variant="body1"
-                component="div"
-                onClick={() => navigate("/signup")}
-                sx={{
-                  color: "#b8d4db",
-                  marginRight: "20px",
-                  cursor: "pointer",
-                }}
-              >
-                Create Account
-              </Typography>
-              <Typography
-                variant="body1"
-                component="div"
-                onClick={() => navigate("/login")}
-                sx={{
-                  color: "#b8d4db",
-                  cursor: "pointer",
-                }}
-              >
-                Log In
-              </Typography>
+            <div
+            onClick={userAction}>
+              {userChoice ? (
+                <Typography
+                  variant="body1"
+                  component="div"
+                  onClick={() => navigate("/login")}
+                  sx={{
+                    color: "#b8d4db",
+                    cursor: "pointer",
+                  }}
+                >
+                  Log In
+                </Typography>
+              ) : (
+                <Typography
+                  variant="body1"
+                  component="div"
+                  onClick={() => navigate("/signup")}
+                  sx={{
+                    color: "#b8d4db",
+                    marginRight: "20px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Create Account
+                </Typography>
+              )}
             </div>
           )}
         </Toolbar>

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate, Route } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import LaunchIcon from "@mui/icons-material/Launch";
 import {
   Grid,
   Card,
@@ -26,9 +28,10 @@ const ExpandFav = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-/* TODO: ADD ON CLICK/MADE BUTTON TO INCREMENT COUNTER OF MADE MEALS.*/
 const FavoriteCard = ({ recipe }) => {
+  const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -36,7 +39,7 @@ const FavoriteCard = ({ recipe }) => {
 
   const instructions = `<li>${recipe.instructions.replace(/\n/g, "<li>")}</li>`;
   return (
-    <Grid item key={recipe.id} xs={8} sm={6} md={4}>
+    <Grid item key={recipe.id} xs={6} sm={5} md={3}>
       <Card
         id="recipe card"
         sx={{
@@ -46,6 +49,7 @@ const FavoriteCard = ({ recipe }) => {
           flexDirection: "column",
           boxShadow:
             "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
+          marginY: 1,
         }}
       >
         <div onClick={handleExpandClick} style={{ cursor: "pointer" }}>
@@ -80,7 +84,7 @@ const FavoriteCard = ({ recipe }) => {
               width="300"
               image={recipe.image}
               sx={{
-                filter: "blur(3px)",
+                filter: "blur(2px)",
               }}
             />
           </div>
@@ -91,6 +95,8 @@ const FavoriteCard = ({ recipe }) => {
           </CardActions>
         </div>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <LaunchIcon />
+          <Button onClick={() => {navigate(`/details/${recipe.id}`)}}> View Full Recipe</Button> 
           <Divider />
           <Typography
             id="instructions"
@@ -101,16 +107,13 @@ const FavoriteCard = ({ recipe }) => {
             Instructions
           </Typography>
           <Divider />
-          <Typography>
             <List sx={{ listStyle: "decimal", pl: 2 }}>
-              <ListItem sx={{ listStyle: "decimal", pl: 2 }}>
-                <span
-                  style={{}}
-                  dangerouslySetInnerHTML={{ __html: instructions }}
-                />
-              </ListItem>
+            <ListItem sx={{ pl: 2 }}>
+              <div
+                dangerouslySetInnerHTML={{ __html: instructions }}
+              />
+            </ListItem>
             </List>
-          </Typography>
           <Divider />
           <Typography id="ingredients" variant="h4" align="center" gutterBottom>
             Ingredients

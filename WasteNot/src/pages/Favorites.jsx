@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import FavoriteCard from "../components/FavoriteDetails.jsx";
+import ChatBotComponent from "../components/ChatBotComponent.jsx";
 import {
-    Stack,
-    Box,
+Stack,
+Box,
     Container,
     Typography,
     Grid,
     Dialog,
     Button,
-    DialogActions,
   } from "@mui/material";
   import api from "../utilities.jsx";
-import ChatBotComponent from "../components/ChatBotComponent.jsx";
 
 
   const Favorites = () => {
@@ -25,8 +24,6 @@ import ChatBotComponent from "../components/ChatBotComponent.jsx";
     const handleClose = () => {
       setWasteBotOpen(false);
     };
-
- 
 
     useEffect(() => {
         const getFavorites = async () => {
@@ -109,7 +106,7 @@ import ChatBotComponent from "../components/ChatBotComponent.jsx";
                 
                 </Container>
                <Container sx={{ py: 8 }}>
-                    <Grid container spacing={3} justifyContent={"center"}>
+                    <Grid container spacing={1} justifyContent={"center"}>
                         {fav.map((recipe,i) => (
                             <FavoriteCard key={i} recipe={recipe} />
                         ))}

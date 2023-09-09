@@ -6,7 +6,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import api from "../utilities.jsx";
 import { useEffect, useState } from "react";
 
-export default function Profile() {
+const Profile = () => {
   const navigate = useNavigate();
   const { user, setUser } = useOutletContext();
 
@@ -41,7 +41,6 @@ export default function Profile() {
 
   useEffect(() => {
     if (user !== null) {
-      console.log("useeffect", user);
       setFirstName(user.first_name);
       setLastName(user.last_name);
       setEmail(user.email);
@@ -130,8 +129,8 @@ export default function Profile() {
                   sx={{
                     borderRadius: "50%",
                     backgroundColor: "white",
-                    height: { xs: "50px", sm: "150px" },
-                    width: { xs: "50px", sm: "150px" },
+                    height: { xs: "90px", sm: "150px" },
+                    width: { xs: "90px", sm: "150px" },
                     border: "2px solid #90a4ae",
                     boxShadow: 2,
                   }}
@@ -139,8 +138,8 @@ export default function Profile() {
                   <Avatar
                     size="avatar-image"
                     sx={{
-                      height: { xs: "40px", sm: "130px" },
-                      width: { xs: "40px", sm: "130px" },
+                      height: { xs: "80px", sm: "130px" },
+                      width: { xs: "80px", sm: "130px" },
                     }}
                   >
                     <img
@@ -154,7 +153,6 @@ export default function Profile() {
                 component={"h2"}
                 id="user-header"
                 variant="h2"
-                align="end"
                 sx={{
                   position: "absolute",
                   right: 5,
@@ -386,3 +384,5 @@ export default function Profile() {
     </>
   );
 }
+
+export default Profile
