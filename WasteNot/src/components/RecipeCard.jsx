@@ -3,146 +3,136 @@ import Typography from "@mui/material/Typography";
 import { Paper, Box, Stack, Button } from "@mui/material";
 import "../styles/Font.css";
 import { BorderAllRounded, BorderStyleRounded } from "@mui/icons-material";
+import { useState, useEffect } from "react";
 import api from "../utilities.jsx";
 
 export default function RecipeCard({ data }) {
-  const handleFavorite = async (id) => {
-    try {
-      const recipeResponse = await api.get(`spoon/recipe/${id}/`);
-      console.log(recipeResponse.data);
 
-      if (recipeResponse) {
-        const response = await api.post("recipe/", recipeResponse.data);
-      }
+    const [userFavorites, setUserFavorites] = useState([]);
+    
+    const isFavorited = userFavorites.some(recipe => recipe.id === data.id);
 
-      alert("Your recipe was added");
-    } catch (error) {
-      console.log("problem favoriting your recipe:", error);
-    }
-  };
+    const handleFavorite = async (id, isFavorited) => {
+        try {
+          if (isFavorited) {
+            const response = await api.delete(`recipe/${id}/`);
+            if (response.status === 204) {
+              setUserFavorites(prevFavorites => prevFavorites.filter(recipe => recipe.id !== id));
+            }
+          } else {
+            const recipeResponse = await api.get(`spoon/recipe/${id}/`);
+            if (recipeResponse) {
+              const response = await api.post("recipe/", recipeResponse.data);
+              if (response.status === 201) {
+                setUserFavorites(prevFavorites => [...prevFavorites, recipeResponse.data]);
+              }
+            }
+          }
+        } catch (error) {
+          console.log("problem toggling favorite status:", error);
+        }
+      };
+      
 
-  return (
+    useEffect(() => {
+    const fetchUserFavorites = async () => {
+        try {
+        const response = await api.get("recipe/");
+        setUserFavorites(response.data.recipes);
+        } catch (error) {
+        console.log("Error fetching user favorites:", error);
+        }
+    };
+
+    fetchUserFavorites();
+    }, []);
+
+
+    return (
     <Box>
-      <Paper
+        <Paper
         elevation={24}
         sx={{
-          width: {
+            width: {
             xs: "80vw",
             sm: "20vw",
             md: "20vw",
             lg: "15vw",
-          },
+            },
 
-          height: {
+            height: {
             xs: "500px",
             sm: "30vw",
             md: "25vw",
-          },
+            },
 
-          padding: {
+            padding: {
             xs: "2vw",
             sm: "1vw",
-          },
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "white",
-          border: 6,
-          borderColor: "#68A2B1",
+            },
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "white",
+            border: 6,
+            borderColor: "#68A2B1",
         }}
-      >
+        >
         <Stack
-          sx={{
+            sx={{
             height: "100%",
             width: "100%",
             textAlign: "center",
-          }}
-        >
-          <Stack
-            sx={{
-              height: "100%",
-              width: "100%",
             }}
-          >
+        >
             <Stack
-              sx={{
+            sx={{
+                height: "100%",
+                width: "100%",
+            }}
+            >
+            <Stack
+                sx={{
                 height: "40%",
                 width: "100%",
                 backgroundImage: `url(${data.image})`,
                 backgroundSize: "cover",
                 boxShadow: "rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;",
-              }}
-              style={{ borderRadius: "3%" }}
+                }}
+                style={{ borderRadius: "3%" }}
             ></Stack>
             <Typography
-              sx={{
+                sx={{
                 fontSize: {
-                  xs: "3vw",
-                  sm: "1.5vw",
-                  md: "1vw",
+                    xs: "3vw",
+                    sm: "1.5vw",
+                    md: "1vw",
                 },
                 borderTop: 1,
                 borderBottom: 1,
                 marginTop: "1vh",
-              }}
+                }}
             >
-              {data.title}
+                {data.title}
             </Typography>
 
             <Typography>{data.descriptions}</Typography>
-          </Stack>
-          <Button
-            onClick={() => handleFavorite(data.id)}
+            </Stack>
+            <Button
+            onClick={() => handleFavorite(data.id, isFavorited)}
             variant="contained"
             sx={{
-              backgroundColor: "#68A2B1",
-              ":hover": {
+                backgroundColor: "#68A2B1",
+                ":hover": {
                 backgroundColor: "#8ED7EA",
+                },
                 display:"flex",
                 flexDirection: ""
               },
             }}
-          >
-            Favorite
-          </Button>
+            >
+                {isFavorited ? "UnFavorite" : "Favorite"}
+            </Button>
         </Stack>
-        {/* <Stack sx={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    height: '100%',
-                    width: '100%'
-                }}>
-
-                    <Stack spacing={8} sx={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-
-                        <Stack sx={{
-                            maxHeight: '15%'
-                        }}>
-                            <Typography sx={{
-                                fontSize: {
-                                    xs: '3vw',
-                                    sm: '1.5vw',
-                                    md: '1vw',
-                                }
-                            }}>
-                                {data.title}
-                            </Typography>
-
-                            <Typography>{data.descriptions}</Typography>
-                        </Stack>
-
-                        <Stack sx={{
-                            height: '85%',
-                            width: '85%',
-                        }}>
-
-                            <img src={data.image} style={{ objectFit: 'cover', borderRadius: '8%' }}  />
-                        </Stack>
-                    </Stack>
-                </Stack> */}
-      </Paper>
+        </Paper>
     </Box>
-  );
+    );
 }
