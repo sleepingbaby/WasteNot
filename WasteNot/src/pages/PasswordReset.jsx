@@ -1,12 +1,16 @@
 import { Stack, Typography, TextField, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import  api  from "../utilities.jsx";
+import { useOutletContext } from "react-router-dom";
 
-import { useState } from "react";
+import { useState} from "react";
 
 export default function PasswordReset() {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const { user } = useOutletContext()
+
+
 
 
   const logIn = async(e) => {
@@ -125,7 +129,7 @@ export default function PasswordReset() {
               <Button
                 id="cancel-button"
                 variant="text"
-                onClick={() => navigate("/login")}
+                onClick={() => {user ? navigate('/profile') : navigate('/login') } }
                 sx={{
                   color: "#000000",
                   "&:hover": { borderRadius: "8px" },

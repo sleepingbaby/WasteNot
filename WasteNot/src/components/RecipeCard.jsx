@@ -124,6 +124,9 @@ export default function RecipeCard({ data }) {
                 ":hover": {
                 backgroundColor: "#8ED7EA",
                 },
+                display:"flex",
+                flexDirection: ""
+              },
             }}
             >
                 {isFavorited ? "UnFavorite" : "Favorite"}

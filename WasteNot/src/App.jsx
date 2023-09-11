@@ -17,6 +17,7 @@ function App() {
     const response = await api.get("user/");
     if (response.data) {
       setUser(response.data);
+      // console.log("WhoAmI", response.data)
       if (lastVisited.current) {
         navigate(lastVisited.current);
       } else {

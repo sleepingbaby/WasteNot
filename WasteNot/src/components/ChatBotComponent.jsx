@@ -1,86 +1,127 @@
-import React from "react";
-import { useEffect, useState } from "react";
-// import ChatBot from "react-simple-chatbot";
+import React, { useEffect, useState } from "react";
 import api from "../utilities.jsx";
-// import { Box, createTheme, ThemeProvider, Stack } from "@mui/material";
-import { Stack } from "@mui/material";
+import { TextField, Button, Box, Container } from "@mui/material";
+import Message from "./Message.jsx";
 
-export default function ChatBotComponent() {
-  const [steps, setSteps] = useState([]);
+const ChatBotComponent = () => {
+  const [userInput, setUserInput] = useState("");
+  const [messages, setMessages] = useState([]);
+  let wasteBotMessage = {};
 
-  //   const theme = createTheme({
-  //     background: "#f5f8fb",
-  //     fontFamily: "Helvetica Neue",
-  //     headerBgColor: "#EF6C00",
-  //     headerFontColor: "#fff",
-  //     headerFontSize: "15px",
-  //     botBubbleColor: "#EF6C00",
-  //     botFontColor: "#000000",
-  //     userBubbleColor: "yellow",
-  //     userFontColor: "#4a4a4a",
-  //   });
+  const sendInitialGuidance = () => {
+    const initialMessage = {
+      id: messages.length + 1,
+      text: (
+        <>
+          Welcome to WasteBot!
+          <br />
+          <br />
+          You can ask me questions about ingredient substitutions,
+          macronutrients, or unit conversions!
+        </>
+      ),
+      sender: "wasteBot",
+    };
+    setMessages([...messages, initialMessage]);
+  };
 
   useEffect(() => {
-    const getNextStep = async (userInput) => {
-      try {
-        const response = api.post("chatbot/chat/", { text: userInput });
-        const chatResponse = response.data.response;
-        console.log("chat response:", chatResponse);
+    sendInitialGuidance();
+  }, []);
 
-        // setSteps((prevSteps) => [
-        //   ...prevSteps,
-        //   {
-        //     id: "api-response",
-        //     messages : chatResponse,
-        //     trigger: "user-input",
-        //   },
-        // ]);
-      } catch (error) {
-        console.error(error);
-      }
+  const handleSubmit = async () => {
+    if (userInput.trim() === "") return;
+
+    const userMessage = {
+      id: messages.length + 1,
+      text: userInput,
+      sender: "user",
     };
-    getNextStep();
-  }, [ChatBot]);
+
+    try {
+      const response = await api.post("chatbot/chat/", { text: userInput });
+      if (response.data.response.answerText === "") {
+        wasteBotMessage = {
+          id: messages.length + 2,
+          text: "Sorry, try another question!",
+          sender: "wasteBot",
+        };
+      } else {
+        wasteBotMessage = {
+          id: messages.length + 2,
+          text: response.data.response.answerText,
+          sender: "wasteBot",
+        };
+      }
+
+      setMessages([...messages, userMessage, wasteBotMessage]);
+      setUserInput("");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <>
-      <Stack
-        id="mainpage"
-        height="100%"
-        width="100%"
-        justifyContent="center"
-        alignItems="center"
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        p: 2,
+        height: "400px",
+        width: "400px",
+        bgcolor: "white",
+        overflow: "scroll",
+        "::-webkit-scrollbar": {
+          width: "0",
+          background: "transparent",
+        },
+        borderRadius: "8px",
+        boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
+              0 0 20px rgba(210, 210, 210, 0.2),
+              0 0 20px rgba(210, 210, 210, 0.2)`,
+      }}
+    >
+      {messages.map((message, index) => (
+        <Message key={index} message={message} />
+      ))}
+      <Container
+        id="user-actions"
+        align="end"
+        sx={{
+          display: "flex",
+          justifyContent: "end",
+          flexDirection: "row-reverse",
+        }}
       >
-        {/* <ChatBot steps={steps}/> */}
-
-        <ChatBot
-          steps={[
-            {
-              id: "1",
-              options: [
-                { value: 1, label: "Chat", trigger: "2" },
-                { value: 2, label: "Food trivia", trigger: "3" },
-                { value: 3, label: "End", trigger: "4" },
-              ],
+        <Button
+          id="submit-button"
+          onClick={handleSubmit}
+          sx={{
+            backgroundColor: "#68a2b1",
+            color: "#033015",
+            margin: "8px",
+            fontWeight: "bolder",
+            "&:hover": {
+              backgroundColor: "#1a2e32",
+              color: "white",
             },
-            {
-              id: "3",
-              message: "Wrong answer, try again.",
-              trigger: "2",
-            },
-            {
-              id: "4",
-              message: "Catch ya on the flip side",
-              // end: true,
-            },
-            {
-              id: "2",
-              user: true,
-            },
-          ]}
+          }}
+        >
+          Submit
+        </Button>
+        <TextField
+          value={userInput}
+          onChange={(e) => {
+            setUserInput(e.target.value);
+          }}
+          sx={{
+            width: "100%",
+          }}
         />
-
-        {/* </ThemeProvider> */}
-      </Stack>
-    </>
+      </Container>
+    </Box>
   );
-}
+};
+
+export default ChatBotComponent;

@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Button,
   Grid,
   Card,
   CardMedia,
@@ -23,17 +22,17 @@ const Contact = () => {
     },
     {
       name: "Jesse",
-      fact: "I like broccoli",
-      github: "https://github.com/jayaruhbee",
-      linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      fact: "Fixing things makes me happy!",
+      github: "https://github.com/jessejamesva",
+      linkedin: "https://www.linkedin.com/in/jesse-j-vargas",
+      image: "src/assets/JesseVBackground.png",
     },
     {
       name: "Jessi",
       fact: "I'm also a Registered Dental Hygienist!",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/Jessi-Headshot.png",
     },
     {
       name: "Josh",
@@ -44,10 +43,10 @@ const Contact = () => {
     },
     {
       name: "Kelvin",
-      fact: "I have rock climbed my entire life but injure something every year.",
+      fact: "My favorite band is Hail the Sun",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/kelvin.jpeg",
     },
     {
       name: "Mike",
@@ -79,7 +78,7 @@ const Contact = () => {
           height: { xs: "95%", sm: "95%" },
           width: { xs: "90%", sm: "90%" },
           backgroundColor: "#b8d4db",
-          borderRadius: "18px",
+          borderRadius: "8px",
           boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
             0 0 20px rgba(210, 210, 210, 0.2),
             0 0 20px rgba(210, 210, 210, 0.2)`,
@@ -94,10 +93,9 @@ const Contact = () => {
           id="header-bg"
           sx={{
             bgcolor: "background.paper",
-            borderTopRightRadius: "18px",
-            borderTopLeftRadius: "18px",
-            pt: 8,
-            pb: 6,
+            borderTopRightRadius: "8px",
+            borderTopLeftRadius: "8px",
+            py: 2,
           }}
         >
           <Container maxWidth="md">
@@ -107,7 +105,6 @@ const Contact = () => {
               variant="h2"
               align="center"
               color="text.primary"
-              gutterBottom
             >
               Meet The Engineers
             </Typography>
@@ -132,6 +129,7 @@ const Contact = () => {
                       component="div"
                       sx={{
                         pt: "56.25%",
+                        height: "300px",
                       }}
                       image={card.image}
                     />

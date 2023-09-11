@@ -17,7 +17,11 @@ const Loading = () => {
     <Stack
       alignItems="center"
       justifyContent="center"
-      sx={{ height: "calc(100% - 200px)", width: "100%", postion: "relative" }}
+      sx={{
+        height: "calc(100% - 200px)",
+        width: "100%",
+        postion: "relative",
+      }}
     >
       <Meat2 />
       <Hamburger />

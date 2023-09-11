@@ -3,30 +3,37 @@ import RecyclingIcon from "@mui/icons-material/Recycling";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-// import Toggle from "../components/TogglePassword";
 import api from "../utilities.jsx";
 import { useEffect, useState } from "react";
 
-//* NEED TO FIX STATE ONLY REFLECTED ON REFRESH
-export default function Profile() {
+const Profile = () => {
   const navigate = useNavigate();
   const { user, setUser } = useOutletContext();
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [file, setFile] = useState(null);
+  const [profilePic, setProfilePic] = useState("");
 
-  const updateUser = async () => {
+  const updateUser = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("profile_picture", file);
+    formData.append("first_name", first_name);
+    formData.append("last_name", last_name);
+    formData.append("email", email);
     try {
-      const response = await api.put("user/", {
-        first_name,
-        last_name,
-        email,
+      const response = await api.put("user/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
-      console.log("response", response.data)
-      setUser(response.data)
+      // console.log("response", response.data)
+      setUser(response.data);
+      console.log("updateUser", user);
       window.alert("Profile Successfully Updated");
-      navigate("/ingredients");
+      navigate("/profile");
     } catch (error) {
       console.error(error);
     }
@@ -34,17 +41,17 @@ export default function Profile() {
 
   useEffect(() => {
     if (user !== null) {
-      console.log("useeffect", user)
       setFirstName(user.first_name);
       setLastName(user.last_name);
       setEmail(user.email);
+      setProfilePic(user.profile_picture);
     }
   }, [user]);
 
   const deactivateUser = async () => {
     try {
       const response = await api.put("user/status/", { is_active: "f" });
-      setUser(null)
+      setUser(null);
       window.alert("Account deactivated. We hope to see you again");
       navigate("/ingredients");
     } catch (error) {
@@ -103,45 +110,67 @@ export default function Profile() {
                 borderTopRightRadius: "15px",
                 borderTopLeftRadius: "15px",
                 borderColor: "#006064",
+                position: "relative",
               }}
             >
               <Stack
-                id="avatar-backdrop"
-                justifyContent="center"
-                alignItems="center"
-                mt={{ xs: 0, sm: 10 }}
+                id="avatar-container"
                 sx={{
-                  borderRadius: "50%",
-                  backgroundColor: "white",
-                  height: { xs: "50px", sm: "120px" },
-                  width: { xs: "50px", sm: "120px" },
-                  border: "2px solid #90a4ae",
-                  boxShadow: 2,
+                  pt: "22px",
+                  position: "absolute",
+                  left: 12,
                 }}
               >
-                <Avatar
-                  size=""
+                <Stack
+                  id="avatar-backdrop"
+                  justifyContent="center"
+                  alignItems="center"
+                  mt={{ xs: 0, sm: 10 }}
                   sx={{
-                    height: { xs: "40px", sm: "100px" },
-                    width: { xs: "40px", sm: "100px" },
+                    borderRadius: "50%",
+                    backgroundColor: "white",
+                    height: { xs: "90px", sm: "150px" },
+                    width: { xs: "90px", sm: "150px" },
+                    border: "2px solid #90a4ae",
+                    boxShadow: 2,
                   }}
-                ></Avatar>
+                >
+                  <Avatar
+                    size="avatar-image"
+                    sx={{
+                      height: { xs: "80px", sm: "130px" },
+                      width: { xs: "80px", sm: "130px" },
+                    }}
+                  >
+                    <img
+                      src={profilePic ? profilePic : "src/assets/beef.png"} // Use profilePic state here
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </Avatar>
+                </Stack>
               </Stack>
               <Typography
                 component={"h2"}
                 id="user-header"
                 variant="h2"
                 sx={{
+                  position: "absolute",
+                  right: 5,
                   color: "white",
                   fontWeight: "300",
                   fontSize: {
-                    xs: "28px", // Extra small screens
+                    xs: "24px", // Extra small screens
                     sm: "36px", // Small screens
-                    md: "48px", // Medium screens
-                    lg: "64px", // Large screens
+                    // md: "48px", // Medium screens
+                    // lg: "64px", // Large screens
                   },
                 }}
-              >{user.first_name} {user.last_name}</Typography>
+              >
+                {user.first_name.charAt(0).toUpperCase() +
+                  user.first_name.slice(1)}{" "}
+                {user.last_name.charAt(0).toUpperCase() +
+                  user.last_name.slice(1)}
+              </Typography>
             </Stack>
             <Stack
               id="profile-container"
@@ -151,6 +180,7 @@ export default function Profile() {
               alignItems="center"
               mt={8}
             >
+              
               <Stack
                 id="profile-data-fields"
                 gap={4}
@@ -226,45 +256,101 @@ export default function Profile() {
                     },
                   }}
                 ></TextField>
-              </Stack>
-              <Stack
-                id="buttons"
-                direction="row"
-                justifySelf="end"
-                gap={4}
-                sx={{
-                  mb: 2,
-                }}
-              >
                 <Button
                   id="cancel-button"
                   variant="text"
-                  onClick={() => navigate("/ingredients")}
+                  onClick={() => navigate("/password-reset")}
                   sx={{
-                    color: "#000000",
+                    color: "#aa0000",
+                    alignSelf: "flex-start",
+                    marginLeft: "35px",
                     "&:hover": { borderRadius: "8px" },
                   }}
                 >
-                  Cancel
+                  Forgot Password?
                 </Button>
-                <Button
-                  id="save-button"
-                  variant="contained"
-                  onClick={updateUser}
-                  // *NAVIGATE BACK TO HOME AFTER JS ADDED
+                <Stack
+                  id="buttons"
+                  direction="row-reverse"
+                  justifySelf="end"
+                  gap={2}
                   sx={{
-                    backgroundColor: "#68a2b1",
-                    color: "#033015",
-                    margin: "8px",
-                    fontWeight: "bolder",
-                    "&:hover": {
-                      backgroundColor: "#1a2e32",
-                      color: "white",
-                    },
+                    mt: 2,
                   }}
                 >
-                  Save Changes
-                </Button>
+                  <Button
+                    id="save-button"
+                    variant="contained"
+                    onClick={updateUser}
+                    // *NAVIGATE BACK TO HOME AFTER JS ADDED
+                    sx={{
+                      backgroundColor: "#68a2b1",
+                      color: "#033015",
+                      margin: "8px",
+                      fontWeight: "bolder",
+                      "&:hover": {
+                        backgroundColor: "#1a2e32",
+                        color: "white",
+                      },
+                    }}
+                  >
+                    Save Changes
+                  </Button>
+                  <Button
+                variant="contained"
+                component="label" // Make it behave like a label for a file input
+                sx={{
+                  backgroundColor: "#68a2b1",
+                  color: "#033015",
+                  margin: "8px",
+                  fontWeight: "bolder",
+                  "&:hover": {
+                    backgroundColor: "#1a2e32",
+                    color: "white",
+                  },
+                }}
+              >
+                Change Photo
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    setFile(e.target.files[0]);
+                    const selectedImage = e.target.files[0];
+                    if (selectedImage) {
+                      setProfilePic(URL.createObjectURL(selectedImage)); // Set the temporary URL
+                    }
+                  }}
+                  style={{ display: "none" }}
+                />
+                {/* <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      setFile(e.target.files[0]);
+                    }}
+                    style={{ display: 'none' }} // Hide the original input element
+                  /> */}
+              </Button>
+                  <Button
+                    id="cancel-button"
+                    variant="text"
+                    onClick={() => {
+                      // window.location.reload(); // Refreshing the page to return to the original profile prior to changes since the changes were cancelled --> Is there a better way to do this?
+                      navigate("/ingredients");
+                    }}
+                    sx={{
+                      color: "#033015",
+                      margin: "8px",
+                      fontWeight: "bolder",
+                      "&:hover": {
+                        color: "gray",
+                      },
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                </Stack>
               </Stack>
             </Stack>
           </Stack>
@@ -298,3 +384,5 @@ export default function Profile() {
     </>
   );
 }
+
+export default Profile

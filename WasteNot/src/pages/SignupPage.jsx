@@ -79,28 +79,7 @@ export default function SignupPage() {
               borderColor: "#006064",
             }}
           >
-            <Stack
-              id="avatar-backdrop"
-              justifyContent="center"
-              alignItems="center"
-              mt={{ xs: 0, sm: 10 }}
-              sx={{
-                borderRadius: "50%",
-                backgroundColor: "white",
-                height: { xs: "50px", sm: "120px" },
-                width: { xs: "50px", sm: "120px" },
-                border: "2px solid #90a4ae",
-                boxShadow: 2,
-              }}
-            >
-              <Avatar
-                size=""
-                sx={{
-                  height: { xs: "40px", sm: "100px" },
-                  width: { xs: "40px", sm: "100px" },
-                }}
-              ></Avatar>
-            </Stack>
+            
             <Typography
               component={"h2"}
               id="user-header"
@@ -221,7 +200,7 @@ export default function SignupPage() {
                 mb: 2,
               }}
             >
-              <Button
+              {/* <Button
                 id="cancel-button"
                 variant="text"
                 onClick={() => navigate("/login")}
@@ -231,7 +210,7 @@ export default function SignupPage() {
                 }}
               >
                 Already have an account?
-              </Button>
+              </Button> */}
               <Button
                 id="save-button"
                 variant="contained"
