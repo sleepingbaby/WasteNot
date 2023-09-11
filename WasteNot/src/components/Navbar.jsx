@@ -13,10 +13,10 @@ import {
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
 import { api } from "../utilities.jsx";
-
-const { setIngredientList, setPantryList } = useContext(recipeContext);
+import { recipeContext } from "../contexts/RecipeContext";
 
 const Navbar = ({ user, setUser }) => {
+  const { setIngredientList, setPantryList } = useContext(recipeContext);
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -52,8 +52,8 @@ const Navbar = ({ user, setUser }) => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
-      setIngredientList([])
-      setPantryList([])
+      setIngredientList([]);
+      setPantryList([]);
       navigate("/");
     } else {
       setAnchorEl(null);
@@ -143,8 +143,7 @@ const Navbar = ({ user, setUser }) => {
               </Menu>
             </div>
           ) : (
-            <div
-            onClick={userAction}>
+            <div onClick={userAction}>
               {userChoice ? (
                 <Typography
                   variant="body1"
