@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -13,6 +13,8 @@ import {
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
 import { api } from "../utilities.jsx";
+
+const { setIngredientList, setPantryList } = useContext(recipeContext);
 
 const Navbar = ({ user, setUser }) => {
   const [auth, setAuth] = useState(true);
@@ -50,6 +52,8 @@ const Navbar = ({ user, setUser }) => {
     let response = await api.post("user/logout/");
     if (response.status === 204) {
       setUser(null);
+      setIngredientList([])
+      setPantryList([])
       navigate("/");
     } else {
       setAnchorEl(null);
