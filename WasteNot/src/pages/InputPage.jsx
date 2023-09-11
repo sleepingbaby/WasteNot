@@ -19,7 +19,9 @@ import CustomPaper from "../components/CustomPaper";
 const InputPage = () => {
   const [newIngredient, setNewIngredient] = useState("");
   const [isStrict, setIsStrict] = useState(false);
-  const { ingredientList, setIngredientList, getPantryItems } = useContext(recipeContext);
+  const { ingredientList, setIngredientList, getPantryItems } = useContext(
+    recipeContext
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -175,30 +177,6 @@ const InputPage = () => {
             ))}
           </Stack>
         </Stack>
-        <FormGroup
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "row",
-            padding: "8px",
-          }}
-        >
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Vegan"
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Vegetarian"
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Nut-Free"
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: "#1a2e32" }} />}
-            label="Dairy-Free"
-          />
-        </FormGroup>
 
         <FormControlLabel
           control={<Switch checked={isStrict} onChange={handleSwitchChange} />}

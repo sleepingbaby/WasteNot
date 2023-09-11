@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Button,
   Grid,
   Card,
   CardMedia,
@@ -44,10 +43,10 @@ const Contact = () => {
     },
     {
       name: "Kelvin",
-      fact: "I have rock climbed my entire life but injure something every year.",
+      fact: "My favorite band is Hail the Sun",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/kelvin.jpeg",
     },
     {
       name: "Mike",
@@ -96,7 +95,7 @@ const Contact = () => {
             bgcolor: "background.paper",
             borderTopRightRadius: "8px",
             borderTopLeftRadius: "8px",
-            py:2,
+            py: 2,
           }}
         >
           <Container maxWidth="md">
@@ -129,7 +128,8 @@ const Contact = () => {
                     <CardMedia
                       component="div"
                       sx={{
-                        pt: "56.25%", height:"300px"
+                        pt: "56.25%",
+                        height: "300px",
                       }}
                       image={card.image}
                     />
