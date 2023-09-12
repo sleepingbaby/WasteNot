@@ -9,6 +9,7 @@ import {
   MenuItem,
   Typography,
   Avatar,
+  Stack,
 } from "@mui/material";
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
@@ -78,35 +79,40 @@ const Navbar = ({ user, setUser }) => {
           color: "#b8d4db",
         }}
       >
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2 }}
+        <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
+          <Stack direction="row" width="30%">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2 }}
+            >
+              <MenuOutlined />
+            </IconButton>
+            <TemporaryDrawer
+              open={drawerOpen}
+              onClose={() => setDrawerOpen(false)}
+              user={user}
+            />
+          </Stack>
+          <Stack
+            width="250px"
+            height="50px"
+            padding={3}
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="8px"
           >
-            <MenuOutlined />
-          </IconButton>
-          <TemporaryDrawer
-            open={drawerOpen}
-            onClose={() => setDrawerOpen(false)}
-            user={user}
-          />
-          <Typography
-            variant="h6"
-            component="div"
-            onClick={goHome}
-            sx={{
-              fontWeight: "bold",
-              color: "#b8d4db",
-              flexGrow: 1,
-              "&:hover": { cursor: "pointer" },
-            }}
-          >
-            WasteNot
-          </Typography>
+            <img
+              src="src/assets/wastenot.svg"
+              width="100%"
+              alt="Waste Not Image"
+              className="filter"
+            />
+          </Stack>
+
           {auth ? (
             <div>
               <IconButton
@@ -143,7 +149,14 @@ const Navbar = ({ user, setUser }) => {
               </Menu>
             </div>
           ) : (
-            <div onClick={userAction}>
+            <div
+              onClick={userAction}
+              style={{
+                width: "30%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
               {userChoice ? (
                 <Typography
                   variant="body1"
@@ -164,6 +177,7 @@ const Navbar = ({ user, setUser }) => {
                   sx={{
                     color: "#b8d4db",
                     marginRight: "20px",
+                    marginLeft: "20px",
                     cursor: "pointer",
                   }}
                 >
