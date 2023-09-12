@@ -52,48 +52,36 @@ const Pantry = () => {
       sx={{
         height: "100%",
         width: "100%",
-        backgroundColor:"#1a2e32",
-        backgroundImage: `url(src/assets/pantry_background.png)`,
-        // backgroundImage: `url(src/assets/pantry2.png)`,
-        backgroundSize:"cover", 
-        backgroundRepeat: "repeat"
-
       }}
     >
-      {/* <Stack width="90%">
-        <Typography sx={{ color: "white", fontSize: "2rem" }}>
-          Pantry
-        </Typography>
-      </Stack> */}
-         {/* <Typography
-        variant="h4"
+         <Typography
+        variant="h3"
         sx={{
-          color: "white",
+          color: "#b8d4db",
           fontWeight: "bold",
-          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
           marginBottom: "20px",
         }}
       >
         My Pantry
-      </Typography> */}
-{/* 
+      </Typography>
+
       <Box
-        // backgroundColor="#b8d4db"
+        backgroundColor="#b8d4db"
         height="90%"
         width="90%"
-        // borderRadius="8px"
+        borderRadius="8px"
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        // sx={{ boxShadow: 7 }}
-      > */}
+        sx={{ boxShadow: 7 }}
+      >
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="center"
           mb={2}
-          width="40%"
+          width="80%"
         >
           <Autocomplete
             options={ingredients}
@@ -153,14 +141,13 @@ const Pantry = () => {
 
         <Stack
           height="70%"
-          width="50%"
-          justifyContent="center"
-          // sx={{
-          //   backgroundColor: "#1a2e32",
-          //   borderRadius: "6px",
-          //   boxShadow:
-          //     "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-          // }}
+          width="80%"
+          sx={{
+            backgroundColor: "#1a2e32",
+            borderRadius: "6px",
+            boxShadow:
+              "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+          }}
         >
           <Stack
             direction="row"
@@ -169,7 +156,7 @@ const Pantry = () => {
             sx={{
               overflow: "scroll",
               flexWrap: "wrap",
-              // width: "50%",
+
               "&::-webkit-scrollbar": { display: "none" },
             }}
           >
@@ -184,7 +171,7 @@ const Pantry = () => {
             ))}
           </Stack>
         </Stack>
-      {/* </Box> */}
+      </Box>
     </Stack>
   );
 };
