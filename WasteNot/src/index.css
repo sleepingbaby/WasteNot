@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 
 * {
@@ -25,6 +24,11 @@ body {
 
 .autocomplete {
   text-transform: capitalize;
+}
+
+.filter {
+  filter: invert(100%) sepia(5%) saturate(7493%) hue-rotate(292deg)
+    brightness(106%) contrast(92%);
 }
 
 /* Loading Animation */

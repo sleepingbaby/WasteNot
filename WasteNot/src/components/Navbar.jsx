@@ -79,8 +79,8 @@ const Navbar = ({ user, setUser }) => {
           color: "#b8d4db",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Stack direction="row">
+        <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
+          <Stack direction="row" width="30%">
             <IconButton
               size="large"
               edge="start"
@@ -100,7 +100,6 @@ const Navbar = ({ user, setUser }) => {
           <Stack
             width="250px"
             height="50px"
-            backgroundColor="white"
             padding={3}
             alignItems="center"
             justifyContent="center"
@@ -110,6 +109,7 @@ const Navbar = ({ user, setUser }) => {
               src="src/assets/wastenot.svg"
               width="100%"
               alt="Waste Not Image"
+              className="filter"
             />
           </Stack>
 
@@ -149,7 +149,14 @@ const Navbar = ({ user, setUser }) => {
               </Menu>
             </div>
           ) : (
-            <div onClick={userAction}>
+            <div
+              onClick={userAction}
+              style={{
+                width: "30%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
               {userChoice ? (
                 <Typography
                   variant="body1"
@@ -170,6 +177,7 @@ const Navbar = ({ user, setUser }) => {
                   sx={{
                     color: "#b8d4db",
                     marginRight: "20px",
+                    marginLeft: "20px",
                     cursor: "pointer",
                   }}
                 >
