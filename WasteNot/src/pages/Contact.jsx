@@ -18,7 +18,7 @@ const Contact = () => {
       fact: "I like spicy foods",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/default_user.png",
     },
     {
       name: "Jesse",
@@ -39,7 +39,7 @@ const Contact = () => {
       fact: "I like rain",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/default_user.png",
     },
     {
       name: "Kelvin",
@@ -53,7 +53,7 @@ const Contact = () => {
       fact: "I like tv",
       github: "https://github.com/jayaruhbee",
       linkedin: "https://www.linkedin.com/in/jessica-paarfus",
-      image: "src/assets/beef.png",
+      image: "src/assets/default_user.png",
     },
     {
       name: "Pete",
@@ -80,8 +80,8 @@ const Contact = () => {
           backgroundColor: "#b8d4db",
           borderRadius: "8px",
           boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
-            0 0 20px rgba(210, 210, 210, 0.2),
-            0 0 20px rgba(210, 210, 210, 0.2)`,
+  0 0 20px rgba(210, 210, 210, 0.2),
+  0 0 20px rgba(210, 210, 210, 0.2)`,
           overflow: "scroll",
           "::-webkit-scrollbar": {
             width: "0",
@@ -95,13 +95,12 @@ const Contact = () => {
             bgcolor: "background.paper",
             borderTopRightRadius: "8px",
             borderTopLeftRadius: "8px",
-            py: 2,
+            py: 1,
           }}
         >
           <Container maxWidth="md">
             <Typography
               id="header"
-              component="h1"
               variant="h2"
               align="center"
               color="text.primary"
@@ -110,8 +109,9 @@ const Contact = () => {
             </Typography>
           </Container>
         </Box>
+
         <Stack id="lower-container" justifyContent={"center"}>
-          <Container sx={{ py: 8 }}>
+          <Container sx={{ pt: 3 }}>
             <Grid container spacing={3} justifyContent={"center"}>
               {cards.map((card, index) => (
                 <Grid item key={index} xs={12} sm={6} md={3}>
@@ -128,33 +128,39 @@ const Contact = () => {
                     <CardMedia
                       component="div"
                       sx={{
-                        pt: "56.25%",
-                        height: "300px",
+                        height: "250px",
                       }}
                       image={card.image}
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="h2"
+                        variant="h4"
                         sx={{
-                          pb: "5.25%",
+                          pb: "1.25%",
                         }}
                       >
                         {card.name}
                       </Typography>
                       <Typography
+                        variant="body1"
                         sx={{
                           fontWeight: "bold",
-                          marginBottom: "1px",
                           textDecoration: "underline",
                           pb: "2px",
                         }}
                       >
                         <span>Fun Fact:</span>
                       </Typography>
-                      <Typography>{card.fact}</Typography>
+                      <Typography
+                        variant="body2"
+                        sx={
+                          {
+                            // pb: "0px",
+                          }
+                        }
+                      >
+                        {card.fact}
+                      </Typography>
                     </CardContent>
                     <CardActions
                       style={{

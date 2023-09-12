@@ -29,7 +29,6 @@ const Profile = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      // console.log("response", response.data)
       setUser(response.data);
       console.log("updateUser", user);
       window.alert("Profile Successfully Updated");
@@ -95,8 +94,8 @@ const Profile = () => {
               borderBottomLeftRadius: "15px",
               borderBottomRightRadius: "15px",
               boxShadow: `0 0 20px rgba(210, 210, 210, 0.2),
-            0 0 20px rgba(210, 210, 210, 0.2),
-            0 0 20px rgba(210, 210, 210, 0.2)`,
+0 0 20px rgba(210, 210, 210, 0.2),
+0 0 20px rgba(210, 210, 210, 0.2)`,
             }}
           >
             <Stack
@@ -143,7 +142,9 @@ const Profile = () => {
                     }}
                   >
                     <img
-                      src={profilePic ? profilePic : "src/assets/beef.png"} // Use profilePic state here
+                      src={
+                        profilePic ? profilePic : "src/assets/default_user.png"
+                      } 
                       style={{ width: "100%", height: "100%" }}
                     />
                   </Avatar>
@@ -161,8 +162,6 @@ const Profile = () => {
                   fontSize: {
                     xs: "24px", // Extra small screens
                     sm: "36px", // Small screens
-                    // md: "48px", // Medium screens
-                    // lg: "64px", // Large screens
                   },
                 }}
               >
@@ -180,7 +179,6 @@ const Profile = () => {
               alignItems="center"
               mt={8}
             >
-              
               <Stack
                 id="profile-data-fields"
                 gap={4}
@@ -297,41 +295,41 @@ const Profile = () => {
                     Save Changes
                   </Button>
                   <Button
-                variant="contained"
-                component="label" // Make it behave like a label for a file input
-                sx={{
-                  backgroundColor: "#68a2b1",
-                  color: "#033015",
-                  margin: "8px",
-                  fontWeight: "bolder",
-                  "&:hover": {
-                    backgroundColor: "#1a2e32",
-                    color: "white",
-                  },
-                }}
-              >
-                Change Photo
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => {
-                    setFile(e.target.files[0]);
-                    const selectedImage = e.target.files[0];
-                    if (selectedImage) {
-                      setProfilePic(URL.createObjectURL(selectedImage)); // Set the temporary URL
-                    }
-                  }}
-                  style={{ display: "none" }}
-                />
-                {/* <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => {
-                      setFile(e.target.files[0]);
+                    variant="contained"
+                    component="label" // Make it behave like a label for a file input
+                    sx={{
+                      backgroundColor: "#68a2b1",
+                      color: "#033015",
+                      margin: "8px",
+                      fontWeight: "bolder",
+                      "&:hover": {
+                        backgroundColor: "#1a2e32",
+                        color: "white",
+                      },
                     }}
-                    style={{ display: 'none' }} // Hide the original input element
-                  /> */}
-              </Button>
+                  >
+                    Change Photo
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => {
+                        setFile(e.target.files[0]);
+                        const selectedImage = e.target.files[0];
+                        if (selectedImage) {
+                          setProfilePic(URL.createObjectURL(selectedImage)); // Set the temporary URL
+                        }
+                      }}
+                      style={{ display: "none" }}
+                    />
+                    {/* <input
+type="file"
+accept="image/*"
+onChange={(e) => {
+setFile(e.target.files[0]);
+}}
+style={{ display: 'none' }} // Hide the original input element
+/> */}
+                  </Button>
                   <Button
                     id="cancel-button"
                     variant="text"
@@ -383,6 +381,6 @@ const Profile = () => {
       )}
     </>
   );
-}
+};
 
-export default Profile
+export default Profile;
