@@ -4,32 +4,20 @@ import api from "../utilities.jsx";
 
 export const recipeContext = createContext();
 
-export function RecipeContextProvider({ children, user }) {
+export function RecipeContextProvider({ children }) {
   const [ingredientList, setIngredientList] = useState([]);
   const [recipeImage, setRecipeImage] = useState({});
   const [pantryList, setPantryList] = useState([]);
 
   useEffect(() => {
-    if (user) {
-      getPantryItems();
-    } else {
-      return;
-    }
-  }, [user]);
+    getPantryItems();
+  }, []);
 
-  const getPantryItems = async () => {
-    try {
-      const response = await api.get("pantryitem/");
-      if (response.status === 401) {
-        console.error("Unauthorized: Please log in");
-      } else {
-        setPantryList(response.data.pantry_items);
-        setIngredientList(response.data.pantry_items);
-      }
-    } catch (error) {
-      console.log("An error occurred");
-    }
-  };
+  const getPantryItems = async() => {
+    let response = await api.get('pantryitem/');
+    setPantryList(response.data.pantry_items);
+    setIngredientList(response.data.pantry_items);
+  }
 
   return (
     <recipeContext.Provider
@@ -41,7 +29,6 @@ export function RecipeContextProvider({ children, user }) {
         getPantryItems,
         pantryList,
         setPantryList,
-        user,
       }}
     >
       {children}

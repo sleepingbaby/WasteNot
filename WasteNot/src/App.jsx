@@ -14,29 +14,28 @@ function App() {
   const navigate = useNavigate();
 
   const whoAmI = async () => {
-    if (user) {
-      const response = await api.get("user/");
-      if (response.data) {
-        setUser(response.data);
-        if (lastVisited.current) {
-          navigate(lastVisited.current);
-        } else {
-          navigate("/");
-        }
+    const response = await api.get("user/");
+    if (response.data) {
+      setUser(response.data);
+      // console.log("WhoAmI", response.data)
+      if (lastVisited.current) {
+        navigate(lastVisited.current);
+      } else {
+        navigate("/");
       }
     }
   };
 
   useEffect(() => {
-    whoAmI();
-  }, [user]);
+      whoAmI();
+  }, []);
 
   useEffect(() => {
     lastVisited.current = location.pathname;
   }, [location]);
 
   return (
-    <RecipeContextProvider user={user}>
+    <RecipeContextProvider>
       <Stack height="100%" sx={{ backgroundColor: "#0a1214" }}>
         {path !== "/" && <Navbar user={user} setUser={setUser} />}
         <Outlet context={{ user, setUser }} />

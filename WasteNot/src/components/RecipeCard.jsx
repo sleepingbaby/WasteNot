@@ -1,7 +1,8 @@
+import React from "react";
 import Typography from "@mui/material/Typography";
 import { Paper, Box, Stack, Button } from "@mui/material";
 import "../styles/Font.css";
-
+import { BorderAllRounded, BorderStyleRounded } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import api from "../utilities.jsx";
 
