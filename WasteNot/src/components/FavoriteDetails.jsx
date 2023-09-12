@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNavigate, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import LaunchIcon from "@mui/icons-material/Launch";
+
 import {
   Grid,
   Card,
@@ -31,11 +32,17 @@ const ExpandFav = styled((props) => {
 const FavoriteCard = ({ recipe }) => {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
-
+  const distinctIngredients = [];
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  for (const ingredient of recipe.extendedIngredients) {
+    if (!distinctIngredients.some((el) => el.id === ingredient.id)) {
+      distinctIngredients.push(ingredient);
+    }
+  }
 
   const instructions = `<li>${recipe.instructions.replace(/\n/g, "<li>")}</li>`;
   return (
@@ -52,8 +59,13 @@ const FavoriteCard = ({ recipe }) => {
           marginY: 1,
         }}
       >
-        <div onClick={handleExpandClick} style={{ cursor: "pointer" }}>
-          <div style={{ position: "relative" }}>
+        <div style={{ cursor: "pointer" }}>
+          <div
+            onClick={() => {
+              navigate(`/details/${recipe.id}`);
+            }}
+            style={{ position: "relative" }}
+          >
             <div
               style={{
                 position: "absolute",
@@ -89,33 +101,31 @@ const FavoriteCard = ({ recipe }) => {
             />
           </div>
           <CardActions>
-            <ExpandFav>
+            <ExpandFav onClick={handleExpandClick}>
               {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </ExpandFav>
           </CardActions>
         </div>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <LaunchIcon />
-          <Button onClick={() => {navigate(`/details/${recipe.id}`)}}> View Full Recipe</Button> 
-          <Divider />
-          <Typography
-            id="instructions"
-            variant="h4"
-            align="center"
-            gutterBottom
+          <Button
+            onClick={() => {
+              navigate(`/details/${recipe.id}`);
+            }}
           >
+            <LaunchIcon sx={{ marginRight: 1 }} /> View Full Recipe
+          </Button>
+          <Divider />
+          <Typography id="instructions" variant="h4" align="center">
             Instructions
           </Typography>
           <Divider />
-            <List sx={{ listStyle: "decimal", pl: 2 }}>
+          <List sx={{ listStyle: "decimal", pl: 2 }}>
             <ListItem sx={{ pl: 2 }}>
-              <div
-                dangerouslySetInnerHTML={{ __html: instructions }}
-              />
+              <div dangerouslySetInnerHTML={{ __html: instructions }} />
             </ListItem>
-            </List>
+          </List>
           <Divider />
-          <Typography id="ingredients" variant="h4" align="center" gutterBottom>
+          <Typography id="ingredients" variant="h4" align="center">
             Ingredients
             <Divider />
           </Typography>
@@ -125,9 +135,8 @@ const FavoriteCard = ({ recipe }) => {
               listStylePosition: "inside",
             }}
           >
-            {recipe.extendedIngredients.map((ingredient, i) => (
+            {distinctIngredients.map((ingredient, i) => (
               <ListItem sx={{ display: "list-item" }} key={i}>
-                {/* {ingredient.original} */}
                 {ingredient.amount} {ingredient.unit} -{" "}
                 {ingredient.nameClean.charAt(0).toUpperCase() +
                   ingredient.nameClean.slice(1)}
