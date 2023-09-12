@@ -9,6 +9,7 @@ import {
   MenuItem,
   Typography,
   Avatar,
+  Stack,
 } from "@mui/material";
 import { MenuOutlined, AccountCircle } from "@mui/icons-material";
 import TemporaryDrawer from "./Drawer";
@@ -78,35 +79,40 @@ const Navbar = ({ user, setUser }) => {
           color: "#b8d4db",
         }}
       >
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2 }}
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Stack direction="row">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2 }}
+            >
+              <MenuOutlined />
+            </IconButton>
+            <TemporaryDrawer
+              open={drawerOpen}
+              onClose={() => setDrawerOpen(false)}
+              user={user}
+            />
+          </Stack>
+          <Stack
+            width="250px"
+            height="50px"
+            backgroundColor="white"
+            padding={3}
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="8px"
           >
-            <MenuOutlined />
-          </IconButton>
-          <TemporaryDrawer
-            open={drawerOpen}
-            onClose={() => setDrawerOpen(false)}
-            user={user}
-          />
-          <Typography
-            variant="h6"
-            component="div"
-            onClick={goHome}
-            sx={{
-              fontWeight: "bold",
-              color: "#b8d4db",
-              flexGrow: 1,
-              "&:hover": { cursor: "pointer" },
-            }}
-          >
-            WasteNot
-          </Typography>
+            <img
+              src="src/assets/wastenot.svg"
+              width="100%"
+              alt="Waste Not Image"
+            />
+          </Stack>
+
           {auth ? (
             <div>
               <IconButton
