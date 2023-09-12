@@ -10,3 +10,7 @@ WasteNot is a valuable app that addresses the important issue of food waste by p
 
 **APIs:** Spoonacular (for recipe suggestions), OpenAI (for strict recipe generation)
 
+
+
+https://github.com/sleepingbaby/WasteNot/assets/22720520/445697c5-0cbe-45ea-8370-3037b5eae119
+
