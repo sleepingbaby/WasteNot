@@ -3,23 +3,52 @@ import Typography from "@mui/material/Typography";
 import { Paper, Box, Stack, Button } from "@mui/material";
 import "../styles/Font.css";
 import { BorderAllRounded, BorderStyleRounded } from "@mui/icons-material";
+import { useState, useEffect } from "react";
 import api from "../utilities.jsx";
 
 export default function RecipeCard({ data }) {
-  const handleFavorite = async (id) => {
+  const [userFavorites, setUserFavorites] = useState([]);
+
+  const isFavorited = userFavorites.some((recipe) => recipe.id === data.id);
+
+  const handleFavorite = async (id, isFavorited) => {
     try {
-      const recipeResponse = await api.get(`spoon/recipe/${id}/`);
-      console.log(recipeResponse.data);
-
-      if (recipeResponse) {
-        const response = await api.post("recipe/", recipeResponse.data);
+      if (isFavorited) {
+        const response = await api.delete(`recipe/${id}/`);
+        if (response.status === 204) {
+          setUserFavorites((prevFavorites) =>
+            prevFavorites.filter((recipe) => recipe.id !== id)
+          );
+        }
+      } else {
+        const recipeResponse = await api.get(`spoon/recipe/${id}/`);
+        if (recipeResponse) {
+          const response = await api.post("recipe/", recipeResponse.data);
+          if (response.status === 201) {
+            setUserFavorites((prevFavorites) => [
+              ...prevFavorites,
+              recipeResponse.data,
+            ]);
+          }
+        }
       }
-
-      alert("Your recipe was added");
     } catch (error) {
-      console.log("problem favoriting your recipe:", error);
+      console.log("problem toggling favorite status:", error);
     }
   };
+
+  useEffect(() => {
+    const fetchUserFavorites = async () => {
+      try {
+        const response = await api.get("recipe/");
+        setUserFavorites(response.data.recipes);
+      } catch (error) {
+        console.log("Error fetching user favorites:", error);
+      }
+    };
+
+    fetchUserFavorites();
+  }, []);
 
   return (
     <Box>
@@ -90,58 +119,20 @@ export default function RecipeCard({ data }) {
             <Typography>{data.descriptions}</Typography>
           </Stack>
           <Button
-            onClick={() => handleFavorite(data.id)}
+            onClick={() => handleFavorite(data.id, isFavorited)}
             variant="contained"
             sx={{
               backgroundColor: "#68A2B1",
               ":hover": {
                 backgroundColor: "#8ED7EA",
-                display:"flex",
-                flexDirection: ""
               },
+              display: "flex",
+              flexDirection: "",
             }}
           >
-            Favorite
+            {isFavorited ? "UnFavorite" : "Favorite"}
           </Button>
         </Stack>
-        {/* <Stack sx={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    height: '100%',
-                    width: '100%'
-                }}>
-
-                    <Stack spacing={8} sx={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-
-                        <Stack sx={{
-                            maxHeight: '15%'
-                        }}>
-                            <Typography sx={{
-                                fontSize: {
-                                    xs: '3vw',
-                                    sm: '1.5vw',
-                                    md: '1vw',
-                                }
-                            }}>
-                                {data.title}
-                            </Typography>
-
-                            <Typography>{data.descriptions}</Typography>
-                        </Stack>
-
-                        <Stack sx={{
-                            height: '85%',
-                            width: '85%',
-                        }}>
-
-                            <img src={data.image} style={{ objectFit: 'cover', borderRadius: '8%' }}  />
-                        </Stack>
-                    </Stack>
-                </Stack> */}
       </Paper>
     </Box>
   );

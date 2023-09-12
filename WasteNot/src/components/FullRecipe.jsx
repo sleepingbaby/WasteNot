@@ -143,6 +143,7 @@ const FullRecipe = () => {
           <Typography
             id="header"
             variant="h1"
+
             display="flex"
             alignItems="center"
             sx={{
@@ -163,6 +164,7 @@ const FullRecipe = () => {
             xs={12}
             sm={6}
             id="image"
+
             justifyContent="center"
             sx={{
               width: "100%",
