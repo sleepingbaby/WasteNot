@@ -1,9 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import {
   Stack,
-  FormGroup,
   FormControlLabel,
-  Checkbox,
   TextField,
   Button,
   Box,
@@ -19,14 +17,19 @@ import CustomPaper from "../components/CustomPaper";
 const InputPage = () => {
   const [newIngredient, setNewIngredient] = useState("");
   const [isStrict, setIsStrict] = useState(false);
-  const { ingredientList, setIngredientList, getPantryItems } = useContext(
-    recipeContext
-  );
+  const {
+    ingredientList,
+    setIngredientList,
+    getPantryItems,
+    user,
+  } = useContext(recipeContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    getPantryItems();
-  }, []);
+    if (user) {
+      getPantryItems();
+    }
+  }, [user]);
 
   const handleSwitchChange = () => {
     setIsStrict(!isStrict);
@@ -97,7 +100,7 @@ const InputPage = () => {
               },
             }}
             value={newIngredient}
-            onChange={(event, newValue) => {
+            onChange={(newValue) => {
               setNewIngredient(newValue);
             }}
             renderInput={(params) => (

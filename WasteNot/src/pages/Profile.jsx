@@ -50,6 +50,7 @@ const Profile = () => {
   const deactivateUser = async () => {
     try {
       const response = await api.put("user/status/", { is_active: "f" });
+      console.log(response);
       setUser(null);
       window.alert("Account deactivated. We hope to see you again");
       navigate("/ingredients");
@@ -144,7 +145,7 @@ const Profile = () => {
                     <img
                       src={
                         profilePic ? profilePic : "src/assets/default_user.png"
-                      } 
+                      }
                       style={{ width: "100%", height: "100%" }}
                     />
                   </Avatar>
@@ -321,14 +322,6 @@ const Profile = () => {
                       }}
                       style={{ display: "none" }}
                     />
-                    {/* <input
-type="file"
-accept="image/*"
-onChange={(e) => {
-setFile(e.target.files[0]);
-}}
-style={{ display: 'none' }} // Hide the original input element
-/> */}
                   </Button>
                   <Button
                     id="cancel-button"
