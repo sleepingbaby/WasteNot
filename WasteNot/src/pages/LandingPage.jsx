@@ -29,17 +29,7 @@ const LandingPage = () => {
           mt={8}
           sx={{ zIndex: "5000" }}
         >
-          <Typography
-            sx={{
-              fontSize: { xs: "300%", sm: "650%" },
-              fontWeight: "bold",
-              marginBottom: "0px",
-              color: "#b8d4db",
-              textDecoration: "underline",
-            }}
-          >
-            WasteNot
-          </Typography>
+          <img src="src/assets/wastenot.svg" width="100%" />
           <Typography
             sx={{
               fontSize: "1.2rem",
