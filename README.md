@@ -1,5 +1,9 @@
 # WasteNot
 WasteNot is a valuable app that addresses the important issue of food waste by providing users with practical solutions for using leftover ingredients effectively. The combination of React, Django, and external APIs makes it a powerful and user-friendly tool for promoting sustainable cooking practices.
+
+
+[WasteNot.info](https://www.wastenot.info)
+
 ## Tech Stack
 #### Client Side: 
 ![Image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
