@@ -1,11 +1,11 @@
-# WasteNot
+![Image](wastenotLogo.jpg)
 WasteNot is a valuable app that addresses the important issue of food waste by providing users with practical solutions for using leftover ingredients effectively. The combination of React, Django, and external APIs makes it a powerful and user-friendly tool for promoting sustainable cooking practices.
 
 
 [WasteNot.info](https://www.wastenot.info)
 
 ## Tech Stack
-#### Client Side: 
+#### Client Side:
 ![Image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![Image](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
@@ -27,7 +27,7 @@ WasteNot is a valuable app that addresses the important issue of food waste by p
 ![Image](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Image](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)
 
-### Contributors:
+## Contributors
 * Ivan Goudyrev [Github](https://github.com/ivangoudyrev) [LinkedIn](https://www.linkedin.com/in/ivangoudyrev/)
 * Jesse Vargas [Github](https://github.com/jessejamesva) [LinkedIn](https://www.linkedin.com/in/jesse-j-vargas/)
 * Jessi Paarfus [Github](https://github.com/jayaruhbee) [LinkedIn](https://www.linkedin.com/in/jessica-paarfus)
@@ -39,7 +39,7 @@ WasteNot is a valuable app that addresses the important issue of food waste by p
 
 
 
-
+## Quick Demo
 
 
 https://github.com/sleepingbaby/WasteNot/assets/22720520/445697c5-0cbe-45ea-8370-3037b5eae119
