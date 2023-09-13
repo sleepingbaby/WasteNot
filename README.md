@@ -4,8 +4,8 @@ WasteNot is a valuable app that addresses the important issue of food waste by p
 #### Client Side: 
 ![Image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Image](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)
-![Image](https://img.shields.io/badge/Swiper-E95420?style=for-the-badge&logologoColor=white)
+![Image](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
+![Image](https://img.shields.io/badge/Swiper-E95420?style=for-the-badge&logo=swiper&logoColor=white)
 ![Image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 #### Sever Side:
@@ -16,7 +16,7 @@ WasteNot is a valuable app that addresses the important issue of food waste by p
 
 #### 3rd Party APIs:
 ![Image](https://img.shields.io/badge/spoonacular_API-E23744?style=for-the-badge&logo=&logoColor=white)
-![Image]( https://img.shields.io/badge/OPENAI-000000?style=for-the-badge&logo&logoColor=white)
+![Image]( https://img.shields.io/badge/OPENAI-000000?style=for-the-badge&logo=openai&logoColor=white)
 
 #### Group Communication:
 ![Image](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
